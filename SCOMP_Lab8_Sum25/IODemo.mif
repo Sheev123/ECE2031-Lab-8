@@ -1,0 +1,75 @@
+WIDTH=16;
+DEPTH=2048;
+
+ADDRESS_RADIX=HEX;
+DATA_RADIX=HEX;
+
+CONTENT BEGIN
+0000: 9000; -- 	IN     Switches
+0001: 9801; -- 	OUT LEDs
+0002: 103C; --     STORE Pattern
+0003: 5820; --     JUMP CheckerInit
+0004: 9000; -- 	IN Switches
+0005: 103C; --     STORE Pattern
+0006: 083E; -- 	LOAD Counter
+0007: 7020; --     JZERO CheckerInit
+0008: 9801; -- 	OUT    LEDs
+0009: 801B; -- 	CALL   Delay
+000A: 083C; -- 	LOAD   Pattern
+000B: 3841; -- 	AND    Bit9         ; bit mask
+000C: 7812; -- 	JNZ    Right        ; bit9 is 1; go right
+000D: 083C; -- 	LOAD   Pattern
+000E: 5001; -- 	SHIFT  1
+000F: 103C; -- 	STORE  Pattern
+0010: 9801; -- 	OUT    LEDs
+0011: 5809; -- 	JUMP   Left
+0012: 801B; -- 	CALL   Delay
+0013: 083C; -- 	LOAD   Pattern
+0014: 3840; -- 	AND    Bit0         ; bit mask
+0015: 7809; -- 	JNZ    Left         ; bit0 is 1; go left
+0016: 083C; -- 	LOAD   Pattern
+0017: 5011; -- 	SHIFT  -1
+0018: 103C; -- 	STORE  Pattern
+0019: 9801; -- 	OUT    LEDs
+001A: 5812; -- 	JUMP   Right
+001B: 9802; -- 	OUT    Timer
+001C: 9002; -- 	IN     Timer
+001D: 37FB; -- 	ADDI   -5
+001E: 601C; -- 	JNEG   WaitingLoop
+001F: 8800; -- 	RETURN
+0020: 1803; -- 	LOADI 3
+0021: 103E; --     STORE Counter
+0022: 180A; --     LOADI 10
+0023: 103F; --     STORE LoopCounter
+0024: 083C; --     LOAD Pattern
+0025: 103D; --     STORE PatternCheck    
+0026: 083D; --     LOAD PatternCheck
+0027: 3840; --     AND Bit0
+0028: 7831; --     JNZ LEDFound
+0029: 083D; --     LOAD PatternCheck
+002A: 5011; --     SHIFT -1
+002B: 103D; --     STORE PatternCheck
+002C: 083F; --     LOAD LoopCounter
+002D: 37FF; --     ADDI -1
+002E: 103F; --     STORE LoopCounter
+002F: 7004; --     JZERO CheckSwitches
+0030: 5826; --     JUMP CheckerLoop
+0031: 083E; -- 	LOAD Counter
+0032: 37FF; --     ADDI -1
+0033: 103E; --     STORE Counter
+0034: 7004; --     JZERO CheckSwitches
+0035: 083D; --     LOAD PatternCheck
+0036: 5011; --     SHIFT -1
+0037: 103D; --     STORE PatternCheck
+0038: 083F; --     LOAD LoopCounter
+0039: 37FF; --     ADDI -1
+003A: 103F; --     STORE LoopCounter
+003B: 5826; --     JUMP CheckerLoop
+003C: 0000; -- Pattern:      DW 0
+003D: 0000; -- PatternCheck: DW 0
+003E: 0003; -- Counter: 	  DW 3
+003F: 0000; -- LoopCounter:  DW 0
+0040: 0001; -- Bit0:      DW &B0000000001
+0041: 0200; -- Bit9:      DW &B1000000000
+[0042..07FF] : 0000; -- [empty memory]
+END;

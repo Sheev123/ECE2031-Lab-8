@@ -1,0 +1,82 @@
+WIDTH=16;
+DEPTH=2048;
+
+ADDRESS_RADIX=HEX;
+DATA_RADIX=HEX;
+
+CONTENT BEGIN
+0000: 3000; --     ADDI 0
+0001: 1041; --     STORE Score
+0002: 3000; -- 	ADDI 0
+0003: 1045; --     STORE Point
+0004: 103F; --     STORE GuessNum
+0005: 1042; --     STORE LSBNum
+0006: 1043; --     STORE Counter
+0007: 9804; --     OUT Hex0		   ;Display GuessNum
+0008: 9000; --     IN Switches
+0009: 9801; --     OUT LEDs
+000A: 680B; --     JPOS ResetLoop
+000B: 9000; -- 	IN Switches
+000C: 9801; --     OUT LEDs
+000D: 680B; --     JPOS ResetLoop
+000E: 083F; -- 	LOAD GuessNum
+000F: 3001; --     ADDI 1
+0010: 103F; --     STORE GuessNum
+0011: 9000; --     IN Switches
+0012: 2847; --     SUB Bit9
+0013: 780E; --     JNZ CountLoop
+0014: 083F; --     LOAD GuessNum
+0015: 3848; --     AND TwoFiveFive
+0016: 103F; --     STORE GuessNum
+0017: 681A; --     JPOS Skip
+0018: 3001; --     ADDI 1
+0019: 103F; --     STORE GuessNum
+001A: 9804; --     OUT Hex0			;Display GuessNum
+001B: 801E; --     CALL FindLSB
+001C: 1044; --     STORE GuessNumCounter
+001D: 582D; --     JUMP WaitLoop
+001E: 1042; -- 	STORE LSBNum    	; Save original value
+001F: 1800; --     LOADI 0             ; Counter = 0
+0020: 1043; --     STORE Counter
+0021: 0842; -- 	LOAD LSBNum
+0022: 3846; --     AND Bit0            ; Mask LSB
+0023: 782B; --     JNZ LSB_Found       ; If LSB is 1 skip to LSB_Found
+0024: 0842; --     LOAD LSBNum
+0025: 5011; --     SHIFT -1			; Shift right
+0026: 1042; -- 	STORE LSBNum
+0027: 0843; --     LOAD Counter
+0028: 2046; --     ADD Bit0             ; Increment counter
+0029: 1043; --     STORE Counter
+002A: 5821; --     JUMP LSB_Loop
+002B: 0843; --     LOAD Counter  	    ; Result is in counter
+002C: 8800; --     RETURN
+002D: 9000; -- 	IN Switches
+002E: 7002; --     JZERO Reset
+002F: 9801; --     OUT LEDs
+0030: 2847; --     SUB Bit9
+0031: 702D; --     JZERO WaitLoop
+0032: 9000; --     IN Switches
+0033: 801E; --     CALL FindLSB
+0034: 2844; --     SUB GuessNumCounter
+0035: 703A; --     JZERO Addpoint
+0036: 1800; --     LOADI 0
+0037: 1041; --     STORE Score
+0038: 9805; --     OUT Hex1 			;Display Score
+0039: 5802; --     JUMP Reset
+003A: 0841; --     LOAD Score
+003B: 3001; --     ADDI 1
+003C: 1041; --     STORE Score
+003D: 9805; --     OUT Hex1 			;Display Score
+003E: 5802; --     JUMP Reset
+003F: 0000; -- GuessNum:        DW 0
+0040: 0000; -- GuessMask:	     DW 0
+0041: 0000; -- Score:		     DW 0
+0042: 0000; -- LSBNum:		     DW 0
+0043: 0000; -- Counter:	     DW 0
+0044: 0000; -- GuessNumCounter: DW 0
+0045: 0000; -- Point: 		     DW 0
+0046: 0001; -- Bit0:        DW &B0000000001
+0047: 0200; -- Bit9:        DW &B1000000000
+0048: 00FF; -- TwoFiveFive:  DW 255
+[0049..07FF] : 0000; -- [empty memory]
+END;
