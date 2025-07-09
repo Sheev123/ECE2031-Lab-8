@@ -1,0 +1,111 @@
+--  PARSE_DISP_DATA_IN.vhd  (combinational version – no clock)
+--
+--  16-bit IO_DATA field
+--   15–14  mode                 00: hex | 01: bin | 10: dec | 11: full-control
+--      13  full_disp_override   1 = treat 4-digit + 2-digit as one 6-digit set
+--      12  fc_enable            (only when mode = 11)
+--   11–9   fc_disp              "
+--    8–6   fc_seg               "
+--   12–0   value                (num to show – overlaps fc_* by design)
+--
+--  IO_ADDR 4 → 4-digit display group (GRP0)
+--  IO_ADDR 5 → 2-digit display group (GRP1)
+
+library IEEE;
+use IEEE.std_logic_1164.all;
+use IEEE.numeric_std.all;
+
+entity PARSE_DISP_DATA_IN is
+    port (
+        IO_WRITE : in  std_logic;
+        IO_ADDR  : in  std_logic_vector(10 downto 0);
+        IO_DATA  : in  std_logic_vector(15 downto 0);
+
+        -- === Four-digit group (addr = 4) ===========================
+        GRP0_MODE      : out std_logic_vector(1 downto 0);
+        GRP0_VALUE     : out std_logic_vector(12 downto 0);
+        GRP0_FC_ENABLE : out std_logic;
+        GRP0_FC_DISP   : out std_logic_vector(2 downto 0);
+        GRP0_FC_SEG    : out std_logic_vector(2 downto 0);
+        GRP0_WRITE     : out std_logic;
+
+        -- === Two-digit group (addr = 5) ============================
+        GRP1_MODE      : out std_logic_vector(1 downto 0);
+        GRP1_VALUE     : out std_logic_vector(12 downto 0);
+        GRP1_FC_ENABLE : out std_logic;
+        GRP1_FC_DISP   : out std_logic_vector(2 downto 0);
+        GRP1_FC_SEG    : out std_logic_vector(2 downto 0);
+        GRP1_WRITE     : out std_logic
+    );
+end entity PARSE_DISP_DATA_IN;
+
+architecture comb of PARSE_DISP_DATA_IN is
+    -- field extracts
+    signal mode_s               : std_logic_vector(1 downto 0);
+    signal full_disp_override_s : std_logic;
+    signal fc_enable_s          : std_logic;
+    signal fc_disp_s            : std_logic_vector(2 downto 0);
+    signal fc_seg_s             : std_logic_vector(2 downto 0);
+    signal value_s              : std_logic_vector(12 downto 0);
+
+    -- convenience constants
+    constant ADDR_GRP0 : integer := 4;
+    constant ADDR_GRP1 : integer := 5;
+begin
+    -- split IO_DATA
+    mode_s               <= IO_DATA(15 downto 14);
+    full_disp_override_s <= IO_DATA(13);
+    fc_enable_s          <= IO_DATA(12);
+    fc_disp_s            <= IO_DATA(11 downto 9);
+    fc_seg_s             <= IO_DATA(8  downto 6);
+    value_s              <= IO_DATA(12 downto 0);
+
+    ------------------------------------------------------------------
+    --  Group-0 (4 displays)
+    ------------------------------------------------------------------
+    GRP0_WRITE <= IO_WRITE and
+                  std_logic'(to_integer(unsigned(IO_ADDR)) = ADDR_GRP0);
+
+    GRP0_MODE  <= mode_s when GRP0_WRITE = '1' else (others => '0');
+
+    GRP0_VALUE <= value_s               when (GRP0_WRITE = '1' and mode_s /= "11")
+                  else (others => '0');
+
+    GRP0_FC_ENABLE <= fc_enable_s       when (GRP0_WRITE = '1' and mode_s = "11")
+                      else '0';
+
+    GRP0_FC_DISP   <= fc_disp_s         when (GRP0_WRITE = '1' and mode_s = "11")
+                      else (others => '0');
+
+    GRP0_FC_SEG    <= fc_seg_s          when (GRP0_WRITE = '1' and mode_s = "11")
+                      else (others => '0');
+
+    ------------------------------------------------------------------
+    --  Group-1 (2 displays)  — also used when override extends grp-0
+    ------------------------------------------------------------------
+    GRP1_WRITE <= IO_WRITE and (
+                     std_logic'(to_integer(unsigned(IO_ADDR)) = ADDR_GRP1)        or
+                     (std_logic'(to_integer(unsigned(IO_ADDR)) = ADDR_GRP0) and
+                      full_disp_override_s = '1')
+                  );
+
+    GRP1_MODE  <= mode_s when GRP1_WRITE = '1' else (others => '0');
+
+    GRP1_VALUE <= value_s               when (GRP1_WRITE = '1' and mode_s /= "11")
+                  else (others => '0');
+
+    GRP1_FC_ENABLE <= fc_enable_s       when (GRP1_WRITE = '1' and mode_s = "11")
+                      else '0';
+
+    GRP1_FC_DISP   <=                     -- continue numbering if override
+        std_logic_vector(unsigned(fc_disp_s) + 4) when
+            (GRP1_WRITE = '1' and mode_s = "11" and
+             std_logic'(to_integer(unsigned(IO_ADDR)) = ADDR_GRP0) and
+             full_disp_override_s = '1')
+        else fc_disp_s  when
+            (GRP1_WRITE = '1' and mode_s = "11")
+        else (others => '0');
+
+    GRP1_FC_SEG    <= fc_seg_s          when (GRP1_WRITE = '1' and mode_s = "11")
+                      else (others => '0');
+end architecture comb;
