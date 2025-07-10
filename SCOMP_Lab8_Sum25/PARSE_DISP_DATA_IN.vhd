@@ -50,9 +50,9 @@ begin
     FC_SEG    <= fc_seg_s    when mode_s = MODE_FC else (others => '0');
 
     -- Write‑enable generation
-    --   addr 4  → four‑digit group (grp0)
-    --   addr 5  → two‑digit group (grp1)
-    --   full_disp_override extends addr 4 write to grp1 as well
+    -- addr 4: four‑digit group (grp0)
+    -- addr 5: two‑digit group (grp1)
+    -- full_disp_override extends addr 4 write to grp1 as well
     grp0_we_s <= IO_WRITE when IO_ADDR = "00000000100" else '0'; -- 4
 
     grp1_we_s <= IO_WRITE when (IO_ADDR = "00000000101") or      -- 5
@@ -62,8 +62,13 @@ begin
     GRP0_WRITE <= grp0_we_s;
     GRP1_WRITE <= grp1_we_s;
 
-    -- Values (valid only when NOT in full‑control mode)
-    GRP0_VALUE <= value_s when grp0_we_s = '1' and mode_s /= MODE_FC else (others => '0');
-    GRP1_VALUE <= value_s when grp1_we_s = '1' and mode_s /= MODE_FC else (others => '0');
+    GRP0_VALUE <= value_s when grp0_we_s = '1' else (others => '0');
+    GRP1_VALUE <= value_s when grp1_we_s = '1' else (others => '0');
+	 -- grp1 will not output a value when in full 6-display mode, grp0 will have the value
+	 -- otherwise, both values are determined by their write-enable flag which is determined
+	 -- by the device we out to, just like in Lab 8.
+	 
+	 -- Note for full control: Even though we're outputing 13 bits, the first few are reserved
+	 -- for additional flags as fc_*
 
 end architecture comb;

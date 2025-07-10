@@ -603,10 +603,17 @@ on the Quartus Prime software download page.
 		(line (pt 0 80)(pt 16 80)(line_width 3))
 	)
 	(port
+		(pt 0 96)
+		(input)
+		(text "CLOCK" (rect 0 0 41 15)(font "Intel Clear" (font_size 8)))
+		(text "CLOCK" (rect 21 91 62 106)(font "Intel Clear" (font_size 8)))
+		(line (pt 0 96)(pt 16 96))
+	)
+	(port
 		(pt 240 32)
 		(output)
 		(text "segments[41..0]" (rect 0 0 94 15)(font "Intel Clear" (font_size 8)))
-		(text "segments[41..0]" (rect 124 27 218 42)(font "Intel Clear" (font_size 8)))
+		(text "segments[41..0]" (rect 125 27 219 42)(font "Intel Clear" (font_size 8)))
 		(line (pt 240 32)(pt 224 32)(line_width 3))
 	)
 	(drawing
@@ -845,6 +852,11 @@ on the Quartus Prime software download page.
 	(pt 264 128)
 	(pt 280 128)
 )
+(connector
+	(text "clk_10MHz" (rect 744 752 797 764)(font "Intel Clear" ))
+	(pt 824 768)
+	(pt 736 768)
+)
 (title_block
 	(rect 944 912 1312 1032)
 	(section (rect 0 0 368 24)(text "TITLE" (rect 2 0 31 11)(font "Arial" ))(text "SCOMP System" (rect 56 2 194 20)(font "Arial" (font_size 12)))(border))
@@ -852,7 +864,7 @@ on the Quartus Prime software download page.
 	(section (rect 0 48 368 72)(text "DESIGNER" (rect 2 0 57 11)(font "Arial" ))(text "Kevin Johnson, Tom Collins" (rect 56 2 290 20)(font "Arial" (font_size 12)))(border))
 	(section (rect 0 72 280 96)(text "NUMBER" (rect 2 0 48 11)(font "Arial" ))(text "1.00" (rect 56 1 86 16)(font "Arial" (font_size 10)))(border))
 	(section (rect 280 72 368 96)(text "REV" (rect 2 1 24 12)(font "Arial" ))(text "A" (rect 43 1 53 16)(font "Arial" (font_size 10)))(border))
-	(section (rect 0 96 240 120)(text "DATE" (rect 2 0 30 11)(font "Arial" ))(text "Mon Jun 30 11:26:28 2025" (rect 56 3 238 18)(font "Arial" (font_size 10)))(date)(border))
+	(section (rect 0 96 240 120)(text "DATE" (rect 2 0 30 11)(font "Arial" ))(text "Thu Jul 10 16:54:28 2025" (rect 56 3 230 18)(font "Arial" (font_size 10)))(date)(border))
 	(section (rect 240 96 310 120)(text "SHEET" (rect 2 0 37 11)(font "Arial" ))(text "1" (rect 55 5 64 20)(font "Arial" (font_size 10))))
 	(section (rect 310 96 368 120)(text "OF" (rect 10 0 25 11)(font "Arial" ))(text "1" (rect 34 4 43 19)(font "Arial" (font_size 10))))
 	(drawing
