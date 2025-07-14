@@ -1,5 +1,5 @@
-Analysis & Elaboration report for SCOMP
-Wed Jul  9 18:26:02 2025
+Analysis & Synthesis report for SCOMP
+Mon Jul 14 16:12:06 2025
 Quartus Prime Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
 
 
@@ -7,10 +7,10 @@ Quartus Prime Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
 ; Table of Contents ;
 ---------------------
   1. Legal Notice
-  2. Analysis & Elaboration Summary
-  3. Parallel Compilation
-  4. Analysis & Elaboration Settings
-  5. Analysis & Elaboration Messages
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Messages
 
 
 
@@ -34,42 +34,26 @@ on the Quartus Prime software download page.
 
 
 
-+---------------------------------------------------------------------------------+
-; Analysis & Elaboration Summary                                                  ;
-+-------------------------------+-------------------------------------------------+
-; Analysis & Elaboration Status ; Failed - Wed Jul  9 18:26:02 2025               ;
-; Quartus Prime Version         ; 24.1std.0 Build 1077 03/04/2025 SC Lite Edition ;
-; Revision Name                 ; SCOMP                                           ;
-; Top-level Entity Name         ; SCOMP_System                                    ;
-; Family                        ; Cyclone V                                       ;
-; Logic utilization (in ALMs)   ; N/A until Partition Merge                       ;
-; Total registers               ; N/A until Partition Merge                       ;
-; Total pins                    ; N/A until Partition Merge                       ;
-; Total virtual pins            ; N/A until Partition Merge                       ;
-; Total block memory bits       ; N/A until Partition Merge                       ;
-; Total PLLs                    ; N/A until Partition Merge                       ;
-; Total DLLs                    ; N/A until Partition Merge                       ;
-+-------------------------------+-------------------------------------------------+
-
-
-+------------------------------------------+
-; Parallel Compilation                     ;
-+----------------------------+-------------+
-; Processors                 ; Number      ;
-+----------------------------+-------------+
-; Number detected on machine ; 4           ;
-; Maximum allowed            ; 4           ;
-;                            ;             ;
-; Average used               ; 1.00        ;
-; Maximum used               ; 1           ;
-;                            ;             ;
-; Usage by Processor         ; % Time Used ;
-;     Processor 1            ; 100.0%      ;
-+----------------------------+-------------+
++-------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                  ;
++-----------------------------+-------------------------------------------------+
+; Analysis & Synthesis Status ; Failed - Mon Jul 14 16:12:06 2025               ;
+; Quartus Prime Version       ; 24.1std.0 Build 1077 03/04/2025 SC Lite Edition ;
+; Revision Name               ; SCOMP                                           ;
+; Top-level Entity Name       ; SCOMP_System                                    ;
+; Family                      ; Cyclone V                                       ;
+; Logic utilization (in ALMs) ; N/A until Partition Merge                       ;
+; Total registers             ; N/A until Partition Merge                       ;
+; Total pins                  ; N/A until Partition Merge                       ;
+; Total virtual pins          ; N/A until Partition Merge                       ;
+; Total block memory bits     ; N/A until Partition Merge                       ;
+; Total PLLs                  ; N/A until Partition Merge                       ;
+; Total DLLs                  ; N/A until Partition Merge                       ;
++-----------------------------+-------------------------------------------------+
 
 
 +---------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Elaboration Settings                                                                                           ;
+; Analysis & Synthesis Settings                                                                                             ;
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 ; Option                                                                          ; Setting            ; Default Value      ;
 +---------------------------------------------------------------------------------+--------------------+--------------------+
@@ -156,59 +140,235 @@ on the Quartus Prime software download page.
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 
 
-+---------------------------------+
-; Analysis & Elaboration Messages ;
-+---------------------------------+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 12          ;
+; Maximum allowed            ; 6           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
++----------------------------+-------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
 Info: *******************************************************************
-Info: Running Quartus Prime Analysis & Elaboration
+Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
-    Info: Processing started: Wed Jul  9 18:25:50 2025
-Info: Command: quartus_map --read_settings_files=on --write_settings_files=off SCOMP -c SCOMP --analysis_and_elaboration
-Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+    Info: Processing started: Mon Jul 14 16:11:57 2025
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off SCOMP -c SCOMP
+Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
 Warning (12019): Can't analyze file -- file HEX_DISP.vhd is missing
 Info (12021): Found 2 design units, including 1 entities, in source file dig_out.vhd
-    Info (12022): Found design unit 1: DIG_OUT-a File: C:/Mac/Home/Documents/ECE2031/ECE2031-Lab-8/SCOMP_Lab8_Sum25/DIG_OUT.vhd Line: 26
-    Info (12023): Found entity 1: DIG_OUT File: C:/Mac/Home/Documents/ECE2031/ECE2031-Lab-8/SCOMP_Lab8_Sum25/DIG_OUT.vhd Line: 16
+    Info (12022): Found design unit 1: DIG_OUT-a File: C:/Users/druiz35/Downloads/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/DIG_OUT.vhd Line: 26
+    Info (12023): Found entity 1: DIG_OUT File: C:/Users/druiz35/Downloads/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/DIG_OUT.vhd Line: 16
 Info (12021): Found 2 design units, including 1 entities, in source file dig_in.vhd
-    Info (12022): Found design unit 1: DIG_IN-a File: C:/Mac/Home/Documents/ECE2031/ECE2031-Lab-8/SCOMP_Lab8_Sum25/DIG_IN.vhd Line: 20
-    Info (12023): Found entity 1: DIG_IN File: C:/Mac/Home/Documents/ECE2031/ECE2031-Lab-8/SCOMP_Lab8_Sum25/DIG_IN.vhd Line: 11
+    Info (12022): Found design unit 1: DIG_IN-a File: C:/Users/druiz35/Downloads/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/DIG_IN.vhd Line: 20
+    Info (12023): Found entity 1: DIG_IN File: C:/Users/druiz35/Downloads/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/DIG_IN.vhd Line: 11
 Info (12021): Found 2 design units, including 1 entities, in source file clk_div.vhd
-    Info (12022): Found design unit 1: clk_div-a File: C:/Mac/Home/Documents/ECE2031/ECE2031-Lab-8/SCOMP_Lab8_Sum25/clk_div.vhd Line: 26
-    Info (12023): Found entity 1: clk_div File: C:/Mac/Home/Documents/ECE2031/ECE2031-Lab-8/SCOMP_Lab8_Sum25/clk_div.vhd Line: 11
+    Info (12022): Found design unit 1: clk_div-a File: C:/Users/druiz35/Downloads/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/clk_div.vhd Line: 26
+    Info (12023): Found entity 1: clk_div File: C:/Users/druiz35/Downloads/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/clk_div.vhd Line: 11
 Info (12021): Found 2 design units, including 1 entities, in source file timer.vhd
-    Info (12022): Found design unit 1: TIMER-a File: C:/Mac/Home/Documents/ECE2031/ECE2031-Lab-8/SCOMP_Lab8_Sum25/TIMER.vhd Line: 29
-    Info (12023): Found entity 1: TIMER File: C:/Mac/Home/Documents/ECE2031/ECE2031-Lab-8/SCOMP_Lab8_Sum25/TIMER.vhd Line: 17
+    Info (12022): Found design unit 1: TIMER-a File: C:/Users/druiz35/Downloads/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/TIMER.vhd Line: 29
+    Info (12023): Found entity 1: TIMER File: C:/Users/druiz35/Downloads/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/TIMER.vhd Line: 17
 Info (12021): Found 2 design units, including 1 entities, in source file scomp.vhd
-    Info (12022): Found design unit 1: SCOMP-a File: C:/Mac/Home/Documents/ECE2031/ECE2031-Lab-8/SCOMP_Lab8_Sum25/SCOMP.vhd Line: 33
-    Info (12023): Found entity 1: SCOMP File: C:/Mac/Home/Documents/ECE2031/ECE2031-Lab-8/SCOMP_Lab8_Sum25/SCOMP.vhd Line: 16
+    Info (12022): Found design unit 1: SCOMP-a File: C:/Users/druiz35/Downloads/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/SCOMP.vhd Line: 33
+    Info (12023): Found entity 1: SCOMP File: C:/Users/druiz35/Downloads/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/SCOMP.vhd Line: 16
 Info (12021): Found 1 design units, including 1 entities, in source file scomp_system.bdf
     Info (12023): Found entity 1: SCOMP_System
 Info (12021): Found 1 design units, including 1 entities, in source file hex_disp_6.bdf
     Info (12023): Found entity 1: HEX_DISP_6
 Info (12021): Found 2 design units, including 1 entities, in source file pll_main.vhd
-    Info (12022): Found design unit 1: PLL_main-rtl File: C:/Mac/Home/Documents/ECE2031/ECE2031-Lab-8/SCOMP_Lab8_Sum25/PLL_main.vhd Line: 20
-    Info (12023): Found entity 1: PLL_main File: C:/Mac/Home/Documents/ECE2031/ECE2031-Lab-8/SCOMP_Lab8_Sum25/PLL_main.vhd Line: 11
+    Info (12022): Found design unit 1: PLL_main-rtl File: C:/Users/druiz35/Downloads/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/PLL_main.vhd Line: 20
+    Info (12023): Found entity 1: PLL_main File: C:/Users/druiz35/Downloads/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/PLL_main.vhd Line: 11
 Info (12021): Found 1 design units, including 1 entities, in source file pll_main/pll_main_0002.v
-    Info (12023): Found entity 1: PLL_main_0002 File: C:/Mac/Home/Documents/ECE2031/ECE2031-Lab-8/SCOMP_Lab8_Sum25/PLL_main/PLL_main_0002.v Line: 2
+    Info (12023): Found entity 1: PLL_main_0002 File: C:/Users/druiz35/Downloads/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/PLL_main/PLL_main_0002.v Line: 2
 Info (12021): Found 2 design units, including 1 entities, in source file seg_disp.vhd
-    Info (12022): Found design unit 1: SEG_DISP-a File: C:/Mac/Home/Documents/ECE2031/ECE2031-Lab-8/SCOMP_Lab8_Sum25/SEG_DISP.vhd Line: 17
-    Info (12023): Found entity 1: SEG_DISP File: C:/Mac/Home/Documents/ECE2031/ECE2031-Lab-8/SCOMP_Lab8_Sum25/SEG_DISP.vhd Line: 9
+    Info (12022): Found design unit 1: SEG_DISP-a File: C:/Users/druiz35/Downloads/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/SEG_DISP.vhd Line: 17
+    Info (12023): Found entity 1: SEG_DISP File: C:/Users/druiz35/Downloads/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/SEG_DISP.vhd Line: 9
 Info (12021): Found 2 design units, including 1 entities, in source file parse_disp_data_in.vhd
-    Info (12022): Found design unit 1: PARSE_DISP_DATA_IN-comb File: C:/Mac/Home/Documents/ECE2031/ECE2031-Lab-8/SCOMP_Lab8_Sum25/PARSE_DISP_DATA_IN.vhd Line: 29
-    Info (12023): Found entity 1: PARSE_DISP_DATA_IN File: C:/Mac/Home/Documents/ECE2031/ECE2031-Lab-8/SCOMP_Lab8_Sum25/PARSE_DISP_DATA_IN.vhd Line: 5
+    Info (12022): Found design unit 1: PARSE_DISP_DATA_IN-comb File: C:/Users/druiz35/Downloads/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/PARSE_DISP_DATA_IN.vhd Line: 24
+    Info (12023): Found entity 1: PARSE_DISP_DATA_IN File: C:/Users/druiz35/Downloads/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/PARSE_DISP_DATA_IN.vhd Line: 5
 Info (12127): Elaborating entity "SCOMP_System" for the top level hierarchy
-Info (12128): Elaborating entity "HEX_DISP_6" for hierarchy "HEX_DISP_6:inst9"
-Error (275024): Width mismatch in port "seg_val[6..0]" of instance "inst7" and type SEG_DISP -- source is ""hex_val0[3..0]""
-Error (275024): Width mismatch in port "seg_val[6..0]" of instance "inst8" and type SEG_DISP -- source is ""hex_val0[7..4]""
-Error (275024): Width mismatch in port "seg_val[6..0]" of instance "inst12" and type SEG_DISP -- source is ""hex_val0[11..8]""
-Error (275024): Width mismatch in port "seg_val[6..0]" of instance "inst13" and type SEG_DISP -- source is ""hex_val0[15..12]""
-Error (275024): Width mismatch in port "seg_val[6..0]" of instance "inst14" and type SEG_DISP -- source is ""hex_val1[3..0]""
-Error (275024): Width mismatch in port "seg_val[6..0]" of instance "inst15" and type SEG_DISP -- source is ""hex_val1[7..4]""
-Error (12152): Can't elaborate user hierarchy "HEX_DISP_6:inst9"
-Error: Quartus Prime Analysis & Elaboration was unsuccessful. 7 errors, 1 warning
-    Error: Peak virtual memory: 13316 megabytes
-    Error: Processing ended: Wed Jul  9 18:26:02 2025
-    Error: Elapsed time: 00:00:12
-    Error: Total CPU time (on all processors): 00:00:23
+Info (12128): Elaborating entity "HEX_DISP_6" for hierarchy "HEX_DISP_6:inst10"
+Warning (275011): Block or symbol "NOT" of instance "inst16" overlaps another block or symbol
+Warning (275085): Found inconsistent dimensions for element "seg_val"
+Warning (275080): Converted elements in bus name "seg_val" using legacy naming rules. Make any assignments on the new names, not on the original names.
+    Warning (275081): Converted element name(s) from "seg_val[6..0]" to "seg_val6..0"
+    Warning (275081): Converted element name(s) from "seg_val[13..7]" to "seg_val13..7"
+    Warning (275081): Converted element name(s) from "seg_val[20..14]" to "seg_val20..14"
+    Warning (275081): Converted element name(s) from "seg_val[27..21]" to "seg_val27..21"
+    Warning (275081): Converted element name(s) from "seg_val[41..35]" to "seg_val41..35"
+    Warning (275081): Converted element name(s) from "seg_val[34..28]" to "seg_val34..28"
+Warning (275008): Primitive "TRI" of instance "inst10" not used
+Warning (275008): Primitive "TRI" of instance "inst11" not used
+Warning (275008): Primitive "NOT" of instance "inst16" not used
+Warning (275008): Primitive "AND2" of instance "inst5" not used
+Info (12128): Elaborating entity "SEG_DISP" for hierarchy "HEX_DISP_6:inst10|SEG_DISP:inst7"
+Info (12128): Elaborating entity "PARSE_DISP_DATA_IN" for hierarchy "HEX_DISP_6:inst10|PARSE_DISP_DATA_IN:inst21"
+Warning (12125): Using design file disp_conversion.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: DISP_CONVERSION-rtl File: C:/Users/druiz35/Downloads/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/disp_conversion.vhd Line: 23
+    Info (12023): Found entity 1: DISP_CONVERSION File: C:/Users/druiz35/Downloads/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/disp_conversion.vhd Line: 11
+Info (12128): Elaborating entity "DISP_CONVERSION" for hierarchy "HEX_DISP_6:inst10|DISP_CONVERSION:inst18"
+Warning (10540): VHDL Signal Declaration warning at disp_conversion.vhd(54): used explicit default value for signal "latched_segments" because signal was never assigned a value File: C:/Users/druiz35/Downloads/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/disp_conversion.vhd Line: 54
+Warning (10036): Verilog HDL or VHDL warning at disp_conversion.vhd(58): object "tmp" assigned a value but never read File: C:/Users/druiz35/Downloads/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/disp_conversion.vhd Line: 58
+Warning (12125): Using design file seg_edit.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: SEG_EDIT-a File: C:/Users/druiz35/Downloads/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 19
+    Info (12023): Found entity 1: SEG_EDIT File: C:/Users/druiz35/Downloads/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 5
+Info (12128): Elaborating entity "SEG_EDIT" for hierarchy "HEX_DISP_6:inst10|SEG_EDIT:inst3"
+Warning (10492): VHDL Process Statement warning at seg_edit.vhd(65): signal "mask" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/druiz35/Downloads/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 65
+Warning (10492): VHDL Process Statement warning at seg_edit.vhd(66): signal "HEX0" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/druiz35/Downloads/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 66
+Warning (10492): VHDL Process Statement warning at seg_edit.vhd(66): signal "mask" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/druiz35/Downloads/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 66
+Warning (10492): VHDL Process Statement warning at seg_edit.vhd(68): signal "HEX0" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/druiz35/Downloads/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 68
+Warning (10492): VHDL Process Statement warning at seg_edit.vhd(68): signal "mask" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/druiz35/Downloads/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 68
+Warning (10492): VHDL Process Statement warning at seg_edit.vhd(71): signal "HEX5" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/druiz35/Downloads/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 71
+Warning (10492): VHDL Process Statement warning at seg_edit.vhd(71): signal "HEX4" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/druiz35/Downloads/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 71
+Warning (10492): VHDL Process Statement warning at seg_edit.vhd(71): signal "HEX3" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/druiz35/Downloads/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 71
+Warning (10492): VHDL Process Statement warning at seg_edit.vhd(71): signal "HEX2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/druiz35/Downloads/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 71
+Warning (10492): VHDL Process Statement warning at seg_edit.vhd(71): signal "HEX1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/druiz35/Downloads/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 71
+Warning (10492): VHDL Process Statement warning at seg_edit.vhd(71): signal "HEX0" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/druiz35/Downloads/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 71
+Warning (10492): VHDL Process Statement warning at seg_edit.vhd(74): signal "mask" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/druiz35/Downloads/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 74
+Warning (10492): VHDL Process Statement warning at seg_edit.vhd(75): signal "HEX1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/druiz35/Downloads/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 75
+Warning (10492): VHDL Process Statement warning at seg_edit.vhd(75): signal "mask" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/druiz35/Downloads/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 75
+Warning (10492): VHDL Process Statement warning at seg_edit.vhd(77): signal "HEX1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/druiz35/Downloads/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 77
+Warning (10492): VHDL Process Statement warning at seg_edit.vhd(77): signal "mask" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/druiz35/Downloads/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 77
+Warning (10492): VHDL Process Statement warning at seg_edit.vhd(80): signal "HEX5" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/druiz35/Downloads/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 80
+Warning (10492): VHDL Process Statement warning at seg_edit.vhd(80): signal "HEX4" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/druiz35/Downloads/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 80
+Warning (10492): VHDL Process Statement warning at seg_edit.vhd(80): signal "HEX3" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/druiz35/Downloads/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 80
+Warning (10492): VHDL Process Statement warning at seg_edit.vhd(80): signal "HEX2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/druiz35/Downloads/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 80
+Warning (10492): VHDL Process Statement warning at seg_edit.vhd(80): signal "HEX1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/druiz35/Downloads/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 80
+Warning (10492): VHDL Process Statement warning at seg_edit.vhd(80): signal "HEX0" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/druiz35/Downloads/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 80
+Warning (10492): VHDL Process Statement warning at seg_edit.vhd(84): signal "mask" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/druiz35/Downloads/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 84
+Warning (10492): VHDL Process Statement warning at seg_edit.vhd(85): signal "HEX2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/druiz35/Downloads/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 85
+Warning (10492): VHDL Process Statement warning at seg_edit.vhd(85): signal "mask" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/druiz35/Downloads/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 85
+Warning (10492): VHDL Process Statement warning at seg_edit.vhd(87): signal "HEX2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/druiz35/Downloads/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 87
+Warning (10492): VHDL Process Statement warning at seg_edit.vhd(87): signal "mask" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/druiz35/Downloads/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 87
+Warning (10492): VHDL Process Statement warning at seg_edit.vhd(90): signal "HEX5" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/druiz35/Downloads/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 90
+Warning (10492): VHDL Process Statement warning at seg_edit.vhd(90): signal "HEX4" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/druiz35/Downloads/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 90
+Warning (10492): VHDL Process Statement warning at seg_edit.vhd(90): signal "HEX3" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/druiz35/Downloads/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 90
+Warning (10492): VHDL Process Statement warning at seg_edit.vhd(90): signal "HEX2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/druiz35/Downloads/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 90
+Warning (10492): VHDL Process Statement warning at seg_edit.vhd(90): signal "HEX1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/druiz35/Downloads/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 90
+Warning (10492): VHDL Process Statement warning at seg_edit.vhd(90): signal "HEX0" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/druiz35/Downloads/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 90
+Warning (10492): VHDL Process Statement warning at seg_edit.vhd(94): signal "mask" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/druiz35/Downloads/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 94
+Warning (10492): VHDL Process Statement warning at seg_edit.vhd(95): signal "HEX3" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/druiz35/Downloads/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 95
+Warning (10492): VHDL Process Statement warning at seg_edit.vhd(95): signal "mask" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/druiz35/Downloads/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 95
+Warning (10492): VHDL Process Statement warning at seg_edit.vhd(97): signal "HEX3" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/druiz35/Downloads/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 97
+Warning (10492): VHDL Process Statement warning at seg_edit.vhd(97): signal "mask" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/druiz35/Downloads/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 97
+Warning (10492): VHDL Process Statement warning at seg_edit.vhd(100): signal "HEX5" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/druiz35/Downloads/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 100
+Warning (10492): VHDL Process Statement warning at seg_edit.vhd(100): signal "HEX4" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/druiz35/Downloads/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 100
+Warning (10492): VHDL Process Statement warning at seg_edit.vhd(100): signal "HEX3" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/druiz35/Downloads/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 100
+Warning (10492): VHDL Process Statement warning at seg_edit.vhd(100): signal "HEX2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/druiz35/Downloads/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 100
+Warning (10492): VHDL Process Statement warning at seg_edit.vhd(100): signal "HEX1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/druiz35/Downloads/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 100
+Warning (10492): VHDL Process Statement warning at seg_edit.vhd(100): signal "HEX0" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/druiz35/Downloads/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 100
+Warning (10492): VHDL Process Statement warning at seg_edit.vhd(104): signal "mask" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/druiz35/Downloads/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 104
+Warning (10492): VHDL Process Statement warning at seg_edit.vhd(105): signal "HEX4" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/druiz35/Downloads/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 105
+Warning (10492): VHDL Process Statement warning at seg_edit.vhd(105): signal "mask" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/druiz35/Downloads/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 105
+Warning (10492): VHDL Process Statement warning at seg_edit.vhd(107): signal "HEX4" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/druiz35/Downloads/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 107
+Warning (10492): VHDL Process Statement warning at seg_edit.vhd(107): signal "mask" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/druiz35/Downloads/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 107
+Warning (10492): VHDL Process Statement warning at seg_edit.vhd(110): signal "HEX5" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/druiz35/Downloads/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 110
+Warning (10492): VHDL Process Statement warning at seg_edit.vhd(110): signal "HEX4" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/druiz35/Downloads/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 110
+Warning (10492): VHDL Process Statement warning at seg_edit.vhd(110): signal "HEX3" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/druiz35/Downloads/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 110
+Warning (10492): VHDL Process Statement warning at seg_edit.vhd(110): signal "HEX2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/druiz35/Downloads/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 110
+Warning (10492): VHDL Process Statement warning at seg_edit.vhd(110): signal "HEX1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/druiz35/Downloads/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 110
+Warning (10492): VHDL Process Statement warning at seg_edit.vhd(110): signal "HEX0" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/druiz35/Downloads/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 110
+Warning (10492): VHDL Process Statement warning at seg_edit.vhd(114): signal "mask" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/druiz35/Downloads/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 114
+Warning (10492): VHDL Process Statement warning at seg_edit.vhd(115): signal "HEX5" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/druiz35/Downloads/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 115
+Warning (10492): VHDL Process Statement warning at seg_edit.vhd(115): signal "mask" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/druiz35/Downloads/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 115
+Warning (10492): VHDL Process Statement warning at seg_edit.vhd(117): signal "HEX5" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/druiz35/Downloads/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 117
+Warning (10492): VHDL Process Statement warning at seg_edit.vhd(117): signal "mask" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/druiz35/Downloads/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 117
+Warning (10492): VHDL Process Statement warning at seg_edit.vhd(120): signal "HEX5" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/druiz35/Downloads/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 120
+Warning (10492): VHDL Process Statement warning at seg_edit.vhd(120): signal "HEX4" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/druiz35/Downloads/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 120
+Warning (10492): VHDL Process Statement warning at seg_edit.vhd(120): signal "HEX3" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/druiz35/Downloads/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 120
+Warning (10492): VHDL Process Statement warning at seg_edit.vhd(120): signal "HEX2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/druiz35/Downloads/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 120
+Warning (10492): VHDL Process Statement warning at seg_edit.vhd(120): signal "HEX1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/druiz35/Downloads/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 120
+Warning (10492): VHDL Process Statement warning at seg_edit.vhd(120): signal "HEX0" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/druiz35/Downloads/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 120
+Warning (10631): VHDL Process Statement warning at seg_edit.vhd(44): inferring latch(es) for signal or variable "mask", which holds its previous value in one or more paths through the process File: C:/Users/druiz35/Downloads/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 44
+Warning (10631): VHDL Process Statement warning at seg_edit.vhd(44): inferring latch(es) for signal or variable "HEX0", which holds its previous value in one or more paths through the process File: C:/Users/druiz35/Downloads/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 44
+Warning (10631): VHDL Process Statement warning at seg_edit.vhd(44): inferring latch(es) for signal or variable "HEX1", which holds its previous value in one or more paths through the process File: C:/Users/druiz35/Downloads/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 44
+Warning (10631): VHDL Process Statement warning at seg_edit.vhd(44): inferring latch(es) for signal or variable "HEX2", which holds its previous value in one or more paths through the process File: C:/Users/druiz35/Downloads/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 44
+Warning (10631): VHDL Process Statement warning at seg_edit.vhd(44): inferring latch(es) for signal or variable "HEX3", which holds its previous value in one or more paths through the process File: C:/Users/druiz35/Downloads/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 44
+Warning (10631): VHDL Process Statement warning at seg_edit.vhd(44): inferring latch(es) for signal or variable "HEX4", which holds its previous value in one or more paths through the process File: C:/Users/druiz35/Downloads/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 44
+Warning (10631): VHDL Process Statement warning at seg_edit.vhd(44): inferring latch(es) for signal or variable "HEX5", which holds its previous value in one or more paths through the process File: C:/Users/druiz35/Downloads/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 44
+Info (10041): Inferred latch for "HEX5[0]" at seg_edit.vhd(44) File: C:/Users/druiz35/Downloads/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 44
+Info (10041): Inferred latch for "HEX5[1]" at seg_edit.vhd(44) File: C:/Users/druiz35/Downloads/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 44
+Info (10041): Inferred latch for "HEX5[2]" at seg_edit.vhd(44) File: C:/Users/druiz35/Downloads/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 44
+Info (10041): Inferred latch for "HEX5[3]" at seg_edit.vhd(44) File: C:/Users/druiz35/Downloads/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 44
+Info (10041): Inferred latch for "HEX5[4]" at seg_edit.vhd(44) File: C:/Users/druiz35/Downloads/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 44
+Info (10041): Inferred latch for "HEX5[5]" at seg_edit.vhd(44) File: C:/Users/druiz35/Downloads/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 44
+Info (10041): Inferred latch for "HEX5[6]" at seg_edit.vhd(44) File: C:/Users/druiz35/Downloads/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 44
+Info (10041): Inferred latch for "HEX4[0]" at seg_edit.vhd(44) File: C:/Users/druiz35/Downloads/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 44
+Info (10041): Inferred latch for "HEX4[1]" at seg_edit.vhd(44) File: C:/Users/druiz35/Downloads/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 44
+Info (10041): Inferred latch for "HEX4[2]" at seg_edit.vhd(44) File: C:/Users/druiz35/Downloads/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 44
+Info (10041): Inferred latch for "HEX4[3]" at seg_edit.vhd(44) File: C:/Users/druiz35/Downloads/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 44
+Info (10041): Inferred latch for "HEX4[4]" at seg_edit.vhd(44) File: C:/Users/druiz35/Downloads/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 44
+Info (10041): Inferred latch for "HEX4[5]" at seg_edit.vhd(44) File: C:/Users/druiz35/Downloads/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 44
+Info (10041): Inferred latch for "HEX4[6]" at seg_edit.vhd(44) File: C:/Users/druiz35/Downloads/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 44
+Info (10041): Inferred latch for "HEX3[0]" at seg_edit.vhd(44) File: C:/Users/druiz35/Downloads/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 44
+Info (10041): Inferred latch for "HEX3[1]" at seg_edit.vhd(44) File: C:/Users/druiz35/Downloads/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 44
+Info (10041): Inferred latch for "HEX3[2]" at seg_edit.vhd(44) File: C:/Users/druiz35/Downloads/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 44
+Info (10041): Inferred latch for "HEX3[3]" at seg_edit.vhd(44) File: C:/Users/druiz35/Downloads/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 44
+Info (10041): Inferred latch for "HEX3[4]" at seg_edit.vhd(44) File: C:/Users/druiz35/Downloads/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 44
+Info (10041): Inferred latch for "HEX3[5]" at seg_edit.vhd(44) File: C:/Users/druiz35/Downloads/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 44
+Info (10041): Inferred latch for "HEX3[6]" at seg_edit.vhd(44) File: C:/Users/druiz35/Downloads/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 44
+Info (10041): Inferred latch for "HEX2[0]" at seg_edit.vhd(44) File: C:/Users/druiz35/Downloads/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 44
+Info (10041): Inferred latch for "HEX2[1]" at seg_edit.vhd(44) File: C:/Users/druiz35/Downloads/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 44
+Info (10041): Inferred latch for "HEX2[2]" at seg_edit.vhd(44) File: C:/Users/druiz35/Downloads/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 44
+Info (10041): Inferred latch for "HEX2[3]" at seg_edit.vhd(44) File: C:/Users/druiz35/Downloads/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 44
+Info (10041): Inferred latch for "HEX2[4]" at seg_edit.vhd(44) File: C:/Users/druiz35/Downloads/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 44
+Info (10041): Inferred latch for "HEX2[5]" at seg_edit.vhd(44) File: C:/Users/druiz35/Downloads/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 44
+Info (10041): Inferred latch for "HEX2[6]" at seg_edit.vhd(44) File: C:/Users/druiz35/Downloads/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 44
+Info (10041): Inferred latch for "HEX1[0]" at seg_edit.vhd(44) File: C:/Users/druiz35/Downloads/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 44
+Info (10041): Inferred latch for "HEX1[1]" at seg_edit.vhd(44) File: C:/Users/druiz35/Downloads/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 44
+Info (10041): Inferred latch for "HEX1[2]" at seg_edit.vhd(44) File: C:/Users/druiz35/Downloads/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 44
+Info (10041): Inferred latch for "HEX1[3]" at seg_edit.vhd(44) File: C:/Users/druiz35/Downloads/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 44
+Info (10041): Inferred latch for "HEX1[4]" at seg_edit.vhd(44) File: C:/Users/druiz35/Downloads/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 44
+Info (10041): Inferred latch for "HEX1[5]" at seg_edit.vhd(44) File: C:/Users/druiz35/Downloads/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 44
+Info (10041): Inferred latch for "HEX1[6]" at seg_edit.vhd(44) File: C:/Users/druiz35/Downloads/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 44
+Info (10041): Inferred latch for "HEX0[0]" at seg_edit.vhd(44) File: C:/Users/druiz35/Downloads/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 44
+Info (10041): Inferred latch for "HEX0[1]" at seg_edit.vhd(44) File: C:/Users/druiz35/Downloads/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 44
+Info (10041): Inferred latch for "HEX0[2]" at seg_edit.vhd(44) File: C:/Users/druiz35/Downloads/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 44
+Info (10041): Inferred latch for "HEX0[3]" at seg_edit.vhd(44) File: C:/Users/druiz35/Downloads/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 44
+Info (10041): Inferred latch for "HEX0[4]" at seg_edit.vhd(44) File: C:/Users/druiz35/Downloads/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 44
+Info (10041): Inferred latch for "HEX0[5]" at seg_edit.vhd(44) File: C:/Users/druiz35/Downloads/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 44
+Info (10041): Inferred latch for "HEX0[6]" at seg_edit.vhd(44) File: C:/Users/druiz35/Downloads/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 44
+Info (10041): Inferred latch for "mask[0]" at seg_edit.vhd(44) File: C:/Users/druiz35/Downloads/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 44
+Info (10041): Inferred latch for "mask[1]" at seg_edit.vhd(44) File: C:/Users/druiz35/Downloads/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 44
+Info (10041): Inferred latch for "mask[2]" at seg_edit.vhd(44) File: C:/Users/druiz35/Downloads/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 44
+Info (10041): Inferred latch for "mask[3]" at seg_edit.vhd(44) File: C:/Users/druiz35/Downloads/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 44
+Info (10041): Inferred latch for "mask[4]" at seg_edit.vhd(44) File: C:/Users/druiz35/Downloads/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 44
+Info (10041): Inferred latch for "mask[5]" at seg_edit.vhd(44) File: C:/Users/druiz35/Downloads/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 44
+Info (10041): Inferred latch for "mask[6]" at seg_edit.vhd(44) File: C:/Users/druiz35/Downloads/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 44
+Error (10031): Net "HEX0[6]" at seg_edit.vhd(37) is already driven by input port "segments_in[6]", and cannot be driven by another signal File: C:/Users/druiz35/Downloads/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 37
+Error (10032): "segments_in[6]" was declared at seg_edit.vhd(12) File: C:/Users/druiz35/Downloads/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 12
+Error (10031): Net "HEX0[5]" at seg_edit.vhd(37) is already driven by input port "segments_in[5]", and cannot be driven by another signal File: C:/Users/druiz35/Downloads/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 37
+Error (10032): "segments_in[5]" was declared at seg_edit.vhd(12) File: C:/Users/druiz35/Downloads/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 12
+Error (10031): Net "HEX0[4]" at seg_edit.vhd(37) is already driven by input port "segments_in[4]", and cannot be driven by another signal File: C:/Users/druiz35/Downloads/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 37
+Error (10032): "segments_in[4]" was declared at seg_edit.vhd(12) File: C:/Users/druiz35/Downloads/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 12
+Error (10031): Net "HEX0[3]" at seg_edit.vhd(37) is already driven by input port "segments_in[3]", and cannot be driven by another signal File: C:/Users/druiz35/Downloads/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 37
+Error (10032): "segments_in[3]" was declared at seg_edit.vhd(12) File: C:/Users/druiz35/Downloads/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 12
+Error (10031): Net "HEX0[2]" at seg_edit.vhd(37) is already driven by input port "segments_in[2]", and cannot be driven by another signal File: C:/Users/druiz35/Downloads/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 37
+Error (10032): "segments_in[2]" was declared at seg_edit.vhd(12) File: C:/Users/druiz35/Downloads/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 12
+Error (10031): Net "HEX0[1]" at seg_edit.vhd(37) is already driven by input port "segments_in[1]", and cannot be driven by another signal File: C:/Users/druiz35/Downloads/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 37
+Error (10032): "segments_in[1]" was declared at seg_edit.vhd(12) File: C:/Users/druiz35/Downloads/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 12
+Error (10031): Net "HEX0[0]" at seg_edit.vhd(37) is already driven by input port "segments_in[0]", and cannot be driven by another signal File: C:/Users/druiz35/Downloads/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 37
+Error (10032): "segments_in[0]" was declared at seg_edit.vhd(12) File: C:/Users/druiz35/Downloads/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 12
+Error (10031): Net "HEX1[6]" at seg_edit.vhd(38) is already driven by input port "segments_in[13]", and cannot be driven by another signal File: C:/Users/druiz35/Downloads/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 38
+Error (10032): "segments_in[13]" was declared at seg_edit.vhd(12) File: C:/Users/druiz35/Downloads/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 12
+Error (10031): Net "HEX1[5]" at seg_edit.vhd(38) is already driven by input port "segments_in[12]", and cannot be driven by another signal File: C:/Users/druiz35/Downloads/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 38
+Error (10032): "segments_in[12]" was declared at seg_edit.vhd(12) File: C:/Users/druiz35/Downloads/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 12
+Error (10031): Net "HEX1[4]" at seg_edit.vhd(38) is already driven by input port "segments_in[11]", and cannot be driven by another signal File: C:/Users/druiz35/Downloads/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 38
+Error (12152): Can't elaborate user hierarchy "HEX_DISP_6:inst10|SEG_EDIT:inst3"
+Error: Quartus Prime Analysis & Synthesis was unsuccessful. 20 errors, 91 warnings
+    Error: Peak virtual memory: 4870 megabytes
+    Error: Processing ended: Mon Jul 14 16:12:06 2025
+    Error: Elapsed time: 00:00:09
+    Error: Total CPU time (on all processors): 00:00:19
 
 

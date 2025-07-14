@@ -12,8 +12,9 @@ entity DISP_CONVERSION is
     port (
         GRP0_VALUE : in  std_logic_vector(12 downto 0); -- digits 0 .. 3
         GRP1_VALUE : in  std_logic_vector(12 downto 0); -- digits 4 .. 5
+		  GRP0_ENABLE : in std_logic;
+		  GRP1_ENABLE : in std_logic;
 	MODE	   : in  std_logic_vector(1 downto 0);  -- mode
-	UPDATE     : in  std_logic;                     -- '1' = latch new data
         -- Output to 7‑segment driver (6 digits x 7 segments = 42 bits)
         SEGMENTS_42 : out std_logic_vector(41 downto 0)
     );
@@ -53,7 +54,7 @@ architecture rtl of DISP_CONVERSION is
 	signal latched_segments : std_logic_vector(41 downto 0) := (others => '1'); -- All segments off by default
 
 begin
-	process(GRP0_VALUE, GRP1_VALUE, MODE, UPDATE)
+	process(GRP0_VALUE, GRP1_VALUE, MODE)
         variable tmp : std_logic_vector(41 downto 0) := (others => '1');
         variable nib : unsigned(3 downto 0);
         variable val : integer;
@@ -109,11 +110,11 @@ begin
         end if;
 
         -- Update the latched value only when UPDATE is '1'
-        if UPDATE = '1' then
-            latched_segments <= tmp;
-        end if;
+--        if UPDATE = '1' then
+  --          latched_segments <= tmp;
+    --    end if;
     end process;
 
     -- Drive output from latched value
-    SEGMENTS_42 <= latched_segments (others => '0');
+    SEGMENTS_42 <= latched_segments; --(others => '0');
 end architecture rtl;

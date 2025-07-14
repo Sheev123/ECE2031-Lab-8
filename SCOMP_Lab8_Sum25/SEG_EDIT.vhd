@@ -68,7 +68,7 @@ begin
                         HEX0 <= HEX0 and mask;
                     end if;
 
-                    segments_out <= HEX5 + HEX4 + HEX3 + HEX2 + HEX1 + HEX0;
+                    segments_out <= HEX5 & HEX4 & HEX3 & HEX2 & HEX1 & HEX0;
                 when "001" =>   -- Edit a segment in HEX1
                     if DLT = '1' then -- LEDs are active-low
                         mask <= not mask;
@@ -77,7 +77,7 @@ begin
                         HEX1 <= HEX1 and mask;
                     end if;
 
-                    segments_out <= HEX5 + HEX4 + HEX3 + HEX2 + HEX1 + HEX0;
+                    segments_out <= HEX5 & HEX4 & HEX3 & HEX2 & HEX1 & HEX0;
 
                 when "010" =>   -- Edit a segment in HEX2
                     if DLT = '1' then -- LEDs are active-low
@@ -87,7 +87,7 @@ begin
                         HEX2 <= HEX2 and mask;
                     end if;
 
-                    segments_out <= HEX5 + HEX4 + HEX3 + HEX2 + HEX1 + HEX0;
+                    segments_out <= HEX5 & HEX4 & HEX3 & HEX2 & HEX1 & HEX0;
 
                 when "011" =>   -- Edit a segment in HEX3
                     if DLT = '1' then -- LEDs are active-low
@@ -97,7 +97,7 @@ begin
                         HEX3 <= HEX3 and mask;
                     end if;
 
-                    segments_out <= HEX5 + HEX4 + HEX3 + HEX2 + HEX1 + HEX0;
+                    segments_out <= HEX5 & HEX4 & HEX3 & HEX2 & HEX1 & HEX0;
 
                 when "100" =>   -- Edit a segment in HEX4
                     if DLT = '1' then -- LEDs are active-low
@@ -107,7 +107,7 @@ begin
                         HEX4 <= HEX4 and mask;
                     end if;
 
-                    segments_out <= HEX5 + HEX4 + HEX3 + HEX2 + HEX1 + HEX0;
+                    segments_out <= HEX5 & HEX4 & HEX3 & HEX2 & HEX1 & HEX0;
 
                 when "101" =>   -- Edit a segment in HEX5
                     if DLT = '1' then -- LEDs are active-low
@@ -117,7 +117,7 @@ begin
                         HEX5 <= HEX5 and mask;
                     end if;
 
-                    segments_out <= HEX5 + HEX4 + HEX3 + HEX2 + HEX1 + HEX0;
+                    segments_out <= HEX5 & HEX4 & HEX3 & HEX2 & HEX1 & HEX0;
 
                 when "110" =>   -- Turn OFF all segments - LEDs are active-low
                     segments_out <= SET;
