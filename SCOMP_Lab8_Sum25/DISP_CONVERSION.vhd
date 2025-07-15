@@ -21,100 +21,146 @@ entity DISP_CONVERSION is
 end entity DISP_CONVERSION;
 
 architecture rtl of DISP_CONVERSION is
-	function nibble_to_7seg(n : unsigned(3 downto 0)) return std_logic_vector is
-	        variable seg : std_logic_vector(6 downto 0);
-	    begin
-	        case n is
-	            when "0000" => seg := "1000000"; -- 0
-	            when "0001" => seg := "1111001"; -- 1
-	            when "0010" => seg := "0100100"; -- 2
-	            when "0011" => seg := "0110000"; -- 3
-	            when "0100" => seg := "0011001"; -- 4
-	            when "0101" => seg := "0010010"; -- 5
-	            when "0110" => seg := "0000010"; -- 6
-	            when "0111" => seg := "1111000"; -- 7
-	            when "1000" => seg := "0000000"; -- 8
-	            when "1001" => seg := "0010000"; -- 9
-	            when "1010" => seg := "0001000"; -- A
-	            when "1011" => seg := "0000011"; -- b
-	            when "1100" => seg := "1000110"; -- C
-	            when "1101" => seg := "0100001"; -- d
-	            when "1110" => seg := "0000110"; -- E
-	            when "1111" => seg := "0001110"; -- F
-	            when others => seg := "0111111"; -- Blank / dash
-	        end case;
-	        return seg;
-	    end function;
-	
-	function dec_to_7seg(d : integer) return std_logic_vector is
-	    begin
-	        return nibble_to_7seg(to_unsigned(d, 4));
-	    end function;
-	
-	signal latched_segments : std_logic_vector(41 downto 0) := (others => '1'); -- All segments off by default
+    signal latched_segments : std_logic_vector(41 downto 0) := (others => '1'); -- all OFF
 
 begin
-	process(GRP0_VALUE, GRP1_VALUE, MODE)
-        variable tmp : std_logic_vector(41 downto 0) := (others => '1');
-        variable nib : unsigned(3 downto 0);
+    process(GRP0_VALUE, GRP1_VALUE, MODE, GRP0_ENABLE, GRP1_ENABLE)
+        variable tmp : std_logic_vector(41 downto 0) := latched_segments;
         variable val : integer;
         variable dig : integer;
+        variable seg : std_logic_vector(6 downto 0);
     begin
-        -- Generate new 7-segment data based on mode
-        if MODE = "00" then -- HEX
-            for i in 0 to 3 loop
-                if (i*4+3) <= 12 then
-                    nib := unsigned(GRP0_VALUE(i*4+3 downto i*4));
-                else
-                    nib := (others => '0');
-                end if;
-                tmp(i*7+6 downto i*7) := nibble_to_7seg(nib);
-            end loop;
 
-            for i in 0 to 1 loop
-                if (i*4+3) <= 12 then
-                    nib := unsigned(GRP1_VALUE(i*4+3 downto i*4));
-                else
-                    nib := (others => '0');
-                end if;
-                tmp((i+4)*7+6 downto (i+4)*7) := nibble_to_7seg(nib);
-            end loop;
+-- GRP0_ENABLE == 1
+        if GRP0_ENABLE = '1' then
+            if MODE = "00" then  -- Hexadecimal
+                for i in 0 to 3 loop
+                    if (i*4+3) <= 12 then
+                        case GRP0_VALUE(i*4+3 downto i*4) is
+                            when "0000" => seg := "1000000";
+                            when "0001" => seg := "1111001";
+                            when "0010" => seg := "0100100";
+                            when "0011" => seg := "0110000";
+                            when "0100" => seg := "0011001";
+                            when "0101" => seg := "0010010";
+                            when "0110" => seg := "0000010";
+                            when "0111" => seg := "1111000";
+                            when "1000" => seg := "0000000";
+                            when "1001" => seg := "0010000";
+                            when "1010" => seg := "0001000";
+                            when "1011" => seg := "0000011";
+                            when "1100" => seg := "1000110";
+                            when "1101" => seg := "0100001";
+                            when "1110" => seg := "0000110";
+                            when "1111" => seg := "0001110";
+                            when others => seg := "0111111";
+                        end case;
+                    else
+                        seg := "0111111"; -- blank
+                    end if;
+                    tmp(i*7+6 downto i*7) := seg;
+                end loop;
 
-        elsif MODE = "01" then -- DECIMAL
-            val := to_integer(unsigned(GRP0_VALUE));
-            for i in 0 to 3 loop
-                dig := val mod 10;
-                val := val / 10;
-                tmp(i*7+6 downto i*7) := dec_to_7seg(dig);
-            end loop;
+            elsif MODE = "01" then  -- Decimal
+                val := to_integer(unsigned(GRP0_VALUE));
+                for i in 0 to 3 loop
+                    dig := val mod 10;
+                    val := val / 10;
+                    case dig is
+                        when 0 => seg := "1000000";
+                        when 1 => seg := "1111001";
+                        when 2 => seg := "0100100";
+                        when 3 => seg := "0110000";
+                        when 4 => seg := "0011001";
+                        when 5 => seg := "0010010";
+                        when 6 => seg := "0000010";
+                        when 7 => seg := "1111000";
+                        when 8 => seg := "0000000";
+                        when 9 => seg := "0010000";
+                        when others => seg := "0111111";
+                    end case;
+                    tmp(i*7+6 downto i*7) := seg;
+                end loop;
 
-            val := to_integer(unsigned(GRP1_VALUE));
-            for i in 0 to 1 loop
-                dig := val mod 10;
-                val := val / 10;
-                tmp((i+4)*7+6 downto (i+4)*7) := dec_to_7seg(dig);
-            end loop;
-
-        elsif MODE = "10" then -- BINARY
-            for i in 0 to 3 loop
-                dig := to_integer(unsigned(GRP0_VALUE(i downto i)));
-                tmp(i*7+6 downto i*7) := dec_to_7seg(dig);
-            end loop;
-
-            for i in 0 to 1 loop
-                dig := to_integer(unsigned(GRP1_VALUE(i downto i)));
-                tmp((i+4)*7+6 downto (i+4)*7) := dec_to_7seg(dig);
-            end loop;
-        else
-            tmp := (others => '1'); -- blank
+            elsif MODE = "10" then  -- Binay
+                for i in 0 to 3 loop
+                    if GRP0_VALUE(i) = '1' then dig := 1; else dig := 0; end if;
+                    case dig is
+                        when 0 => seg := "1000000"; -- 0
+                        when 1 => seg := "1111001"; -- 1
+                        when others => seg := "0111111";
+                    end case;
+                    tmp(i*7+6 downto i*7) := seg;
+                end loop;
+            end if;
         end if;
 
-        -- Update the latched value only when UPDATE is '1'
---        if UPDATE = '1' then
-  --          latched_segments <= tmp;
-    --    end if;
-    end process;
+-- GRP1_ENABLE == 1
+        if GRP1_ENABLE = '1' then
+            if MODE = "00" then  -- Hexadecimal
+                for i in 0 to 1 loop
+                    if (i*4+3) <= 12 then
+                        case GRP1_VALUE(i*4+3 downto i*4) is
+                            when "0000" => seg := "1000000";
+                            when "0001" => seg := "1111001";
+                            when "0010" => seg := "0100100";
+                            when "0011" => seg := "0110000";
+                            when "0100" => seg := "0011001";
+                            when "0101" => seg := "0010010";
+                            when "0110" => seg := "0000010";
+                            when "0111" => seg := "1111000";
+                            when "1000" => seg := "0000000";
+                            when "1001" => seg := "0010000";
+                            when "1010" => seg := "0001000";
+                            when "1011" => seg := "0000011";
+                            when "1100" => seg := "1000110";
+                            when "1101" => seg := "0100001";
+                            when "1110" => seg := "0000110";
+                            when "1111" => seg := "0001110";
+                            when others => seg := "0111111";
+                        end case;
+                    else
+                        seg := "0111111";
+                    end if;
+                    tmp((i+4)*7+6 downto (i+4)*7) := seg;
+                end loop;
 
-    -- Drive output from latched value
-    SEGMENTS_42 <= latched_segments; --(others => '0');
-end architecture rtl;
+            elsif MODE = "01" then  -- Decimal
+                val := to_integer(unsigned(GRP1_VALUE));
+                for i in 0 to 1 loop
+                    dig := val mod 10;
+                    val := val / 10;
+                    case dig is
+                        when 0 => seg := "1000000";
+                        when 1 => seg := "1111001";
+                        when 2 => seg := "0100100";
+                        when 3 => seg := "0110000";
+                        when 4 => seg := "0011001";
+                        when 5 => seg := "0010010";
+                        when 6 => seg := "0000010";
+                        when 7 => seg := "1111000";
+                        when 8 => seg := "0000000";
+                        when 9 => seg := "0010000";
+                        when others => seg := "0111111";
+                    end case;
+                    tmp((i+4)*7+6 downto (i+4)*7) := seg;
+                end loop;
+
+            elsif MODE = "10" then  -- Binary
+                for i in 0 to 1 loop
+                    if GRP1_VALUE(i) = '1' then dig := 1; else dig := 0; end if;
+                    case dig is
+                        when 0 => seg := "1000000"; -- 0
+                        when 1 => seg := "1111001"; -- 1
+                        when others => seg := "0111111";
+                    end case;
+                    tmp((i+4)*7+6 downto (i+4)*7) := seg;
+                end loop;
+            end if;
+        end if;
+
+	latched_segments <= tmp; -- Latched output
+		    
+    end process;
+    SEGMENTS_42 <= latched_segments;
+end architecture;
