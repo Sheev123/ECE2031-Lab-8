@@ -21,9 +21,9 @@ on the Quartus Prime software download page.
 */
 (header "symbol" (version "1.2"))
 (symbol
-	(rect 16 16 256 240)
+	(rect 16 16 256 144)
 	(text "HEX_DISP_6" (rect 5 0 81 14)(font "Intel Clear" (font_size 8)))
-	(text "inst" (rect 8 208 24 220)(font "Intel Clear" ))
+	(text "inst" (rect 8 112 24 124)(font "Intel Clear" ))
 	(port
 		(pt 0 32)
 		(input)
@@ -53,48 +53,6 @@ on the Quartus Prime software download page.
 		(line (pt 0 80)(pt 16 80)(line_width 3))
 	)
 	(port
-		(pt 0 96)
-		(input)
-		(text "HEX0[0..6]" (rect 0 0 63 14)(font "Intel Clear" (font_size 8)))
-		(text "HEX0[0..6]" (rect 21 91 84 105)(font "Intel Clear" (font_size 8)))
-		(line (pt 0 96)(pt 16 96)(line_width 3))
-	)
-	(port
-		(pt 0 112)
-		(input)
-		(text "HEX1[0..6]" (rect 0 0 63 14)(font "Intel Clear" (font_size 8)))
-		(text "HEX1[0..6]" (rect 21 107 84 121)(font "Intel Clear" (font_size 8)))
-		(line (pt 0 112)(pt 16 112)(line_width 3))
-	)
-	(port
-		(pt 0 128)
-		(input)
-		(text "HEX2[0..6]" (rect 0 0 63 14)(font "Intel Clear" (font_size 8)))
-		(text "HEX2[0..6]" (rect 21 123 84 137)(font "Intel Clear" (font_size 8)))
-		(line (pt 0 128)(pt 16 128)(line_width 3))
-	)
-	(port
-		(pt 0 144)
-		(input)
-		(text "HEX3[0..6]" (rect 0 0 63 14)(font "Intel Clear" (font_size 8)))
-		(text "HEX3[0..6]" (rect 21 139 84 153)(font "Intel Clear" (font_size 8)))
-		(line (pt 0 144)(pt 16 144)(line_width 3))
-	)
-	(port
-		(pt 0 160)
-		(input)
-		(text "HEX4[0..6]" (rect 0 0 63 14)(font "Intel Clear" (font_size 8)))
-		(text "HEX4[0..6]" (rect 21 155 84 169)(font "Intel Clear" (font_size 8)))
-		(line (pt 0 160)(pt 16 160)(line_width 3))
-	)
-	(port
-		(pt 0 176)
-		(input)
-		(text "HEX5[0..6]" (rect 0 0 63 14)(font "Intel Clear" (font_size 8)))
-		(text "HEX5[0..6]" (rect 21 171 84 185)(font "Intel Clear" (font_size 8)))
-		(line (pt 0 176)(pt 16 176)(line_width 3))
-	)
-	(port
 		(pt 240 32)
 		(output)
 		(text "segments[41..0]" (rect 0 0 95 14)(font "Intel Clear" (font_size 8)))
@@ -102,6 +60,6 @@ on the Quartus Prime software download page.
 		(line (pt 240 32)(pt 224 32)(line_width 3))
 	)
 	(drawing
-		(rectangle (rect 16 16 224 208))
+		(rectangle (rect 16 16 224 112))
 	)
 )

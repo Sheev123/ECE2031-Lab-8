@@ -1,5 +1,5 @@
 Analysis & Synthesis report for SCOMP
-Mon Jul 14 17:35:56 2025
+Tue Jul 15 13:29:20 2025
 Quartus Prime Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
 
 
@@ -10,14 +10,25 @@ Quartus Prime Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
   2. Analysis & Synthesis Summary
   3. Analysis & Synthesis Settings
   4. Parallel Compilation
-  5. Analysis & Synthesis IP Cores Summary
-  6. Source assignments for SCOMP:inst|altsyncram:altsyncram_component|altsyncram_pf24:auto_generated
-  7. Parameter Settings for User Entity Instance: PLL_main:inst1|PLL_main_0002:pll_main_inst|altera_pll:altera_pll_i
-  8. Parameter Settings for User Entity Instance: SCOMP:inst|altsyncram:altsyncram_component
-  9. Parameter Settings for User Entity Instance: SCOMP:inst|LPM_CLSHIFT:shifter
- 10. Parameter Settings for User Entity Instance: SCOMP:inst|LPM_BUSTRI:io_bus
- 11. Parameter Settings for User Entity Instance: TIMER:inst4|LPM_BUSTRI:IO_BUS
- 12. Analysis & Synthesis Messages
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Analysis & Synthesis RAM Summary
+  9. Analysis & Synthesis IP Cores Summary
+ 10. State Machine - |SCOMP_System|SCOMP:inst|state
+ 11. Registers Removed During Synthesis
+ 12. General Register Statistics
+ 13. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 14. Source assignments for SCOMP:inst|altsyncram:altsyncram_component|altsyncram_pf24:auto_generated
+ 15. Parameter Settings for User Entity Instance: PLL_main:inst1|PLL_main_0002:pll_main_inst|altera_pll:altera_pll_i
+ 16. Parameter Settings for User Entity Instance: SCOMP:inst|altsyncram:altsyncram_component
+ 17. Parameter Settings for User Entity Instance: SCOMP:inst|LPM_CLSHIFT:shifter
+ 18. Parameter Settings for User Entity Instance: SCOMP:inst|LPM_BUSTRI:io_bus
+ 19. Parameter Settings for User Entity Instance: TIMER:inst4|LPM_BUSTRI:IO_BUS
+ 20. altsyncram Parameter Settings by Entity Instance
+ 21. Post-Synthesis Netlist Statistics for Top Partition
+ 22. Elapsed Time Per Partition
+ 23. Analysis & Synthesis Messages
 
 
 
@@ -41,22 +52,27 @@ on the Quartus Prime software download page.
 
 
 
-+-------------------------------------------------------------------------------+
-; Analysis & Synthesis Summary                                                  ;
-+-----------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status ; Failed - Mon Jul 14 17:35:56 2025               ;
-; Quartus Prime Version       ; 24.1std.0 Build 1077 03/04/2025 SC Lite Edition ;
-; Revision Name               ; SCOMP                                           ;
-; Top-level Entity Name       ; SCOMP_System                                    ;
-; Family                      ; Cyclone V                                       ;
-; Logic utilization (in ALMs) ; N/A until Partition Merge                       ;
-; Total registers             ; N/A until Partition Merge                       ;
-; Total pins                  ; N/A until Partition Merge                       ;
-; Total virtual pins          ; N/A until Partition Merge                       ;
-; Total block memory bits     ; N/A until Partition Merge                       ;
-; Total PLLs                  ; N/A until Partition Merge                       ;
-; Total DLLs                  ; N/A until Partition Merge                       ;
-+-----------------------------+-------------------------------------------------+
++-----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                      ;
++---------------------------------+-------------------------------------------------+
+; Analysis & Synthesis Status     ; Successful - Tue Jul 15 13:29:20 2025           ;
+; Quartus Prime Version           ; 24.1std.0 Build 1077 03/04/2025 SC Lite Edition ;
+; Revision Name                   ; SCOMP                                           ;
+; Top-level Entity Name           ; SCOMP_System                                    ;
+; Family                          ; Cyclone V                                       ;
+; Logic utilization (in ALMs)     ; N/A                                             ;
+; Total registers                 ; 248                                             ;
+; Total pins                      ; 92                                              ;
+; Total virtual pins              ; 0                                               ;
+; Total block memory bits         ; 32,768                                          ;
+; Total DSP Blocks                ; 0                                               ;
+; Total HSSI RX PCSs              ; 0                                               ;
+; Total HSSI PMA RX Deserializers ; 0                                               ;
+; Total HSSI TX PCSs              ; 0                                               ;
+; Total HSSI PMA TX Serializers   ; 0                                               ;
+; Total PLLs                      ; 1                                               ;
+; Total DLLs                      ; 0                                               ;
++---------------------------------+-------------------------------------------------+
 
 
 +---------------------------------------------------------------------------------------------------------------------------+
@@ -156,11 +172,114 @@ on the Quartus Prime software download page.
 ; Maximum allowed            ; 6           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 1           ;
+; Maximum used               ; 6           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.0%      ;
+;     Processors 3-6         ;   0.0%      ;
 +----------------------------+-------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                            ;
++----------------------------------+-----------------+----------------------------------------+----------------------------------------------------------------------------------------------------------+----------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                              ; File Name with Absolute Path                                                                             ; Library  ;
++----------------------------------+-----------------+----------------------------------------+----------------------------------------------------------------------------------------------------------+----------+
+; DIG_OUT.vhd                      ; yes             ; User VHDL File                         ; C:/Users/druiz35/Desktop/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/DIG_OUT.vhd              ;          ;
+; DIG_IN.vhd                       ; yes             ; User VHDL File                         ; C:/Users/druiz35/Desktop/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/DIG_IN.vhd               ;          ;
+; clk_div.vhd                      ; yes             ; User VHDL File                         ; C:/Users/druiz35/Desktop/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/clk_div.vhd              ;          ;
+; TIMER.vhd                        ; yes             ; User VHDL File                         ; C:/Users/druiz35/Desktop/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/TIMER.vhd                ;          ;
+; SCOMP.vhd                        ; yes             ; User VHDL File                         ; C:/Users/druiz35/Desktop/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/SCOMP.vhd                ;          ;
+; SCOMP_System.bdf                 ; yes             ; User Block Diagram/Schematic File      ; C:/Users/druiz35/Desktop/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/SCOMP_System.bdf         ;          ;
+; HEX_DISP_6.bdf                   ; yes             ; User Block Diagram/Schematic File      ; C:/Users/druiz35/Desktop/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/HEX_DISP_6.bdf           ;          ;
+; PLL_main.vhd                     ; yes             ; User Wizard-Generated File             ; C:/Users/druiz35/Desktop/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/PLL_main.vhd             ; PLL_main ;
+; PLL_main/PLL_main_0002.v         ; yes             ; User Verilog HDL File                  ; C:/Users/druiz35/Desktop/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/PLL_main/PLL_main_0002.v ; PLL_main ;
+; SEG_DISP.vhd                     ; yes             ; User VHDL File                         ; C:/Users/druiz35/Desktop/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/SEG_DISP.vhd             ;          ;
+; PARSE_DISP_DATA_IN.vhd           ; yes             ; User VHDL File                         ; C:/Users/druiz35/Desktop/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/PARSE_DISP_DATA_IN.vhd   ;          ;
+; seg_edit.vhd                     ; yes             ; Auto-Found VHDL File                   ; C:/Users/druiz35/Desktop/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/seg_edit.vhd             ;          ;
+; disp_conversion.vhd              ; yes             ; Auto-Found VHDL File                   ; C:/Users/druiz35/Desktop/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/disp_conversion.vhd      ;          ;
+; altera_pll.v                     ; yes             ; Megafunction                           ; c:/appl/altera_lite/24.1std/quartus/libraries/megafunctions/altera_pll.v                                 ;          ;
+; altsyncram.tdf                   ; yes             ; Megafunction                           ; c:/appl/altera_lite/24.1std/quartus/libraries/megafunctions/altsyncram.tdf                               ;          ;
+; stratix_ram_block.inc            ; yes             ; Megafunction                           ; c:/appl/altera_lite/24.1std/quartus/libraries/megafunctions/stratix_ram_block.inc                        ;          ;
+; lpm_mux.inc                      ; yes             ; Megafunction                           ; c:/appl/altera_lite/24.1std/quartus/libraries/megafunctions/lpm_mux.inc                                  ;          ;
+; lpm_decode.inc                   ; yes             ; Megafunction                           ; c:/appl/altera_lite/24.1std/quartus/libraries/megafunctions/lpm_decode.inc                               ;          ;
+; aglobal241.inc                   ; yes             ; Megafunction                           ; c:/appl/altera_lite/24.1std/quartus/libraries/megafunctions/aglobal241.inc                               ;          ;
+; a_rdenreg.inc                    ; yes             ; Megafunction                           ; c:/appl/altera_lite/24.1std/quartus/libraries/megafunctions/a_rdenreg.inc                                ;          ;
+; altrom.inc                       ; yes             ; Megafunction                           ; c:/appl/altera_lite/24.1std/quartus/libraries/megafunctions/altrom.inc                                   ;          ;
+; altram.inc                       ; yes             ; Megafunction                           ; c:/appl/altera_lite/24.1std/quartus/libraries/megafunctions/altram.inc                                   ;          ;
+; altdpram.inc                     ; yes             ; Megafunction                           ; c:/appl/altera_lite/24.1std/quartus/libraries/megafunctions/altdpram.inc                                 ;          ;
+; db/altsyncram_pf24.tdf           ; yes             ; Auto-Generated Megafunction            ; C:/Users/druiz35/Desktop/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/db/altsyncram_pf24.tdf   ;          ;
+; lab8game.mif                     ; yes             ; Auto-Found Memory Initialization File  ; C:/Users/druiz35/Desktop/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/lab8game.mif             ;          ;
+; lpm_clshift.tdf                  ; yes             ; Megafunction                           ; c:/appl/altera_lite/24.1std/quartus/libraries/megafunctions/lpm_clshift.tdf                              ;          ;
+; lpm_bustri.tdf                   ; yes             ; Megafunction                           ; c:/appl/altera_lite/24.1std/quartus/libraries/megafunctions/lpm_bustri.tdf                               ;          ;
++----------------------------------+-----------------+----------------------------------------+----------------------------------------------------------------------------------------------------------+----------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                                                                                     ;
++---------------------------------------------+-----------------------------------------------------------------------------------+
+; Resource                                    ; Usage                                                                             ;
++---------------------------------------------+-----------------------------------------------------------------------------------+
+; Estimate of Logic utilization (ALMs needed) ; 284                                                                               ;
+;                                             ;                                                                                   ;
+; Combinational ALUT usage for logic          ; 357                                                                               ;
+;     -- 7 input functions                    ; 2                                                                                 ;
+;     -- 6 input functions                    ; 97                                                                                ;
+;     -- 5 input functions                    ; 92                                                                                ;
+;     -- 4 input functions                    ; 11                                                                                ;
+;     -- <=3 input functions                  ; 155                                                                               ;
+;                                             ;                                                                                   ;
+; Dedicated logic registers                   ; 248                                                                               ;
+;                                             ;                                                                                   ;
+; I/O pins                                    ; 92                                                                                ;
+; Total MLAB memory bits                      ; 0                                                                                 ;
+; Total block memory bits                     ; 32768                                                                             ;
+;                                             ;                                                                                   ;
+; Total DSP Blocks                            ; 0                                                                                 ;
+;                                             ;                                                                                   ;
+; Total PLLs                                  ; 1                                                                                 ;
+;     -- PLLs                                 ; 1                                                                                 ;
+;                                             ;                                                                                   ;
+; Maximum fan-out node                        ; PLL_main:inst1|PLL_main_0002:pll_main_inst|altera_pll:altera_pll_i|outclk_wire[0] ;
+; Maximum fan-out                             ; 254                                                                               ;
+; Total fan-out                               ; 2766                                                                              ;
+; Average fan-out                             ; 3.43                                                                              ;
++---------------------------------------------+-----------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                              ;
++-------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------------------------------------------------+--------------------+--------------+
+; Compilation Hierarchy Node                ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                     ; Entity Name        ; Library Name ;
++-------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------------------------------------------------+--------------------+--------------+
+; |SCOMP_System                             ; 357 (10)            ; 248 (0)                   ; 32768             ; 0          ; 92   ; 0            ; |SCOMP_System                                                                           ; SCOMP_System       ; work         ;
+;    |DIG_IN:inst7|                         ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SCOMP_System|DIG_IN:inst7                                                              ; DIG_IN             ; work         ;
+;    |DIG_OUT:inst6|                        ; 3 (3)               ; 10 (10)                   ; 0                 ; 0          ; 0    ; 0            ; |SCOMP_System|DIG_OUT:inst6                                                             ; DIG_OUT            ; work         ;
+;    |HEX_DISP_6:inst9|                     ; 19 (14)             ; 14 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |SCOMP_System|HEX_DISP_6:inst9                                                          ; HEX_DISP_6         ; work         ;
+;       |PARSE_DISP_DATA_IN:inst3|          ; 5 (5)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SCOMP_System|HEX_DISP_6:inst9|PARSE_DISP_DATA_IN:inst3                                 ; PARSE_DISP_DATA_IN ; work         ;
+;       |SEG_DISP:inst14|                   ; 0 (0)               ; 7 (7)                     ; 0                 ; 0          ; 0    ; 0            ; |SCOMP_System|HEX_DISP_6:inst9|SEG_DISP:inst14                                          ; SEG_DISP           ; work         ;
+;       |SEG_DISP:inst15|                   ; 0 (0)               ; 7 (7)                     ; 0                 ; 0          ; 0    ; 0            ; |SCOMP_System|HEX_DISP_6:inst9|SEG_DISP:inst15                                          ; SEG_DISP           ; work         ;
+;    |PLL_main:inst1|                       ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SCOMP_System|PLL_main:inst1                                                            ; PLL_main           ; pll_main     ;
+;       |PLL_main_0002:pll_main_inst|       ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SCOMP_System|PLL_main:inst1|PLL_main_0002:pll_main_inst                                ; PLL_main_0002      ; PLL_main     ;
+;          |altera_pll:altera_pll_i|        ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SCOMP_System|PLL_main:inst1|PLL_main_0002:pll_main_inst|altera_pll:altera_pll_i        ; altera_pll         ; work         ;
+;    |SCOMP:inst|                           ; 282 (249)           ; 187 (187)                 ; 32768             ; 0          ; 0    ; 0            ; |SCOMP_System|SCOMP:inst                                                                ; SCOMP              ; work         ;
+;       |altsyncram:altsyncram_component|   ; 0 (0)               ; 0 (0)                     ; 32768             ; 0          ; 0    ; 0            ; |SCOMP_System|SCOMP:inst|altsyncram:altsyncram_component                                ; altsyncram         ; work         ;
+;          |altsyncram_pf24:auto_generated| ; 0 (0)               ; 0 (0)                     ; 32768             ; 0          ; 0    ; 0            ; |SCOMP_System|SCOMP:inst|altsyncram:altsyncram_component|altsyncram_pf24:auto_generated ; altsyncram_pf24    ; work         ;
+;       |lpm_clshift:shifter|               ; 33 (33)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SCOMP_System|SCOMP:inst|lpm_clshift:shifter                                            ; lpm_clshift        ; work         ;
+;    |TIMER:inst4|                          ; 17 (17)             ; 16 (16)                   ; 0                 ; 0          ; 0    ; 0            ; |SCOMP_System|TIMER:inst4                                                               ; TIMER              ; work         ;
+;    |clk_div:inst5|                        ; 25 (25)             ; 21 (21)                   ; 0                 ; 0          ; 0    ; 0            ; |SCOMP_System|clk_div:inst5                                                             ; clk_div            ; work         ;
++-------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------------------------------------------------+--------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                                             ;
++--------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+-------+--------------+
+; Name                                                                                 ; Type ; Mode        ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size  ; MIF          ;
++--------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+-------+--------------+
+; SCOMP:inst|altsyncram:altsyncram_component|altsyncram_pf24:auto_generated|ALTSYNCRAM ; AUTO ; Single Port ; 2048         ; 16           ; --           ; --           ; 32768 ; Lab8Game.mif ;
++--------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+-------+--------------+
 
 
 +----------------------------------------------------------------------------------------------------------------+
@@ -170,6 +289,86 @@ on the Quartus Prime software download page.
 +--------+--------------+---------+--------------+--------------+------------------------------+-----------------+
 ; Altera ; altera_pll   ; 24.1    ; N/A          ; N/A          ; |SCOMP_System|PLL_main:inst1 ; PLL_main.vhd    ;
 +--------+--------------+---------+--------------+--------------+------------------------------+-----------------+
+
+
+Encoding Type:  One-Hot
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |SCOMP_System|SCOMP:inst|state                                                                                                                                                                                                                                                                                                                                                                                        ;
++-----------------+--------------+---------------+--------------+---------------+--------------+--------------+-------------+---------------+-----------------+----------------+---------------+---------------+----------------+--------------+-------------+--------------+---------------+--------------+----------------+-----------------+----------------+---------------+--------------+--------------+-------------+------------+
+; Name            ; state.ex_jnz ; state.ex_jpos ; state.ex_sub ; state.ex_out2 ; state.ex_out ; state.ex_in2 ; state.ex_in ; state.ex_call ; state.ex_return ; state.ex_jzero ; state.ex_jneg ; state.ex_jump ; state.ex_shift ; state.ex_xor ; state.ex_or ; state.ex_and ; state.ex_addi ; state.ex_add ; state.ex_loadi ; state.ex_store2 ; state.ex_store ; state.ex_load ; state.ex_nop ; state.decode ; state.fetch ; state.init ;
++-----------------+--------------+---------------+--------------+---------------+--------------+--------------+-------------+---------------+-----------------+----------------+---------------+---------------+----------------+--------------+-------------+--------------+---------------+--------------+----------------+-----------------+----------------+---------------+--------------+--------------+-------------+------------+
+; state.init      ; 0            ; 0             ; 0            ; 0             ; 0            ; 0            ; 0           ; 0             ; 0               ; 0              ; 0             ; 0             ; 0              ; 0            ; 0           ; 0            ; 0             ; 0            ; 0              ; 0               ; 0              ; 0             ; 0            ; 0            ; 0           ; 0          ;
+; state.fetch     ; 0            ; 0             ; 0            ; 0             ; 0            ; 0            ; 0           ; 0             ; 0               ; 0              ; 0             ; 0             ; 0              ; 0            ; 0           ; 0            ; 0             ; 0            ; 0              ; 0               ; 0              ; 0             ; 0            ; 0            ; 1           ; 1          ;
+; state.decode    ; 0            ; 0             ; 0            ; 0             ; 0            ; 0            ; 0           ; 0             ; 0               ; 0              ; 0             ; 0             ; 0              ; 0            ; 0           ; 0            ; 0             ; 0            ; 0              ; 0               ; 0              ; 0             ; 0            ; 1            ; 0           ; 1          ;
+; state.ex_nop    ; 0            ; 0             ; 0            ; 0             ; 0            ; 0            ; 0           ; 0             ; 0               ; 0              ; 0             ; 0             ; 0              ; 0            ; 0           ; 0            ; 0             ; 0            ; 0              ; 0               ; 0              ; 0             ; 1            ; 0            ; 0           ; 1          ;
+; state.ex_load   ; 0            ; 0             ; 0            ; 0             ; 0            ; 0            ; 0           ; 0             ; 0               ; 0              ; 0             ; 0             ; 0              ; 0            ; 0           ; 0            ; 0             ; 0            ; 0              ; 0               ; 0              ; 1             ; 0            ; 0            ; 0           ; 1          ;
+; state.ex_store  ; 0            ; 0             ; 0            ; 0             ; 0            ; 0            ; 0           ; 0             ; 0               ; 0              ; 0             ; 0             ; 0              ; 0            ; 0           ; 0            ; 0             ; 0            ; 0              ; 0               ; 1              ; 0             ; 0            ; 0            ; 0           ; 1          ;
+; state.ex_store2 ; 0            ; 0             ; 0            ; 0             ; 0            ; 0            ; 0           ; 0             ; 0               ; 0              ; 0             ; 0             ; 0              ; 0            ; 0           ; 0            ; 0             ; 0            ; 0              ; 1               ; 0              ; 0             ; 0            ; 0            ; 0           ; 1          ;
+; state.ex_loadi  ; 0            ; 0             ; 0            ; 0             ; 0            ; 0            ; 0           ; 0             ; 0               ; 0              ; 0             ; 0             ; 0              ; 0            ; 0           ; 0            ; 0             ; 0            ; 1              ; 0               ; 0              ; 0             ; 0            ; 0            ; 0           ; 1          ;
+; state.ex_add    ; 0            ; 0             ; 0            ; 0             ; 0            ; 0            ; 0           ; 0             ; 0               ; 0              ; 0             ; 0             ; 0              ; 0            ; 0           ; 0            ; 0             ; 1            ; 0              ; 0               ; 0              ; 0             ; 0            ; 0            ; 0           ; 1          ;
+; state.ex_addi   ; 0            ; 0             ; 0            ; 0             ; 0            ; 0            ; 0           ; 0             ; 0               ; 0              ; 0             ; 0             ; 0              ; 0            ; 0           ; 0            ; 1             ; 0            ; 0              ; 0               ; 0              ; 0             ; 0            ; 0            ; 0           ; 1          ;
+; state.ex_and    ; 0            ; 0             ; 0            ; 0             ; 0            ; 0            ; 0           ; 0             ; 0               ; 0              ; 0             ; 0             ; 0              ; 0            ; 0           ; 1            ; 0             ; 0            ; 0              ; 0               ; 0              ; 0             ; 0            ; 0            ; 0           ; 1          ;
+; state.ex_or     ; 0            ; 0             ; 0            ; 0             ; 0            ; 0            ; 0           ; 0             ; 0               ; 0              ; 0             ; 0             ; 0              ; 0            ; 1           ; 0            ; 0             ; 0            ; 0              ; 0               ; 0              ; 0             ; 0            ; 0            ; 0           ; 1          ;
+; state.ex_xor    ; 0            ; 0             ; 0            ; 0             ; 0            ; 0            ; 0           ; 0             ; 0               ; 0              ; 0             ; 0             ; 0              ; 1            ; 0           ; 0            ; 0             ; 0            ; 0              ; 0               ; 0              ; 0             ; 0            ; 0            ; 0           ; 1          ;
+; state.ex_shift  ; 0            ; 0             ; 0            ; 0             ; 0            ; 0            ; 0           ; 0             ; 0               ; 0              ; 0             ; 0             ; 1              ; 0            ; 0           ; 0            ; 0             ; 0            ; 0              ; 0               ; 0              ; 0             ; 0            ; 0            ; 0           ; 1          ;
+; state.ex_jump   ; 0            ; 0             ; 0            ; 0             ; 0            ; 0            ; 0           ; 0             ; 0               ; 0              ; 0             ; 1             ; 0              ; 0            ; 0           ; 0            ; 0             ; 0            ; 0              ; 0               ; 0              ; 0             ; 0            ; 0            ; 0           ; 1          ;
+; state.ex_jneg   ; 0            ; 0             ; 0            ; 0             ; 0            ; 0            ; 0           ; 0             ; 0               ; 0              ; 1             ; 0             ; 0              ; 0            ; 0           ; 0            ; 0             ; 0            ; 0              ; 0               ; 0              ; 0             ; 0            ; 0            ; 0           ; 1          ;
+; state.ex_jzero  ; 0            ; 0             ; 0            ; 0             ; 0            ; 0            ; 0           ; 0             ; 0               ; 1              ; 0             ; 0             ; 0              ; 0            ; 0           ; 0            ; 0             ; 0            ; 0              ; 0               ; 0              ; 0             ; 0            ; 0            ; 0           ; 1          ;
+; state.ex_return ; 0            ; 0             ; 0            ; 0             ; 0            ; 0            ; 0           ; 0             ; 1               ; 0              ; 0             ; 0             ; 0              ; 0            ; 0           ; 0            ; 0             ; 0            ; 0              ; 0               ; 0              ; 0             ; 0            ; 0            ; 0           ; 1          ;
+; state.ex_call   ; 0            ; 0             ; 0            ; 0             ; 0            ; 0            ; 0           ; 1             ; 0               ; 0              ; 0             ; 0             ; 0              ; 0            ; 0           ; 0            ; 0             ; 0            ; 0              ; 0               ; 0              ; 0             ; 0            ; 0            ; 0           ; 1          ;
+; state.ex_in     ; 0            ; 0             ; 0            ; 0             ; 0            ; 0            ; 1           ; 0             ; 0               ; 0              ; 0             ; 0             ; 0              ; 0            ; 0           ; 0            ; 0             ; 0            ; 0              ; 0               ; 0              ; 0             ; 0            ; 0            ; 0           ; 1          ;
+; state.ex_in2    ; 0            ; 0             ; 0            ; 0             ; 0            ; 1            ; 0           ; 0             ; 0               ; 0              ; 0             ; 0             ; 0              ; 0            ; 0           ; 0            ; 0             ; 0            ; 0              ; 0               ; 0              ; 0             ; 0            ; 0            ; 0           ; 1          ;
+; state.ex_out    ; 0            ; 0             ; 0            ; 0             ; 1            ; 0            ; 0           ; 0             ; 0               ; 0              ; 0             ; 0             ; 0              ; 0            ; 0           ; 0            ; 0             ; 0            ; 0              ; 0               ; 0              ; 0             ; 0            ; 0            ; 0           ; 1          ;
+; state.ex_out2   ; 0            ; 0             ; 0            ; 1             ; 0            ; 0            ; 0           ; 0             ; 0               ; 0              ; 0             ; 0             ; 0              ; 0            ; 0           ; 0            ; 0             ; 0            ; 0              ; 0               ; 0              ; 0             ; 0            ; 0            ; 0           ; 1          ;
+; state.ex_sub    ; 0            ; 0             ; 1            ; 0             ; 0            ; 0            ; 0           ; 0             ; 0               ; 0              ; 0             ; 0             ; 0              ; 0            ; 0           ; 0            ; 0             ; 0            ; 0              ; 0               ; 0              ; 0             ; 0            ; 0            ; 0           ; 1          ;
+; state.ex_jpos   ; 0            ; 1             ; 0            ; 0             ; 0            ; 0            ; 0           ; 0             ; 0               ; 0              ; 0             ; 0             ; 0              ; 0            ; 0           ; 0            ; 0             ; 0            ; 0              ; 0               ; 0              ; 0             ; 0            ; 0            ; 0           ; 1          ;
+; state.ex_jnz    ; 1            ; 0             ; 0            ; 0             ; 0            ; 0            ; 0           ; 0             ; 0               ; 0              ; 0             ; 0             ; 0              ; 0            ; 0           ; 0            ; 0             ; 0            ; 0              ; 0               ; 0              ; 0             ; 0            ; 0            ; 0           ; 1          ;
++-----------------+--------------+---------------+--------------+---------------+--------------+--------------+-------------+---------------+-----------------+----------------+---------------+---------------+----------------+--------------+-------------+--------------+---------------+--------------+----------------+-----------------+----------------+---------------+--------------+--------------+-------------+------------+
+
+
++---------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                          ;
++----------------------------------------------------+----------------------------------------+
+; Register name                                      ; Reason for Removal                     ;
++----------------------------------------------------+----------------------------------------+
+; HEX_DISP_6:inst9|SEG_DISP:inst7|latched_seg[0..6]  ; Stuck at GND due to stuck port clock   ;
+; HEX_DISP_6:inst9|SEG_DISP:inst8|latched_seg[0..6]  ; Stuck at GND due to stuck port clock   ;
+; HEX_DISP_6:inst9|SEG_DISP:inst12|latched_seg[0..6] ; Stuck at GND due to stuck port clock   ;
+; HEX_DISP_6:inst9|SEG_DISP:inst13|latched_seg[0..6] ; Stuck at GND due to stuck port clock   ;
+; SCOMP:inst|state.ex_nop                            ; Lost fanout                            ;
+; SCOMP:inst|state.ex_store2                         ; Stuck at GND due to stuck port data_in ;
+; Total Number of Removed Registers = 30             ;                                        ;
++----------------------------------------------------+----------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 248   ;
+; Number of registers using Synchronous Clear  ; 30    ;
+; Number of registers using Synchronous Load   ; 110   ;
+; Number of registers using Asynchronous Clear ; 64    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 163   ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                    ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                          ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------+
+; 3:1                ; 110 bits  ; 220 LEs       ; 0 LEs                ; 220 LEs                ; Yes        ; |SCOMP_System|SCOMP:inst|PC_stack[5][6]             ;
+; 12:1               ; 15 bits   ; 120 LEs       ; 120 LEs              ; 0 LEs                  ; Yes        ; |SCOMP_System|SCOMP:inst|AC[11]                     ;
+; 13:1               ; 11 bits   ; 88 LEs        ; 22 LEs               ; 66 LEs                 ; Yes        ; |SCOMP_System|SCOMP:inst|PC[4]                      ;
+; 3:1                ; 14 bits   ; 28 LEs        ; 28 LEs               ; 0 LEs                  ; No         ; |SCOMP_System|HEX_DISP_6:inst9|SEG_EDIT:inst1|Mux10 ;
+; 3:1                ; 14 bits   ; 28 LEs        ; 28 LEs               ; 0 LEs                  ; No         ; |SCOMP_System|HEX_DISP_6:inst9|SEG_EDIT:inst1|Mux6  ;
+; 3:1                ; 14 bits   ; 28 LEs        ; 28 LEs               ; 0 LEs                  ; No         ; |SCOMP_System|HEX_DISP_6:inst9|SEG_EDIT:inst1|Mux36 ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; No         ; |SCOMP_System|IO_DATA[6]                            ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------+
 
 
 +--------------------------------------------------------------------------------------------------+
@@ -523,180 +722,135 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
++----------------------------------------------------------------------------------------+
+; altsyncram Parameter Settings by Entity Instance                                       ;
++-------------------------------------------+--------------------------------------------+
+; Name                                      ; Value                                      ;
++-------------------------------------------+--------------------------------------------+
+; Number of entity instances                ; 1                                          ;
+; Entity Instance                           ; SCOMP:inst|altsyncram:altsyncram_component ;
+;     -- OPERATION_MODE                     ; SINGLE_PORT                                ;
+;     -- WIDTH_A                            ; 16                                         ;
+;     -- NUMWORDS_A                         ; 2048                                       ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                               ;
+;     -- WIDTH_B                            ; 1                                          ;
+;     -- NUMWORDS_B                         ; 0                                          ;
+;     -- ADDRESS_REG_B                      ; CLOCK1                                     ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                               ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                       ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                  ;
++-------------------------------------------+--------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; arriav_ff             ; 248                         ;
+;     CLR               ; 64                          ;
+;     ENA               ; 42                          ;
+;     ENA SCLR          ; 11                          ;
+;     ENA SLD           ; 110                         ;
+;     SCLR              ; 19                          ;
+;     plain             ; 2                           ;
+; arriav_lcell_comb     ; 358                         ;
+;     arith             ; 77                          ;
+;         1 data inputs ; 44                          ;
+;         2 data inputs ; 33                          ;
+;     extend            ; 2                           ;
+;         7 data inputs ; 2                           ;
+;     normal            ; 263                         ;
+;         0 data inputs ; 1                           ;
+;         1 data inputs ; 1                           ;
+;         2 data inputs ; 22                          ;
+;         3 data inputs ; 39                          ;
+;         4 data inputs ; 11                          ;
+;         5 data inputs ; 92                          ;
+;         6 data inputs ; 97                          ;
+;     shared            ; 16                          ;
+;         2 data inputs ; 16                          ;
+; boundary_port         ; 92                          ;
+; generic_pll           ; 1                           ;
+; stratixv_ram_block    ; 16                          ;
+;                       ;                             ;
+; Max LUT depth         ; 4.50                        ;
+; Average LUT depth     ; 2.47                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
+
+
 +-------------------------------+
 ; Analysis & Synthesis Messages ;
 +-------------------------------+
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
-    Info: Processing started: Mon Jul 14 17:35:47 2025
+    Info: Processing started: Tue Jul 15 13:29:09 2025
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off SCOMP -c SCOMP
 Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
 Warning (12019): Can't analyze file -- file HEX_DISP.vhd is missing
 Info (12021): Found 2 design units, including 1 entities, in source file dig_out.vhd
-    Info (12022): Found design unit 1: DIG_OUT-a File: C:/Users/druiz35/Downloads/ECE2031-Lab-8/SCOMP_Lab8_Sum25/DIG_OUT.vhd Line: 26
-    Info (12023): Found entity 1: DIG_OUT File: C:/Users/druiz35/Downloads/ECE2031-Lab-8/SCOMP_Lab8_Sum25/DIG_OUT.vhd Line: 16
+    Info (12022): Found design unit 1: DIG_OUT-a File: C:/Users/druiz35/Desktop/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/DIG_OUT.vhd Line: 26
+    Info (12023): Found entity 1: DIG_OUT File: C:/Users/druiz35/Desktop/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/DIG_OUT.vhd Line: 16
 Info (12021): Found 2 design units, including 1 entities, in source file dig_in.vhd
-    Info (12022): Found design unit 1: DIG_IN-a File: C:/Users/druiz35/Downloads/ECE2031-Lab-8/SCOMP_Lab8_Sum25/DIG_IN.vhd Line: 20
-    Info (12023): Found entity 1: DIG_IN File: C:/Users/druiz35/Downloads/ECE2031-Lab-8/SCOMP_Lab8_Sum25/DIG_IN.vhd Line: 11
+    Info (12022): Found design unit 1: DIG_IN-a File: C:/Users/druiz35/Desktop/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/DIG_IN.vhd Line: 20
+    Info (12023): Found entity 1: DIG_IN File: C:/Users/druiz35/Desktop/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/DIG_IN.vhd Line: 11
 Info (12021): Found 2 design units, including 1 entities, in source file clk_div.vhd
-    Info (12022): Found design unit 1: clk_div-a File: C:/Users/druiz35/Downloads/ECE2031-Lab-8/SCOMP_Lab8_Sum25/clk_div.vhd Line: 26
-    Info (12023): Found entity 1: clk_div File: C:/Users/druiz35/Downloads/ECE2031-Lab-8/SCOMP_Lab8_Sum25/clk_div.vhd Line: 11
+    Info (12022): Found design unit 1: clk_div-a File: C:/Users/druiz35/Desktop/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/clk_div.vhd Line: 26
+    Info (12023): Found entity 1: clk_div File: C:/Users/druiz35/Desktop/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/clk_div.vhd Line: 11
 Info (12021): Found 2 design units, including 1 entities, in source file timer.vhd
-    Info (12022): Found design unit 1: TIMER-a File: C:/Users/druiz35/Downloads/ECE2031-Lab-8/SCOMP_Lab8_Sum25/TIMER.vhd Line: 29
-    Info (12023): Found entity 1: TIMER File: C:/Users/druiz35/Downloads/ECE2031-Lab-8/SCOMP_Lab8_Sum25/TIMER.vhd Line: 17
+    Info (12022): Found design unit 1: TIMER-a File: C:/Users/druiz35/Desktop/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/TIMER.vhd Line: 29
+    Info (12023): Found entity 1: TIMER File: C:/Users/druiz35/Desktop/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/TIMER.vhd Line: 17
 Info (12021): Found 2 design units, including 1 entities, in source file scomp.vhd
-    Info (12022): Found design unit 1: SCOMP-a File: C:/Users/druiz35/Downloads/ECE2031-Lab-8/SCOMP_Lab8_Sum25/SCOMP.vhd Line: 33
-    Info (12023): Found entity 1: SCOMP File: C:/Users/druiz35/Downloads/ECE2031-Lab-8/SCOMP_Lab8_Sum25/SCOMP.vhd Line: 16
+    Info (12022): Found design unit 1: SCOMP-a File: C:/Users/druiz35/Desktop/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/SCOMP.vhd Line: 33
+    Info (12023): Found entity 1: SCOMP File: C:/Users/druiz35/Desktop/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/SCOMP.vhd Line: 16
 Info (12021): Found 1 design units, including 1 entities, in source file scomp_system.bdf
     Info (12023): Found entity 1: SCOMP_System
 Info (12021): Found 1 design units, including 1 entities, in source file hex_disp_6.bdf
     Info (12023): Found entity 1: HEX_DISP_6
 Info (12021): Found 2 design units, including 1 entities, in source file pll_main.vhd
-    Info (12022): Found design unit 1: PLL_main-rtl File: C:/Users/druiz35/Downloads/ECE2031-Lab-8/SCOMP_Lab8_Sum25/PLL_main.vhd Line: 20
-    Info (12023): Found entity 1: PLL_main File: C:/Users/druiz35/Downloads/ECE2031-Lab-8/SCOMP_Lab8_Sum25/PLL_main.vhd Line: 11
+    Info (12022): Found design unit 1: PLL_main-rtl File: C:/Users/druiz35/Desktop/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/PLL_main.vhd Line: 20
+    Info (12023): Found entity 1: PLL_main File: C:/Users/druiz35/Desktop/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/PLL_main.vhd Line: 11
 Info (12021): Found 1 design units, including 1 entities, in source file pll_main/pll_main_0002.v
-    Info (12023): Found entity 1: PLL_main_0002 File: C:/Users/druiz35/Downloads/ECE2031-Lab-8/SCOMP_Lab8_Sum25/PLL_main/PLL_main_0002.v Line: 2
+    Info (12023): Found entity 1: PLL_main_0002 File: C:/Users/druiz35/Desktop/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/PLL_main/PLL_main_0002.v Line: 2
 Info (12021): Found 2 design units, including 1 entities, in source file seg_disp.vhd
-    Info (12022): Found design unit 1: SEG_DISP-a File: C:/Users/druiz35/Downloads/ECE2031-Lab-8/SCOMP_Lab8_Sum25/SEG_DISP.vhd Line: 17
-    Info (12023): Found entity 1: SEG_DISP File: C:/Users/druiz35/Downloads/ECE2031-Lab-8/SCOMP_Lab8_Sum25/SEG_DISP.vhd Line: 9
+    Info (12022): Found design unit 1: SEG_DISP-a File: C:/Users/druiz35/Desktop/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/SEG_DISP.vhd Line: 17
+    Info (12023): Found entity 1: SEG_DISP File: C:/Users/druiz35/Desktop/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/SEG_DISP.vhd Line: 9
 Info (12021): Found 2 design units, including 1 entities, in source file parse_disp_data_in.vhd
-    Info (12022): Found design unit 1: PARSE_DISP_DATA_IN-comb File: C:/Users/druiz35/Downloads/ECE2031-Lab-8/SCOMP_Lab8_Sum25/PARSE_DISP_DATA_IN.vhd Line: 24
-    Info (12023): Found entity 1: PARSE_DISP_DATA_IN File: C:/Users/druiz35/Downloads/ECE2031-Lab-8/SCOMP_Lab8_Sum25/PARSE_DISP_DATA_IN.vhd Line: 5
+    Info (12022): Found design unit 1: PARSE_DISP_DATA_IN-comb File: C:/Users/druiz35/Desktop/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/PARSE_DISP_DATA_IN.vhd Line: 23
+    Info (12023): Found entity 1: PARSE_DISP_DATA_IN File: C:/Users/druiz35/Desktop/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/PARSE_DISP_DATA_IN.vhd Line: 5
 Info (12127): Elaborating entity "SCOMP_System" for the top level hierarchy
-Info (12128): Elaborating entity "HEX_DISP_6" for hierarchy "HEX_DISP_6:inst10"
-Warning (275085): Found inconsistent dimensions for element "seg_val"
-Warning (275080): Converted elements in bus name "seg_val" using legacy naming rules. Make any assignments on the new names, not on the original names.
-    Warning (275081): Converted element name(s) from "seg_val[6..0]" to "seg_val6..0"
-    Warning (275081): Converted element name(s) from "seg_val[13..7]" to "seg_val13..7"
-    Warning (275081): Converted element name(s) from "seg_val[20..14]" to "seg_val20..14"
-    Warning (275081): Converted element name(s) from "seg_val[27..21]" to "seg_val27..21"
-    Warning (275081): Converted element name(s) from "seg_val[41..35]" to "seg_val41..35"
-    Warning (275081): Converted element name(s) from "seg_val[34..28]" to "seg_val34..28"
-Warning (275008): Primitive "TRI" of instance "inst10" not used
-Warning (275008): Primitive "TRI" of instance "inst11" not used
-Warning (275008): Primitive "NOT" of instance "inst16" not used
-Warning (275008): Primitive "AND2" of instance "inst5" not used
-Info (12128): Elaborating entity "SEG_DISP" for hierarchy "HEX_DISP_6:inst10|SEG_DISP:inst7"
-Info (12128): Elaborating entity "PARSE_DISP_DATA_IN" for hierarchy "HEX_DISP_6:inst10|PARSE_DISP_DATA_IN:inst21"
+Info (12128): Elaborating entity "HEX_DISP_6" for hierarchy "HEX_DISP_6:inst9"
+Info (12128): Elaborating entity "SEG_DISP" for hierarchy "HEX_DISP_6:inst9|SEG_DISP:inst7"
+Info (12128): Elaborating entity "PARSE_DISP_DATA_IN" for hierarchy "HEX_DISP_6:inst9|PARSE_DISP_DATA_IN:inst3"
+Warning (10541): VHDL Signal Declaration warning at PARSE_DISP_DATA_IN.vhd(33): used implicit default value for signal "grp0_we_s" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/druiz35/Desktop/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/PARSE_DISP_DATA_IN.vhd Line: 33
+Warning (10492): VHDL Process Statement warning at PARSE_DISP_DATA_IN.vhd(55): signal "IO_WRITE" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/druiz35/Desktop/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/PARSE_DISP_DATA_IN.vhd Line: 55
+Warning (10492): VHDL Process Statement warning at PARSE_DISP_DATA_IN.vhd(57): signal "IO_WRITE" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/druiz35/Desktop/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/PARSE_DISP_DATA_IN.vhd Line: 57
 Warning (12125): Using design file seg_edit.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
-    Info (12022): Found design unit 1: SEG_EDIT-a File: C:/Users/druiz35/Downloads/ECE2031-Lab-8/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 19
-    Info (12023): Found entity 1: SEG_EDIT File: C:/Users/druiz35/Downloads/ECE2031-Lab-8/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 5
-Info (12128): Elaborating entity "SEG_EDIT" for hierarchy "HEX_DISP_6:inst10|SEG_EDIT:inst1"
-Warning (10492): VHDL Process Statement warning at seg_edit.vhd(62): signal "mask" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/druiz35/Downloads/ECE2031-Lab-8/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 62
-Warning (10492): VHDL Process Statement warning at seg_edit.vhd(63): signal "mask" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/druiz35/Downloads/ECE2031-Lab-8/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 63
-Warning (10492): VHDL Process Statement warning at seg_edit.vhd(65): signal "mask" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/druiz35/Downloads/ECE2031-Lab-8/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 65
-Warning (10492): VHDL Process Statement warning at seg_edit.vhd(68): signal "HEX5" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/druiz35/Downloads/ECE2031-Lab-8/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 68
-Warning (10492): VHDL Process Statement warning at seg_edit.vhd(68): signal "HEX4" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/druiz35/Downloads/ECE2031-Lab-8/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 68
-Warning (10492): VHDL Process Statement warning at seg_edit.vhd(68): signal "HEX3" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/druiz35/Downloads/ECE2031-Lab-8/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 68
-Warning (10492): VHDL Process Statement warning at seg_edit.vhd(68): signal "HEX2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/druiz35/Downloads/ECE2031-Lab-8/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 68
-Warning (10492): VHDL Process Statement warning at seg_edit.vhd(68): signal "HEX1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/druiz35/Downloads/ECE2031-Lab-8/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 68
-Warning (10492): VHDL Process Statement warning at seg_edit.vhd(68): signal "HEX0" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/druiz35/Downloads/ECE2031-Lab-8/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 68
-Warning (10492): VHDL Process Statement warning at seg_edit.vhd(77): signal "mask" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/druiz35/Downloads/ECE2031-Lab-8/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 77
-Warning (10492): VHDL Process Statement warning at seg_edit.vhd(78): signal "mask" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/druiz35/Downloads/ECE2031-Lab-8/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 78
-Warning (10492): VHDL Process Statement warning at seg_edit.vhd(80): signal "mask" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/druiz35/Downloads/ECE2031-Lab-8/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 80
-Warning (10492): VHDL Process Statement warning at seg_edit.vhd(83): signal "HEX5" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/druiz35/Downloads/ECE2031-Lab-8/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 83
-Warning (10492): VHDL Process Statement warning at seg_edit.vhd(83): signal "HEX4" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/druiz35/Downloads/ECE2031-Lab-8/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 83
-Warning (10492): VHDL Process Statement warning at seg_edit.vhd(83): signal "HEX3" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/druiz35/Downloads/ECE2031-Lab-8/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 83
-Warning (10492): VHDL Process Statement warning at seg_edit.vhd(83): signal "HEX2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/druiz35/Downloads/ECE2031-Lab-8/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 83
-Warning (10492): VHDL Process Statement warning at seg_edit.vhd(83): signal "HEX1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/druiz35/Downloads/ECE2031-Lab-8/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 83
-Warning (10492): VHDL Process Statement warning at seg_edit.vhd(83): signal "HEX0" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/druiz35/Downloads/ECE2031-Lab-8/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 83
-Warning (10492): VHDL Process Statement warning at seg_edit.vhd(93): signal "mask" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/druiz35/Downloads/ECE2031-Lab-8/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 93
-Warning (10492): VHDL Process Statement warning at seg_edit.vhd(94): signal "mask" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/druiz35/Downloads/ECE2031-Lab-8/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 94
-Warning (10492): VHDL Process Statement warning at seg_edit.vhd(96): signal "mask" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/druiz35/Downloads/ECE2031-Lab-8/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 96
-Warning (10492): VHDL Process Statement warning at seg_edit.vhd(99): signal "HEX5" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/druiz35/Downloads/ECE2031-Lab-8/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 99
-Warning (10492): VHDL Process Statement warning at seg_edit.vhd(99): signal "HEX4" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/druiz35/Downloads/ECE2031-Lab-8/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 99
-Warning (10492): VHDL Process Statement warning at seg_edit.vhd(99): signal "HEX3" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/druiz35/Downloads/ECE2031-Lab-8/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 99
-Warning (10492): VHDL Process Statement warning at seg_edit.vhd(99): signal "HEX2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/druiz35/Downloads/ECE2031-Lab-8/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 99
-Warning (10492): VHDL Process Statement warning at seg_edit.vhd(99): signal "HEX1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/druiz35/Downloads/ECE2031-Lab-8/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 99
-Warning (10492): VHDL Process Statement warning at seg_edit.vhd(99): signal "HEX0" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/druiz35/Downloads/ECE2031-Lab-8/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 99
-Warning (10492): VHDL Process Statement warning at seg_edit.vhd(109): signal "mask" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/druiz35/Downloads/ECE2031-Lab-8/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 109
-Warning (10492): VHDL Process Statement warning at seg_edit.vhd(110): signal "mask" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/druiz35/Downloads/ECE2031-Lab-8/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 110
-Warning (10492): VHDL Process Statement warning at seg_edit.vhd(112): signal "mask" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/druiz35/Downloads/ECE2031-Lab-8/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 112
-Warning (10492): VHDL Process Statement warning at seg_edit.vhd(115): signal "HEX5" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/druiz35/Downloads/ECE2031-Lab-8/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 115
-Warning (10492): VHDL Process Statement warning at seg_edit.vhd(115): signal "HEX4" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/druiz35/Downloads/ECE2031-Lab-8/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 115
-Warning (10492): VHDL Process Statement warning at seg_edit.vhd(115): signal "HEX3" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/druiz35/Downloads/ECE2031-Lab-8/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 115
-Warning (10492): VHDL Process Statement warning at seg_edit.vhd(115): signal "HEX2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/druiz35/Downloads/ECE2031-Lab-8/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 115
-Warning (10492): VHDL Process Statement warning at seg_edit.vhd(115): signal "HEX1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/druiz35/Downloads/ECE2031-Lab-8/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 115
-Warning (10492): VHDL Process Statement warning at seg_edit.vhd(115): signal "HEX0" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/druiz35/Downloads/ECE2031-Lab-8/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 115
-Warning (10492): VHDL Process Statement warning at seg_edit.vhd(125): signal "mask" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/druiz35/Downloads/ECE2031-Lab-8/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 125
-Warning (10492): VHDL Process Statement warning at seg_edit.vhd(126): signal "mask" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/druiz35/Downloads/ECE2031-Lab-8/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 126
-Warning (10492): VHDL Process Statement warning at seg_edit.vhd(128): signal "mask" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/druiz35/Downloads/ECE2031-Lab-8/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 128
-Warning (10492): VHDL Process Statement warning at seg_edit.vhd(131): signal "HEX5" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/druiz35/Downloads/ECE2031-Lab-8/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 131
-Warning (10492): VHDL Process Statement warning at seg_edit.vhd(131): signal "HEX4" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/druiz35/Downloads/ECE2031-Lab-8/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 131
-Warning (10492): VHDL Process Statement warning at seg_edit.vhd(131): signal "HEX3" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/druiz35/Downloads/ECE2031-Lab-8/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 131
-Warning (10492): VHDL Process Statement warning at seg_edit.vhd(131): signal "HEX2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/druiz35/Downloads/ECE2031-Lab-8/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 131
-Warning (10492): VHDL Process Statement warning at seg_edit.vhd(131): signal "HEX1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/druiz35/Downloads/ECE2031-Lab-8/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 131
-Warning (10492): VHDL Process Statement warning at seg_edit.vhd(131): signal "HEX0" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/druiz35/Downloads/ECE2031-Lab-8/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 131
-Warning (10492): VHDL Process Statement warning at seg_edit.vhd(141): signal "mask" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/druiz35/Downloads/ECE2031-Lab-8/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 141
-Warning (10492): VHDL Process Statement warning at seg_edit.vhd(142): signal "mask" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/druiz35/Downloads/ECE2031-Lab-8/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 142
-Warning (10492): VHDL Process Statement warning at seg_edit.vhd(144): signal "mask" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/druiz35/Downloads/ECE2031-Lab-8/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 144
-Warning (10492): VHDL Process Statement warning at seg_edit.vhd(147): signal "HEX5" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/druiz35/Downloads/ECE2031-Lab-8/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 147
-Warning (10492): VHDL Process Statement warning at seg_edit.vhd(147): signal "HEX4" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/druiz35/Downloads/ECE2031-Lab-8/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 147
-Warning (10492): VHDL Process Statement warning at seg_edit.vhd(147): signal "HEX3" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/druiz35/Downloads/ECE2031-Lab-8/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 147
-Warning (10492): VHDL Process Statement warning at seg_edit.vhd(147): signal "HEX2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/druiz35/Downloads/ECE2031-Lab-8/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 147
-Warning (10492): VHDL Process Statement warning at seg_edit.vhd(147): signal "HEX1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/druiz35/Downloads/ECE2031-Lab-8/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 147
-Warning (10492): VHDL Process Statement warning at seg_edit.vhd(147): signal "HEX0" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/druiz35/Downloads/ECE2031-Lab-8/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 147
-Warning (10631): VHDL Process Statement warning at seg_edit.vhd(37): inferring latch(es) for signal or variable "HEX1", which holds its previous value in one or more paths through the process File: C:/Users/druiz35/Downloads/ECE2031-Lab-8/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 37
-Warning (10631): VHDL Process Statement warning at seg_edit.vhd(37): inferring latch(es) for signal or variable "HEX2", which holds its previous value in one or more paths through the process File: C:/Users/druiz35/Downloads/ECE2031-Lab-8/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 37
-Warning (10631): VHDL Process Statement warning at seg_edit.vhd(37): inferring latch(es) for signal or variable "HEX3", which holds its previous value in one or more paths through the process File: C:/Users/druiz35/Downloads/ECE2031-Lab-8/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 37
-Warning (10631): VHDL Process Statement warning at seg_edit.vhd(37): inferring latch(es) for signal or variable "HEX4", which holds its previous value in one or more paths through the process File: C:/Users/druiz35/Downloads/ECE2031-Lab-8/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 37
-Warning (10631): VHDL Process Statement warning at seg_edit.vhd(37): inferring latch(es) for signal or variable "HEX5", which holds its previous value in one or more paths through the process File: C:/Users/druiz35/Downloads/ECE2031-Lab-8/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 37
-Warning (10631): VHDL Process Statement warning at seg_edit.vhd(37): inferring latch(es) for signal or variable "HEX0", which holds its previous value in one or more paths through the process File: C:/Users/druiz35/Downloads/ECE2031-Lab-8/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 37
-Info (10041): Inferred latch for "HEX0[0]" at seg_edit.vhd(37) File: C:/Users/druiz35/Downloads/ECE2031-Lab-8/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 37
-Info (10041): Inferred latch for "HEX0[1]" at seg_edit.vhd(37) File: C:/Users/druiz35/Downloads/ECE2031-Lab-8/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 37
-Info (10041): Inferred latch for "HEX0[2]" at seg_edit.vhd(37) File: C:/Users/druiz35/Downloads/ECE2031-Lab-8/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 37
-Info (10041): Inferred latch for "HEX0[3]" at seg_edit.vhd(37) File: C:/Users/druiz35/Downloads/ECE2031-Lab-8/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 37
-Info (10041): Inferred latch for "HEX0[4]" at seg_edit.vhd(37) File: C:/Users/druiz35/Downloads/ECE2031-Lab-8/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 37
-Info (10041): Inferred latch for "HEX0[5]" at seg_edit.vhd(37) File: C:/Users/druiz35/Downloads/ECE2031-Lab-8/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 37
-Info (10041): Inferred latch for "HEX0[6]" at seg_edit.vhd(37) File: C:/Users/druiz35/Downloads/ECE2031-Lab-8/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 37
-Info (10041): Inferred latch for "HEX5[0]" at seg_edit.vhd(37) File: C:/Users/druiz35/Downloads/ECE2031-Lab-8/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 37
-Info (10041): Inferred latch for "HEX5[1]" at seg_edit.vhd(37) File: C:/Users/druiz35/Downloads/ECE2031-Lab-8/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 37
-Info (10041): Inferred latch for "HEX5[2]" at seg_edit.vhd(37) File: C:/Users/druiz35/Downloads/ECE2031-Lab-8/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 37
-Info (10041): Inferred latch for "HEX5[3]" at seg_edit.vhd(37) File: C:/Users/druiz35/Downloads/ECE2031-Lab-8/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 37
-Info (10041): Inferred latch for "HEX5[4]" at seg_edit.vhd(37) File: C:/Users/druiz35/Downloads/ECE2031-Lab-8/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 37
-Info (10041): Inferred latch for "HEX5[5]" at seg_edit.vhd(37) File: C:/Users/druiz35/Downloads/ECE2031-Lab-8/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 37
-Info (10041): Inferred latch for "HEX5[6]" at seg_edit.vhd(37) File: C:/Users/druiz35/Downloads/ECE2031-Lab-8/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 37
-Info (10041): Inferred latch for "HEX4[0]" at seg_edit.vhd(37) File: C:/Users/druiz35/Downloads/ECE2031-Lab-8/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 37
-Info (10041): Inferred latch for "HEX4[1]" at seg_edit.vhd(37) File: C:/Users/druiz35/Downloads/ECE2031-Lab-8/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 37
-Info (10041): Inferred latch for "HEX4[2]" at seg_edit.vhd(37) File: C:/Users/druiz35/Downloads/ECE2031-Lab-8/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 37
-Info (10041): Inferred latch for "HEX4[3]" at seg_edit.vhd(37) File: C:/Users/druiz35/Downloads/ECE2031-Lab-8/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 37
-Info (10041): Inferred latch for "HEX4[4]" at seg_edit.vhd(37) File: C:/Users/druiz35/Downloads/ECE2031-Lab-8/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 37
-Info (10041): Inferred latch for "HEX4[5]" at seg_edit.vhd(37) File: C:/Users/druiz35/Downloads/ECE2031-Lab-8/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 37
-Info (10041): Inferred latch for "HEX4[6]" at seg_edit.vhd(37) File: C:/Users/druiz35/Downloads/ECE2031-Lab-8/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 37
-Info (10041): Inferred latch for "HEX3[0]" at seg_edit.vhd(37) File: C:/Users/druiz35/Downloads/ECE2031-Lab-8/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 37
-Info (10041): Inferred latch for "HEX3[1]" at seg_edit.vhd(37) File: C:/Users/druiz35/Downloads/ECE2031-Lab-8/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 37
-Info (10041): Inferred latch for "HEX3[2]" at seg_edit.vhd(37) File: C:/Users/druiz35/Downloads/ECE2031-Lab-8/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 37
-Info (10041): Inferred latch for "HEX3[3]" at seg_edit.vhd(37) File: C:/Users/druiz35/Downloads/ECE2031-Lab-8/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 37
-Info (10041): Inferred latch for "HEX3[4]" at seg_edit.vhd(37) File: C:/Users/druiz35/Downloads/ECE2031-Lab-8/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 37
-Info (10041): Inferred latch for "HEX3[5]" at seg_edit.vhd(37) File: C:/Users/druiz35/Downloads/ECE2031-Lab-8/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 37
-Info (10041): Inferred latch for "HEX3[6]" at seg_edit.vhd(37) File: C:/Users/druiz35/Downloads/ECE2031-Lab-8/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 37
-Info (10041): Inferred latch for "HEX2[0]" at seg_edit.vhd(37) File: C:/Users/druiz35/Downloads/ECE2031-Lab-8/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 37
-Info (10041): Inferred latch for "HEX2[1]" at seg_edit.vhd(37) File: C:/Users/druiz35/Downloads/ECE2031-Lab-8/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 37
-Info (10041): Inferred latch for "HEX2[2]" at seg_edit.vhd(37) File: C:/Users/druiz35/Downloads/ECE2031-Lab-8/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 37
-Info (10041): Inferred latch for "HEX2[3]" at seg_edit.vhd(37) File: C:/Users/druiz35/Downloads/ECE2031-Lab-8/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 37
-Info (10041): Inferred latch for "HEX2[4]" at seg_edit.vhd(37) File: C:/Users/druiz35/Downloads/ECE2031-Lab-8/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 37
-Info (10041): Inferred latch for "HEX2[5]" at seg_edit.vhd(37) File: C:/Users/druiz35/Downloads/ECE2031-Lab-8/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 37
-Info (10041): Inferred latch for "HEX2[6]" at seg_edit.vhd(37) File: C:/Users/druiz35/Downloads/ECE2031-Lab-8/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 37
-Info (10041): Inferred latch for "HEX1[0]" at seg_edit.vhd(37) File: C:/Users/druiz35/Downloads/ECE2031-Lab-8/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 37
-Info (10041): Inferred latch for "HEX1[1]" at seg_edit.vhd(37) File: C:/Users/druiz35/Downloads/ECE2031-Lab-8/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 37
-Info (10041): Inferred latch for "HEX1[2]" at seg_edit.vhd(37) File: C:/Users/druiz35/Downloads/ECE2031-Lab-8/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 37
-Info (10041): Inferred latch for "HEX1[3]" at seg_edit.vhd(37) File: C:/Users/druiz35/Downloads/ECE2031-Lab-8/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 37
-Info (10041): Inferred latch for "HEX1[4]" at seg_edit.vhd(37) File: C:/Users/druiz35/Downloads/ECE2031-Lab-8/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 37
-Info (10041): Inferred latch for "HEX1[5]" at seg_edit.vhd(37) File: C:/Users/druiz35/Downloads/ECE2031-Lab-8/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 37
-Info (10041): Inferred latch for "HEX1[6]" at seg_edit.vhd(37) File: C:/Users/druiz35/Downloads/ECE2031-Lab-8/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 37
+    Info (12022): Found design unit 1: SEG_EDIT-a File: C:/Users/druiz35/Desktop/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 13
+    Info (12023): Found entity 1: SEG_EDIT File: C:/Users/druiz35/Desktop/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/seg_edit.vhd Line: 5
+Info (12128): Elaborating entity "SEG_EDIT" for hierarchy "HEX_DISP_6:inst9|SEG_EDIT:inst1"
 Warning (12125): Using design file disp_conversion.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
-    Info (12022): Found design unit 1: DISP_CONVERSION-rtl File: C:/Users/druiz35/Downloads/ECE2031-Lab-8/SCOMP_Lab8_Sum25/disp_conversion.vhd Line: 23
-    Info (12023): Found entity 1: DISP_CONVERSION File: C:/Users/druiz35/Downloads/ECE2031-Lab-8/SCOMP_Lab8_Sum25/disp_conversion.vhd Line: 11
-Info (12128): Elaborating entity "DISP_CONVERSION" for hierarchy "HEX_DISP_6:inst10|DISP_CONVERSION:inst18"
-Warning (10540): VHDL Signal Declaration warning at disp_conversion.vhd(54): used explicit default value for signal "latched_segments" because signal was never assigned a value File: C:/Users/druiz35/Downloads/ECE2031-Lab-8/SCOMP_Lab8_Sum25/disp_conversion.vhd Line: 54
-Warning (10036): Verilog HDL or VHDL warning at disp_conversion.vhd(58): object "tmp" assigned a value but never read File: C:/Users/druiz35/Downloads/ECE2031-Lab-8/SCOMP_Lab8_Sum25/disp_conversion.vhd Line: 58
+    Info (12022): Found design unit 1: DISP_CONVERSION-rtl File: C:/Users/druiz35/Desktop/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/disp_conversion.vhd Line: 23
+    Info (12023): Found entity 1: DISP_CONVERSION File: C:/Users/druiz35/Desktop/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/disp_conversion.vhd Line: 11
+Info (12128): Elaborating entity "DISP_CONVERSION" for hierarchy "HEX_DISP_6:inst9|DISP_CONVERSION:inst18"
+Warning (10540): VHDL Signal Declaration warning at disp_conversion.vhd(54): used explicit default value for signal "latched_segments" because signal was never assigned a value File: C:/Users/druiz35/Desktop/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/disp_conversion.vhd Line: 54
+Warning (10036): Verilog HDL or VHDL warning at disp_conversion.vhd(58): object "tmp" assigned a value but never read File: C:/Users/druiz35/Desktop/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/disp_conversion.vhd Line: 58
 Info (12128): Elaborating entity "PLL_main" for hierarchy "PLL_main:inst1"
-Info (12128): Elaborating entity "PLL_main_0002" for hierarchy "PLL_main:inst1|PLL_main_0002:pll_main_inst" File: C:/Users/druiz35/Downloads/ECE2031-Lab-8/SCOMP_Lab8_Sum25/PLL_main.vhd Line: 32
-Info (12128): Elaborating entity "altera_pll" for hierarchy "PLL_main:inst1|PLL_main_0002:pll_main_inst|altera_pll:altera_pll_i" File: C:/Users/druiz35/Downloads/ECE2031-Lab-8/SCOMP_Lab8_Sum25/PLL_main/PLL_main_0002.v Line: 85
+Info (12128): Elaborating entity "PLL_main_0002" for hierarchy "PLL_main:inst1|PLL_main_0002:pll_main_inst" File: C:/Users/druiz35/Desktop/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/PLL_main.vhd Line: 32
+Info (12128): Elaborating entity "altera_pll" for hierarchy "PLL_main:inst1|PLL_main_0002:pll_main_inst|altera_pll:altera_pll_i" File: C:/Users/druiz35/Desktop/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/PLL_main/PLL_main_0002.v Line: 85
 Info (10008): Verilog HDL or VHDL information: EDA Netlist Writer cannot regroup multidimensional array "wire_to_nowhere_64" into its bus
-Info (12130): Elaborated megafunction instantiation "PLL_main:inst1|PLL_main_0002:pll_main_inst|altera_pll:altera_pll_i" File: C:/Users/druiz35/Downloads/ECE2031-Lab-8/SCOMP_Lab8_Sum25/PLL_main/PLL_main_0002.v Line: 85
-Info (12133): Instantiated megafunction "PLL_main:inst1|PLL_main_0002:pll_main_inst|altera_pll:altera_pll_i" with the following parameter: File: C:/Users/druiz35/Downloads/ECE2031-Lab-8/SCOMP_Lab8_Sum25/PLL_main/PLL_main_0002.v Line: 85
+Info (12130): Elaborated megafunction instantiation "PLL_main:inst1|PLL_main_0002:pll_main_inst|altera_pll:altera_pll_i" File: C:/Users/druiz35/Desktop/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/PLL_main/PLL_main_0002.v Line: 85
+Info (12133): Instantiated megafunction "PLL_main:inst1|PLL_main_0002:pll_main_inst|altera_pll:altera_pll_i" with the following parameter: File: C:/Users/druiz35/Desktop/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/PLL_main/PLL_main_0002.v Line: 85
     Info (12134): Parameter "fractional_vco_multiplier" = "false"
     Info (12134): Parameter "reference_clock_frequency" = "50.0 MHz"
     Info (12134): Parameter "operation_mode" = "direct"
@@ -757,10 +911,11 @@ Info (12133): Instantiated megafunction "PLL_main:inst1|PLL_main_0002:pll_main_i
     Info (12134): Parameter "duty_cycle17" = "50"
     Info (12134): Parameter "pll_type" = "General"
     Info (12134): Parameter "pll_subtype" = "General"
+Info (12128): Elaborating entity "DIG_OUT" for hierarchy "DIG_OUT:inst6"
 Info (12128): Elaborating entity "SCOMP" for hierarchy "SCOMP:inst"
-Info (12128): Elaborating entity "altsyncram" for hierarchy "SCOMP:inst|altsyncram:altsyncram_component" File: C:/Users/druiz35/Downloads/ECE2031-Lab-8/SCOMP_Lab8_Sum25/SCOMP.vhd Line: 63
-Info (12130): Elaborated megafunction instantiation "SCOMP:inst|altsyncram:altsyncram_component" File: C:/Users/druiz35/Downloads/ECE2031-Lab-8/SCOMP_Lab8_Sum25/SCOMP.vhd Line: 63
-Info (12133): Instantiated megafunction "SCOMP:inst|altsyncram:altsyncram_component" with the following parameter: File: C:/Users/druiz35/Downloads/ECE2031-Lab-8/SCOMP_Lab8_Sum25/SCOMP.vhd Line: 63
+Info (12128): Elaborating entity "altsyncram" for hierarchy "SCOMP:inst|altsyncram:altsyncram_component" File: C:/Users/druiz35/Desktop/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/SCOMP.vhd Line: 63
+Info (12130): Elaborated megafunction instantiation "SCOMP:inst|altsyncram:altsyncram_component" File: C:/Users/druiz35/Desktop/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/SCOMP.vhd Line: 63
+Info (12133): Instantiated megafunction "SCOMP:inst|altsyncram:altsyncram_component" with the following parameter: File: C:/Users/druiz35/Desktop/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/SCOMP.vhd Line: 63
     Info (12134): Parameter "address_aclr_a" = "UNUSED"
     Info (12134): Parameter "address_aclr_b" = "NONE"
     Info (12134): Parameter "address_reg_b" = "CLOCK1"
@@ -812,73 +967,135 @@ Info (12133): Instantiated megafunction "SCOMP:inst|altsyncram:altsyncram_compon
     Info (12134): Parameter "lpm_hint" = "ENABLE_RUNTIME_MOD=NO"
     Info (12134): Parameter "lpm_type" = "altsyncram"
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_pf24.tdf
-    Info (12023): Found entity 1: altsyncram_pf24 File: C:/Users/druiz35/Downloads/ECE2031-Lab-8/SCOMP_Lab8_Sum25/db/altsyncram_pf24.tdf Line: 28
+    Info (12023): Found entity 1: altsyncram_pf24 File: C:/Users/druiz35/Desktop/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/db/altsyncram_pf24.tdf Line: 28
 Info (12128): Elaborating entity "altsyncram_pf24" for hierarchy "SCOMP:inst|altsyncram:altsyncram_component|altsyncram_pf24:auto_generated" File: c:/appl/altera_lite/24.1std/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
-Info (12128): Elaborating entity "LPM_CLSHIFT" for hierarchy "SCOMP:inst|LPM_CLSHIFT:shifter" File: C:/Users/druiz35/Downloads/ECE2031-Lab-8/SCOMP_Lab8_Sum25/SCOMP.vhd Line: 90
-Info (12130): Elaborated megafunction instantiation "SCOMP:inst|LPM_CLSHIFT:shifter" File: C:/Users/druiz35/Downloads/ECE2031-Lab-8/SCOMP_Lab8_Sum25/SCOMP.vhd Line: 90
-Info (12133): Instantiated megafunction "SCOMP:inst|LPM_CLSHIFT:shifter" with the following parameter: File: C:/Users/druiz35/Downloads/ECE2031-Lab-8/SCOMP_Lab8_Sum25/SCOMP.vhd Line: 90
+Info (12128): Elaborating entity "LPM_CLSHIFT" for hierarchy "SCOMP:inst|LPM_CLSHIFT:shifter" File: C:/Users/druiz35/Desktop/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/SCOMP.vhd Line: 90
+Info (12130): Elaborated megafunction instantiation "SCOMP:inst|LPM_CLSHIFT:shifter" File: C:/Users/druiz35/Desktop/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/SCOMP.vhd Line: 90
+Info (12133): Instantiated megafunction "SCOMP:inst|LPM_CLSHIFT:shifter" with the following parameter: File: C:/Users/druiz35/Desktop/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/SCOMP.vhd Line: 90
     Info (12134): Parameter "LPM_WIDTH" = "16"
     Info (12134): Parameter "LPM_WIDTHDIST" = "4"
     Info (12134): Parameter "LPM_SHIFTTYPE" = "arithmetic"
     Info (12134): Parameter "LPM_TYPE" = "LPM_CLSHIFT"
     Info (12134): Parameter "LPM_HINT" = "UNUSED"
-Info (12128): Elaborating entity "LPM_BUSTRI" for hierarchy "SCOMP:inst|LPM_BUSTRI:io_bus" File: C:/Users/druiz35/Downloads/ECE2031-Lab-8/SCOMP_Lab8_Sum25/SCOMP.vhd Line: 114
-Info (12130): Elaborated megafunction instantiation "SCOMP:inst|LPM_BUSTRI:io_bus" File: C:/Users/druiz35/Downloads/ECE2031-Lab-8/SCOMP_Lab8_Sum25/SCOMP.vhd Line: 114
-Info (12133): Instantiated megafunction "SCOMP:inst|LPM_BUSTRI:io_bus" with the following parameter: File: C:/Users/druiz35/Downloads/ECE2031-Lab-8/SCOMP_Lab8_Sum25/SCOMP.vhd Line: 114
+Info (12128): Elaborating entity "LPM_BUSTRI" for hierarchy "SCOMP:inst|LPM_BUSTRI:io_bus" File: C:/Users/druiz35/Desktop/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/SCOMP.vhd Line: 114
+Info (12130): Elaborated megafunction instantiation "SCOMP:inst|LPM_BUSTRI:io_bus" File: C:/Users/druiz35/Desktop/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/SCOMP.vhd Line: 114
+Info (12133): Instantiated megafunction "SCOMP:inst|LPM_BUSTRI:io_bus" with the following parameter: File: C:/Users/druiz35/Desktop/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/SCOMP.vhd Line: 114
     Info (12134): Parameter "LPM_WIDTH" = "16"
     Info (12134): Parameter "LPM_TYPE" = "LPM_BUSTRI"
     Info (12134): Parameter "LPM_HINT" = "UNUSED"
 Info (12128): Elaborating entity "TIMER" for hierarchy "TIMER:inst4"
-Warning (10492): VHDL Process Statement warning at TIMER.vhd(48): signal "IO_WRITE" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/druiz35/Downloads/ECE2031-Lab-8/SCOMP_Lab8_Sum25/TIMER.vhd Line: 48
+Warning (10492): VHDL Process Statement warning at TIMER.vhd(48): signal "IO_WRITE" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/druiz35/Desktop/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/TIMER.vhd Line: 48
 Info (12128): Elaborating entity "clk_div" for hierarchy "clk_div:inst5"
 Info (12128): Elaborating entity "DIG_IN" for hierarchy "DIG_IN:inst7"
-Info (12128): Elaborating entity "DIG_OUT" for hierarchy "DIG_OUT:inst6"
-Error (12009): Node "HEX_DISP_6:inst10|seg_val6" is missing source
-Error (12009): Node "HEX_DISP_6:inst10|seg_val5" is missing source
-Error (12009): Node "HEX_DISP_6:inst10|seg_val4" is missing source
-Error (12009): Node "HEX_DISP_6:inst10|seg_val3" is missing source
-Error (12009): Node "HEX_DISP_6:inst10|seg_val2" is missing source
-Error (12009): Node "HEX_DISP_6:inst10|seg_val1" is missing source
-Error (12009): Node "HEX_DISP_6:inst10|seg_val0" is missing source
-Error (12009): Node "HEX_DISP_6:inst10|seg_val13" is missing source
-Error (12009): Node "HEX_DISP_6:inst10|seg_val12" is missing source
-Error (12009): Node "HEX_DISP_6:inst10|seg_val11" is missing source
-Error (12009): Node "HEX_DISP_6:inst10|seg_val10" is missing source
-Error (12009): Node "HEX_DISP_6:inst10|seg_val9" is missing source
-Error (12009): Node "HEX_DISP_6:inst10|seg_val8" is missing source
-Error (12009): Node "HEX_DISP_6:inst10|seg_val7" is missing source
-Error (12009): Node "HEX_DISP_6:inst10|seg_val27" is missing source
-Error (12009): Node "HEX_DISP_6:inst10|seg_val26" is missing source
-Error (12009): Node "HEX_DISP_6:inst10|seg_val25" is missing source
-Error (12009): Node "HEX_DISP_6:inst10|seg_val24" is missing source
-Error (12009): Node "HEX_DISP_6:inst10|seg_val23" is missing source
-Error (12009): Node "HEX_DISP_6:inst10|seg_val22" is missing source
-Error (12009): Node "HEX_DISP_6:inst10|seg_val21" is missing source
-Error (12009): Node "HEX_DISP_6:inst10|seg_val34" is missing source
-Error (12009): Node "HEX_DISP_6:inst10|seg_val33" is missing source
-Error (12009): Node "HEX_DISP_6:inst10|seg_val32" is missing source
-Error (12009): Node "HEX_DISP_6:inst10|seg_val31" is missing source
-Error (12009): Node "HEX_DISP_6:inst10|seg_val30" is missing source
-Error (12009): Node "HEX_DISP_6:inst10|seg_val29" is missing source
-Error (12009): Node "HEX_DISP_6:inst10|seg_val28" is missing source
-Error (12009): Node "HEX_DISP_6:inst10|seg_val41" is missing source
-Error (12009): Node "HEX_DISP_6:inst10|seg_val40" is missing source
-Error (12009): Node "HEX_DISP_6:inst10|seg_val39" is missing source
-Error (12009): Node "HEX_DISP_6:inst10|seg_val38" is missing source
-Error (12009): Node "HEX_DISP_6:inst10|seg_val37" is missing source
-Error (12009): Node "HEX_DISP_6:inst10|seg_val36" is missing source
-Error (12009): Node "HEX_DISP_6:inst10|seg_val35" is missing source
-Error (12009): Node "HEX_DISP_6:inst10|seg_val20" is missing source
-Error (12009): Node "HEX_DISP_6:inst10|seg_val19" is missing source
-Error (12009): Node "HEX_DISP_6:inst10|seg_val18" is missing source
-Error (12009): Node "HEX_DISP_6:inst10|seg_val17" is missing source
-Error (12009): Node "HEX_DISP_6:inst10|seg_val16" is missing source
-Error (12009): Node "HEX_DISP_6:inst10|seg_val15" is missing source
-Error (12009): Node "HEX_DISP_6:inst10|seg_val14" is missing source
-Error: Quartus Prime Analysis & Synthesis was unsuccessful. 42 errors, 78 warnings
-    Error: Peak virtual memory: 4895 megabytes
-    Error: Processing ended: Mon Jul 14 17:35:56 2025
-    Error: Elapsed time: 00:00:09
-    Error: Total CPU time (on all processors): 00:00:19
+Warning (19016): Clock multiplexers are found and protected
+    Warning (19017): Found clock multiplexer HEX_DISP_6:inst9|PARSE_DISP_DATA_IN:inst3|GRP1_WRITE File: C:/Users/druiz35/Desktop/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/PARSE_DISP_DATA_IN.vhd Line: 19
+Warning (13046): Tri-state node(s) do not directly drive top-level pin(s)
+    Warning (13048): Converted tri-state node "IO_DATA[15]" into a selector File: C:/Users/druiz35/Desktop/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/SCOMP.vhd Line: 132
+    Warning (13048): Converted tri-state node "IO_DATA[14]" into a selector File: C:/Users/druiz35/Desktop/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/SCOMP.vhd Line: 132
+    Warning (13048): Converted tri-state node "IO_DATA[13]" into a selector File: C:/Users/druiz35/Desktop/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/SCOMP.vhd Line: 132
+    Warning (13048): Converted tri-state node "IO_DATA[12]" into a selector File: C:/Users/druiz35/Desktop/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/SCOMP.vhd Line: 132
+    Warning (13048): Converted tri-state node "IO_DATA[11]" into a selector File: C:/Users/druiz35/Desktop/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/SCOMP.vhd Line: 132
+    Warning (13048): Converted tri-state node "IO_DATA[10]" into a selector File: C:/Users/druiz35/Desktop/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/SCOMP.vhd Line: 132
+    Warning (13048): Converted tri-state node "IO_DATA[9]" into a selector File: C:/Users/druiz35/Desktop/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/DIG_OUT.vhd Line: 37
+    Warning (13048): Converted tri-state node "IO_DATA[8]" into a selector File: C:/Users/druiz35/Desktop/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/DIG_OUT.vhd Line: 37
+    Warning (13048): Converted tri-state node "IO_DATA[7]" into a selector File: C:/Users/druiz35/Desktop/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/DIG_OUT.vhd Line: 37
+    Warning (13048): Converted tri-state node "IO_DATA[6]" into a selector File: C:/Users/druiz35/Desktop/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/DIG_OUT.vhd Line: 37
+    Warning (13048): Converted tri-state node "IO_DATA[5]" into a selector File: C:/Users/druiz35/Desktop/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/DIG_OUT.vhd Line: 37
+    Warning (13048): Converted tri-state node "IO_DATA[4]" into a selector File: C:/Users/druiz35/Desktop/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/DIG_OUT.vhd Line: 37
+    Warning (13048): Converted tri-state node "IO_DATA[3]" into a selector File: C:/Users/druiz35/Desktop/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/DIG_OUT.vhd Line: 37
+    Warning (13048): Converted tri-state node "IO_DATA[2]" into a selector File: C:/Users/druiz35/Desktop/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/DIG_OUT.vhd Line: 37
+    Warning (13048): Converted tri-state node "IO_DATA[1]" into a selector File: C:/Users/druiz35/Desktop/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/DIG_OUT.vhd Line: 37
+    Warning (13048): Converted tri-state node "IO_DATA[0]" into a selector File: C:/Users/druiz35/Desktop/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/DIG_OUT.vhd Line: 37
+    Warning (13048): Converted tri-state node "HEX_DISP_6:inst9|seg_val[41]" into a selector File: C:/Users/druiz35/Desktop/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/SEG_DISP.vhd Line: 25
+    Warning (13048): Converted tri-state node "HEX_DISP_6:inst9|seg_val[40]" into a selector File: C:/Users/druiz35/Desktop/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/SEG_DISP.vhd Line: 25
+    Warning (13048): Converted tri-state node "HEX_DISP_6:inst9|seg_val[39]" into a selector File: C:/Users/druiz35/Desktop/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/SEG_DISP.vhd Line: 25
+    Warning (13048): Converted tri-state node "HEX_DISP_6:inst9|seg_val[38]" into a selector File: C:/Users/druiz35/Desktop/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/SEG_DISP.vhd Line: 25
+    Warning (13048): Converted tri-state node "HEX_DISP_6:inst9|seg_val[37]" into a selector File: C:/Users/druiz35/Desktop/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/SEG_DISP.vhd Line: 25
+    Warning (13048): Converted tri-state node "HEX_DISP_6:inst9|seg_val[36]" into a selector File: C:/Users/druiz35/Desktop/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/SEG_DISP.vhd Line: 25
+    Warning (13048): Converted tri-state node "HEX_DISP_6:inst9|seg_val[35]" into a selector File: C:/Users/druiz35/Desktop/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/SEG_DISP.vhd Line: 25
+    Warning (13048): Converted tri-state node "HEX_DISP_6:inst9|seg_val[34]" into a selector File: C:/Users/druiz35/Desktop/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/SEG_DISP.vhd Line: 25
+    Warning (13048): Converted tri-state node "HEX_DISP_6:inst9|seg_val[33]" into a selector File: C:/Users/druiz35/Desktop/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/SEG_DISP.vhd Line: 25
+    Warning (13048): Converted tri-state node "HEX_DISP_6:inst9|seg_val[32]" into a selector File: C:/Users/druiz35/Desktop/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/SEG_DISP.vhd Line: 25
+    Warning (13048): Converted tri-state node "HEX_DISP_6:inst9|seg_val[31]" into a selector File: C:/Users/druiz35/Desktop/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/SEG_DISP.vhd Line: 25
+    Warning (13048): Converted tri-state node "HEX_DISP_6:inst9|seg_val[30]" into a selector File: C:/Users/druiz35/Desktop/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/SEG_DISP.vhd Line: 25
+    Warning (13048): Converted tri-state node "HEX_DISP_6:inst9|seg_val[29]" into a selector File: C:/Users/druiz35/Desktop/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/SEG_DISP.vhd Line: 25
+    Warning (13048): Converted tri-state node "HEX_DISP_6:inst9|seg_val[28]" into a selector File: C:/Users/druiz35/Desktop/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/SEG_DISP.vhd Line: 25
+    Warning (13048): Converted tri-state node "HEX_DISP_6:inst9|seg_val[27]" into a selector File: C:/Users/druiz35/Desktop/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/SEG_DISP.vhd Line: 25
+    Warning (13048): Converted tri-state node "HEX_DISP_6:inst9|seg_val[26]" into a selector File: C:/Users/druiz35/Desktop/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/SEG_DISP.vhd Line: 25
+    Warning (13048): Converted tri-state node "HEX_DISP_6:inst9|seg_val[25]" into a selector File: C:/Users/druiz35/Desktop/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/SEG_DISP.vhd Line: 25
+    Warning (13048): Converted tri-state node "HEX_DISP_6:inst9|seg_val[24]" into a selector File: C:/Users/druiz35/Desktop/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/SEG_DISP.vhd Line: 25
+    Warning (13048): Converted tri-state node "HEX_DISP_6:inst9|seg_val[23]" into a selector File: C:/Users/druiz35/Desktop/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/SEG_DISP.vhd Line: 25
+    Warning (13048): Converted tri-state node "HEX_DISP_6:inst9|seg_val[22]" into a selector File: C:/Users/druiz35/Desktop/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/SEG_DISP.vhd Line: 25
+    Warning (13048): Converted tri-state node "HEX_DISP_6:inst9|seg_val[21]" into a selector File: C:/Users/druiz35/Desktop/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/SEG_DISP.vhd Line: 25
+    Warning (13048): Converted tri-state node "HEX_DISP_6:inst9|seg_val[20]" into a selector File: C:/Users/druiz35/Desktop/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/SEG_DISP.vhd Line: 25
+    Warning (13048): Converted tri-state node "HEX_DISP_6:inst9|seg_val[19]" into a selector File: C:/Users/druiz35/Desktop/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/SEG_DISP.vhd Line: 25
+    Warning (13048): Converted tri-state node "HEX_DISP_6:inst9|seg_val[18]" into a selector File: C:/Users/druiz35/Desktop/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/SEG_DISP.vhd Line: 25
+    Warning (13048): Converted tri-state node "HEX_DISP_6:inst9|seg_val[17]" into a selector File: C:/Users/druiz35/Desktop/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/SEG_DISP.vhd Line: 25
+    Warning (13048): Converted tri-state node "HEX_DISP_6:inst9|seg_val[16]" into a selector File: C:/Users/druiz35/Desktop/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/SEG_DISP.vhd Line: 25
+    Warning (13048): Converted tri-state node "HEX_DISP_6:inst9|seg_val[15]" into a selector File: C:/Users/druiz35/Desktop/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/SEG_DISP.vhd Line: 25
+    Warning (13048): Converted tri-state node "HEX_DISP_6:inst9|seg_val[14]" into a selector File: C:/Users/druiz35/Desktop/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/SEG_DISP.vhd Line: 25
+    Warning (13048): Converted tri-state node "HEX_DISP_6:inst9|seg_val[13]" into a selector File: C:/Users/druiz35/Desktop/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/SEG_DISP.vhd Line: 25
+    Warning (13048): Converted tri-state node "HEX_DISP_6:inst9|seg_val[12]" into a selector File: C:/Users/druiz35/Desktop/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/SEG_DISP.vhd Line: 25
+    Warning (13048): Converted tri-state node "HEX_DISP_6:inst9|seg_val[11]" into a selector File: C:/Users/druiz35/Desktop/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/SEG_DISP.vhd Line: 25
+    Warning (13048): Converted tri-state node "HEX_DISP_6:inst9|seg_val[10]" into a selector File: C:/Users/druiz35/Desktop/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/SEG_DISP.vhd Line: 25
+    Warning (13048): Converted tri-state node "HEX_DISP_6:inst9|seg_val[9]" into a selector File: C:/Users/druiz35/Desktop/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/SEG_DISP.vhd Line: 25
+    Warning (13048): Converted tri-state node "HEX_DISP_6:inst9|seg_val[8]" into a selector File: C:/Users/druiz35/Desktop/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/SEG_DISP.vhd Line: 25
+    Warning (13048): Converted tri-state node "HEX_DISP_6:inst9|seg_val[7]" into a selector File: C:/Users/druiz35/Desktop/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/SEG_DISP.vhd Line: 25
+    Warning (13048): Converted tri-state node "HEX_DISP_6:inst9|seg_val[6]" into a selector File: C:/Users/druiz35/Desktop/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/SEG_DISP.vhd Line: 25
+    Warning (13048): Converted tri-state node "HEX_DISP_6:inst9|seg_val[5]" into a selector File: C:/Users/druiz35/Desktop/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/SEG_DISP.vhd Line: 25
+    Warning (13048): Converted tri-state node "HEX_DISP_6:inst9|seg_val[4]" into a selector File: C:/Users/druiz35/Desktop/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/SEG_DISP.vhd Line: 25
+    Warning (13048): Converted tri-state node "HEX_DISP_6:inst9|seg_val[3]" into a selector File: C:/Users/druiz35/Desktop/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/SEG_DISP.vhd Line: 25
+    Warning (13048): Converted tri-state node "HEX_DISP_6:inst9|seg_val[2]" into a selector File: C:/Users/druiz35/Desktop/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/SEG_DISP.vhd Line: 25
+    Warning (13048): Converted tri-state node "HEX_DISP_6:inst9|seg_val[1]" into a selector File: C:/Users/druiz35/Desktop/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/SEG_DISP.vhd Line: 25
+    Warning (13048): Converted tri-state node "HEX_DISP_6:inst9|seg_val[0]" into a selector File: C:/Users/druiz35/Desktop/ECE2031-Lab-8-main/ECE2031-Lab-8-main/SCOMP_Lab8_Sum25/SEG_DISP.vhd Line: 25
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "HEX0[6]" is stuck at GND
+    Warning (13410): Pin "HEX0[5]" is stuck at GND
+    Warning (13410): Pin "HEX0[4]" is stuck at GND
+    Warning (13410): Pin "HEX0[3]" is stuck at GND
+    Warning (13410): Pin "HEX0[2]" is stuck at GND
+    Warning (13410): Pin "HEX0[1]" is stuck at GND
+    Warning (13410): Pin "HEX0[0]" is stuck at GND
+    Warning (13410): Pin "HEX1[6]" is stuck at GND
+    Warning (13410): Pin "HEX1[5]" is stuck at GND
+    Warning (13410): Pin "HEX1[4]" is stuck at GND
+    Warning (13410): Pin "HEX1[3]" is stuck at GND
+    Warning (13410): Pin "HEX1[2]" is stuck at GND
+    Warning (13410): Pin "HEX1[1]" is stuck at GND
+    Warning (13410): Pin "HEX1[0]" is stuck at GND
+    Warning (13410): Pin "HEX2[6]" is stuck at GND
+    Warning (13410): Pin "HEX2[5]" is stuck at GND
+    Warning (13410): Pin "HEX2[4]" is stuck at GND
+    Warning (13410): Pin "HEX2[3]" is stuck at GND
+    Warning (13410): Pin "HEX2[2]" is stuck at GND
+    Warning (13410): Pin "HEX2[1]" is stuck at GND
+    Warning (13410): Pin "HEX2[0]" is stuck at GND
+    Warning (13410): Pin "HEX3[6]" is stuck at GND
+    Warning (13410): Pin "HEX3[5]" is stuck at GND
+    Warning (13410): Pin "HEX3[4]" is stuck at GND
+    Warning (13410): Pin "HEX3[3]" is stuck at GND
+    Warning (13410): Pin "HEX3[2]" is stuck at GND
+    Warning (13410): Pin "HEX3[1]" is stuck at GND
+    Warning (13410): Pin "HEX3[0]" is stuck at GND
+Info (286030): Timing-Driven Synthesis is running
+Info (17049): 1 registers lost all their fanouts during netlist optimizations.
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 5 node(s), including 0 DDIO, 1 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 4 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "DBG_DATA[10]"
+    Warning (15610): No output dependent on input pin "DBG_DATA[9]"
+    Warning (15610): No output dependent on input pin "DBG_DATA[8]"
+    Warning (15610): No output dependent on input pin "DBG_DATA[7]"
+Info (21057): Implemented 611 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 40 input pins
+    Info (21059): Implemented 52 output pins
+    Info (21061): Implemented 502 logic cells
+    Info (21064): Implemented 16 RAM segments
+    Info (21065): Implemented 1 PLLs
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 104 warnings
+    Info: Peak virtual memory: 4995 megabytes
+    Info: Processing ended: Tue Jul 15 13:29:20 2025
+    Info: Elapsed time: 00:00:11
+    Info: Total CPU time (on all processors): 00:00:20
 
 

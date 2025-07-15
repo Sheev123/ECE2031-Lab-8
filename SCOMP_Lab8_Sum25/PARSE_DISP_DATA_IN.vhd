@@ -37,7 +37,7 @@ begin
     mode_s               <= IO_DATA(15 downto 14);
     full_disp_override_s <= IO_DATA(13);
 	 full_disp_value_s 	 <= IO_DATA(6 downto 0);
-	 full_disp_display_s  <= IO_DATA(13 downto 9);
+	 full_disp_display_s  <= IO_DATA(13 downto 11);
     value_s              <= IO_DATA(12 downto 0);
 
     -- Shared outputs (identical for both display banks)
@@ -49,14 +49,25 @@ begin
     -- addr 4: four‑digit group (grp0)
     -- addr 5: two‑digit group (grp1)
     -- full_disp_override extends addr 4 and 5 write to all groups
-    grp1_we_s <= IO_WRITE when (IO_ADDR = "00000000100") or      -- 4
-                               (IO_ADDR = "00000000101" and full_disp_override_s = '1') 
-					else '0';
+	 process(IO_ADDR, full_disp_override_s)
+	 begin
+		 if((IO_ADDR = "00000000100") or (IO_ADDR = "00000000101" and full_disp_override_s = '1')) then
+			grp1_we_s <= IO_WRITE;
+		 elsif((IO_ADDR = "00000000101") or (IO_ADDR = "00000000100" and full_disp_override_s = '1')) then
+			grp1_we_s <= IO_WRITE;
+		 else 
+			grp1_we_s <= '0';
+		 end if;
+	 end process;
+	 
+    --grp1_we_s <= IO_WRITE when (IO_ADDR = "00000000100") or      -- 4
+    --                           (IO_ADDR = "00000000101" and full_disp_override_s = '1') 
+	--				else '0';
 										 
-    grp1_we_s <= IO_WRITE when (IO_ADDR = "00000000101") or      -- 5
-                               (IO_ADDR = "00000000100" and full_disp_override_s = '1') 
-										 -- if overriding, also set grp1 WE
-               else '0';
+   -- grp1_we_s <= IO_WRITE when (IO_ADDR = "00000000101") or      -- 5
+    --                           (IO_ADDR = "00000000100" and full_disp_override_s = '1') 
+	--									 -- if overriding, also set grp1 WE
+    --           else '0';
 
     GRP0_WRITE <= grp0_we_s;
     GRP1_WRITE <= grp1_we_s;
