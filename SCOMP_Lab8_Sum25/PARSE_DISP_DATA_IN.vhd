@@ -22,23 +22,22 @@ end entity PARSE_DISP_DATA_IN;
 
 architecture comb of PARSE_DISP_DATA_IN is
     constant MODE_FC : std_logic_vector(1 downto 0) := "11";
-
-    signal mode_s               : std_logic_vector(1 downto 0); -- 15‑14
-    signal full_disp_override_s : std_logic;                    -- 13
-    signal full_disp_value_s    : std_logic_vector(6 downto 0); -- 6-0
-	 signal full_disp_display_s  : std_logic_vector(2 downto 0); -- 13-11
-    signal value_s              : std_logic_vector(12 downto 0);-- 12‑0
+    signal mode_s               : std_logic_vector(1 downto 0);
+    signal full_disp_override_s : std_logic;
+    signal full_disp_value_s    : std_logic_vector(6 downto 0);
+	 signal full_disp_display_s  : std_logic_vector(2 downto 0);
+    signal value_s              : std_logic_vector(12 downto 0);
 
     -- Write enables
     signal grp0_we_s, grp1_we_s : std_logic;
 
 begin
     -- Split the incoming data word once
-    mode_s               <= IO_DATA(15 downto 14);
-    full_disp_override_s <= IO_DATA(13);
-	 full_disp_value_s 	 <= IO_DATA(6 downto 0);
-	 full_disp_display_s  <= IO_DATA(13 downto 11);
-    value_s              <= IO_DATA(12 downto 0);
+    mode_s               <= IO_DATA(1 downto 0);
+    full_disp_override_s <= IO_DATA(2);
+	 full_disp_value_s 	 <= IO_DATA(15 downto 9);
+	 full_disp_display_s  <= IO_DATA(4 downto 2);
+    value_s              <= IO_DATA(15 downto 3);
 
     -- Shared outputs (identical for both display banks)
     MODE      <= mode_s;
@@ -52,11 +51,12 @@ begin
 	 process(IO_ADDR, full_disp_override_s)
 	 begin
 		 if((IO_ADDR = "00000000100") or (IO_ADDR = "00000000101" and full_disp_override_s = '1')) then
-			grp1_we_s <= IO_WRITE;
+			grp0_we_s <= IO_WRITE;
 		 elsif((IO_ADDR = "00000000101") or (IO_ADDR = "00000000100" and full_disp_override_s = '1')) then
 			grp1_we_s <= IO_WRITE;
 		 else 
 			grp1_we_s <= '0';
+			grp0_we_s <= '0';
 		 end if;
 	 end process;
 	 
