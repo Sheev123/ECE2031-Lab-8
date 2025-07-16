@@ -119,9 +119,9 @@ VCCA_FPLL                    : AA8       : power  :                   : 2.5V    
 GND                          : AA9       : gnd    :                   :         :           :                
 VCCPD3A                      : AA10      : power  :                   : 3.3V    : 3A        :                
 GND                          : AA11      : gnd    :                   :         :           :                
-RESERVED_INPUT               : AA12      :        :                   :         : 3A        :                
-RESERVED_INPUT               : AA13      :        :                   :         : 3B        :                
-RESERVED_INPUT               : AA14      :        :                   :         : 3B        :                
+GRP0_VALUE[7]                : AA12      : output : 3.3-V LVTTL       :         : 3A        : N              
+FC_VALUE[4]                  : AA13      : output : 3.3-V LVTTL       :         : 3B        : N              
+GRP0_VALUE[6]                : AA14      : output : 3.3-V LVTTL       :         : 3B        : N              
 RESERVED_INPUT               : AA15      :        :                   :         : 3B        :                
 RESERVED_INPUT               : AA16      :        :                   :         : 4A        :                
 VCCIO4A                      : AA17      : power  :                   : 3.3V    : 4A        :                
@@ -146,13 +146,13 @@ GND                          : AB5       : gnd    :                   :         
 VCCH_GXBL                    : AB6       : power  :                   : 2.5V    :           :                
 GND                          : AB7       : gnd    :                   :         :           :                
 nCSO, DATA4                  : AB8       :        :                   :         : 3A        :                
-TDO                          : AB9       : output :                   :         : 3A        :                
+altera_reserved_tdo          : AB9       : output : 3.3-V LVTTL       :         : 3A        : N              
 VCCPGM                       : AB10      : power  :                   : 1.8V/2.5V/3.0V/3.3V :           :                
 VCC_AUX                      : AB11      : power  :                   : 2.5V    :           :                
-RESERVED_INPUT               : AB12      :        :                   :         : 3A        :                
-RESERVED_INPUT               : AB13      :        :                   :         : 3B        :                
+GRP0_VALUE[4]                : AB12      : output : 3.3-V LVTTL       :         : 3A        : N              
+GRP1_VALUE[9]                : AB13      : output : 3.3-V LVTTL       :         : 3B        : N              
 VCCIO3B                      : AB14      : power  :                   : 3.3V    : 3B        :                
-RESERVED_INPUT               : AB15      :        :                   :         : 3B        :                
+GRP0_VALUE[0]                : AB15      : output : 3.3-V LVTTL       :         : 3B        : N              
 VCC_AUX                      : AB16      : power  :                   : 2.5V    :           :                
 HEX2[1]                      : AB17      : output : 3.3-V LVTTL       :         : 4A        : Y              
 VCCPD3B4A                    : AB18      : power  :                   : 3.3V    : 3B, 4A    :                
@@ -172,16 +172,16 @@ GND                          : AC1       :        :                   :         
 GND                          : AC2       :        :                   :         : B0L       :                
 GND                          : AC3       : gnd    :                   :         :           :                
 GND                          : AC4       : gnd    :                   :         :           :                
-TCK                          : AC5       : input  :                   :         : 3A        :                
+altera_reserved_tck          : AC5       : input  : 3.3-V LVTTL       :         : 3A        : N              
 GND                          : AC6       : gnd    :                   :         :           :                
 AS_DATA3, DATA3              : AC7       :        :                   :         : 3A        :                
 GND                          : AC8       : gnd    :                   :         :           :                
-RESERVED_INPUT               : AC9       :        :                   :         : 3A        :                
+GRP1_VALUE[5]                : AC9       : output : 3.3-V LVTTL       :         : 3A        : N              
 VCCPD3A                      : AC10      : power  :                   : 3.3V    : 3A        :                
 VCCIO3A                      : AC11      : power  :                   : 3.3V    : 3A        :                
-RESERVED_INPUT               : AC12      :        :                   :         : 3A        :                
+GRP0_VALUE[11]               : AC12      : output : 3.3-V LVTTL       :         : 3A        : N              
 VCCPD3B4A                    : AC13      : power  :                   : 3.3V    : 3B, 4A    :                
-RESERVED_INPUT               : AC14      :        :                   :         : 3B        :                
+GRP1_VALUE[2]                : AC14      : output : 3.3-V LVTTL       :         : 3B        : N              
 VCCPD3B4A                    : AC15      : power  :                   : 3.3V    : 3B, 4A    :                
 GND                          : AC16      : gnd    :                   :         :           :                
 VCCPD3B4A                    : AC17      : power  :                   : 3.3V    : 3B, 4A    :                
@@ -204,14 +204,14 @@ GXB_NC                       : AD3       :        :                   :         
 GXB_NC                       : AD4       :        :                   :         : B0L       :                
 GND                          : AD5       : gnd    :                   :         :           :                
 VREFB3AN0                    : AD6       : power  :                   :         : 3A        :                
-RESERVED_INPUT               : AD7       :        :                   :         : 3A        :                
+IO_DATA[7]                   : AD7       : output : 3.3-V LVTTL       :         : 3A        : N              
 VCCIO3A                      : AD8       : power  :                   : 3.3V    : 3A        :                
 RESERVED_INPUT               : AD9       :        :                   :         : 3A        :                
 RESERVED_INPUT               : AD10      :        :                   :         : 3A        :                
 RESERVED_INPUT               : AD11      :        :                   :         : 3A        :                
-RESERVED_INPUT               : AD12      :        :                   :         : 3A        :                
+FC_VALUE[1]                  : AD12      : output : 3.3-V LVTTL       :         : 3A        : N              
 VCCIO3B                      : AD13      : power  :                   : 3.3V    : 3B        :                
-RESERVED_INPUT               : AD14      :        :                   :         : 3B        :                
+FC_VALUE[3]                  : AD14      : output : 3.3-V LVTTL       :         : 3B        : N              
 DNU                          : AD15      :        :                   :         :           :                
 VCCPD3B4A                    : AD16      : power  :                   : 3.3V    : 3B, 4A    :                
 HEX1[3]                      : AD17      : output : 3.3-V LVTTL       :         : 4A        : Y              
@@ -234,14 +234,14 @@ GND                          : AE3       : gnd    :                   :         
 GND                          : AE4       : gnd    :                   :         :           :                
 AS_DATA1, DATA1              : AE5       :        :                   :         : 3A        :                
 AS_DATA0, ASDO, DATA0        : AE6       :        :                   :         : 3A        :                
-RESERVED_INPUT               : AE7       :        :                   :         : 3A        :                
+MODE[1]                      : AE7       : output : 3.3-V LVTTL       :         : 3A        : N              
 AS_DATA2, DATA2              : AE8       :        :                   :         : 3A        :                
 RESERVED_INPUT               : AE9       :        :                   :         : 3A        :                
 GND                          : AE10      : gnd    :                   :         :           :                
 RESERVED_INPUT               : AE11      :        :                   :         : 3A        :                
 RESERVED_INPUT               : AE12      :        :                   :         : 3A        :                
-RESERVED_INPUT               : AE13      :        :                   :         : 3B        :                
-RESERVED_INPUT               : AE14      :        :                   :         : 3B        :                
+GRP0_VALUE[5]                : AE13      : output : 3.3-V LVTTL       :         : 3B        : N              
+GRP1_VALUE[4]                : AE14      : output : 3.3-V LVTTL       :         : 3B        : N              
 VCCIO3B                      : AE15      : power  :                   : 3.3V    : 3B        :                
 HEX1[2]                      : AE16      : output : 3.3-V LVTTL       :         : 4A        : Y              
 HEX1[5]                      : AE17      : output : 3.3-V LVTTL       :         : 4A        : Y              
@@ -261,18 +261,18 @@ VCCIO5B                      : AE30      : power  :                   : 3.3V    
 GND                          : AF1       : gnd    :                   :         :           :                
 GND                          : AF2       : gnd    :                   :         :           :                
 GND                          : AF3       : gnd    :                   :         :           :                
-RESERVED_INPUT               : AF4       :        :                   :         : 3A        :                
+MODE[0]                      : AF4       : output : 3.3-V LVTTL       :         : 3A        : N              
 RESERVED_INPUT               : AF5       :        :                   :         : 3A        :                
-RESERVED_INPUT               : AF6       :        :                   :         : 3A        :                
+GRP1_VALUE[11]               : AF6       : output : 3.3-V LVTTL       :         : 3A        : N              
 VCCIO3A                      : AF7       : power  :                   : 3.3V    : 3A        :                
 RESERVED_INPUT               : AF8       :        :                   :         : 3A        :                
-RESERVED_INPUT               : AF9       :        :                   :         : 3A        :                
+IO_DATA[9]                   : AF9       : output : 3.3-V LVTTL       :         : 3A        : N              
 RESERVED_INPUT               : AF10      :        :                   :         : 3A        :                
-RESERVED_INPUT               : AF11      :        :                   :         : 3B        :                
+GRP0_VALUE[1]                : AF11      : output : 3.3-V LVTTL       :         : 3B        : N              
 GND                          : AF12      : gnd    :                   :         :           :                
-RESERVED_INPUT               : AF13      :        :                   :         : 3B        :                
+IO_DATA[13]                  : AF13      : output : 3.3-V LVTTL       :         : 3B        : N              
 clock_50                     : AF14      : input  : 3.3-V LVTTL       :         : 3B        : Y              
-RESERVED_INPUT               : AF15      :        :                   :         : 3B        :                
+GRP0_VALUE[9]                : AF15      : output : 3.3-V LVTTL       :         : 3B        : N              
 HEX1[0]                      : AF16      : output : 3.3-V LVTTL       :         : 4A        : Y              
 GND                          : AF17      : gnd    :                   :         :           :                
 HEX2[5]                      : AF18      : output : 3.3-V LVTTL       :         : 4A        : Y              
@@ -288,19 +288,19 @@ GND                          : AF27      : gnd    :                   :         
 RESERVED_INPUT               : AF28      :        :                   :         : 5A        :                
 RESERVED_INPUT               : AF29      :        :                   :         : 5A        :                
 RESERVED_INPUT               : AF30      :        :                   :         : 5A        :                
-RESERVED_INPUT               : AG1       :        :                   :         : 3A        :                
-RESERVED_INPUT               : AG2       :        :                   :         : 3A        :                
+IO_DATA[8]                   : AG1       : output : 3.3-V LVTTL       :         : 3A        : N              
+FC_DISPLAY_SELECT[2]         : AG2       : output : 3.3-V LVTTL       :         : 3A        : N              
 RESERVED_INPUT               : AG3       :        :                   :         : 3A        :                
 VCCIO3A                      : AG4       : power  :                   : 3.3V    : 3A        :                
-RESERVED_INPUT               : AG5       :        :                   :         : 3A        :                
-RESERVED_INPUT               : AG6       :        :                   :         : 3A        :                
-RESERVED_INPUT               : AG7       :        :                   :         : 3A        :                
+FC_VALUE[0]                  : AG5       : output : 3.3-V LVTTL       :         : 3A        : N              
+GRP1_VALUE[6]                : AG6       : output : 3.3-V LVTTL       :         : 3A        : N              
+IO_DATA[1]                   : AG7       : output : 3.3-V LVTTL       :         : 3A        : N              
 RESERVED_INPUT               : AG8       :        :                   :         : 3A        :                
 GND                          : AG9       : gnd    :                   :         :           :                
-RESERVED_INPUT               : AG10      :        :                   :         : 3B        :                
-RESERVED_INPUT               : AG11      :        :                   :         : 3B        :                
-RESERVED_INPUT               : AG12      :        :                   :         : 3B        :                
-RESERVED_INPUT               : AG13      :        :                   :         : 3B        :                
+GRP1_VALUE[8]                : AG10      : output : 3.3-V LVTTL       :         : 3B        : N              
+GRP0_VALUE[3]                : AG11      : output : 3.3-V LVTTL       :         : 3B        : N              
+IO_DATA[14]                  : AG12      : output : 3.3-V LVTTL       :         : 3B        : N              
+GRP1_VALUE[7]                : AG13      : output : 3.3-V LVTTL       :         : 3B        : N              
 GND                          : AG14      : gnd    :                   :         :           :                
 RESERVED_INPUT               : AG15      :        :                   :         : 3B        :                
 HEX0[3]                      : AG16      : output : 3.3-V LVTTL       :         : 4A        : Y              
@@ -319,19 +319,19 @@ RESERVED_INPUT               : AG28      :        :                   :         
 VCCIO5A                      : AG29      : power  :                   : 3.3V    : 5A        :                
 RESERVED_INPUT               : AG30      :        :                   :         : 5A        :                
 GND                          : AH1       : gnd    :                   :         :           :                
-RESERVED_INPUT               : AH2       :        :                   :         : 3A        :                
-RESERVED_INPUT               : AH3       :        :                   :         : 3A        :                
+FC_DISPLAY_SELECT[0]         : AH2       : output : 3.3-V LVTTL       :         : 3A        : N              
+GRP0_VALUE[12]               : AH3       : output : 3.3-V LVTTL       :         : 3A        : N              
 RESERVED_INPUT               : AH4       :        :                   :         : 3A        :                
 RESERVED_INPUT               : AH5       :        :                   :         : 3A        :                
 GND                          : AH6       : gnd    :                   :         :           :                
-RESERVED_INPUT               : AH7       :        :                   :         : 3B        :                
-RESERVED_INPUT               : AH8       :        :                   :         : 3B        :                
-RESERVED_INPUT               : AH9       :        :                   :         : 3B        :                
-RESERVED_INPUT               : AH10      :        :                   :         : 3B        :                
+GRP1_VALUE[0]                : AH7       : output : 3.3-V LVTTL       :         : 3B        : N              
+GRP0_VALUE[10]               : AH8       : output : 3.3-V LVTTL       :         : 3B        : N              
+IO_DATA[6]                   : AH9       : output : 3.3-V LVTTL       :         : 3B        : N              
+FC_VALUE[5]                  : AH10      : output : 3.3-V LVTTL       :         : 3B        : N              
 GND                          : AH11      : gnd    :                   :         :           :                
 RESERVED_INPUT               : AH12      :        :                   :         : 3B        :                
-RESERVED_INPUT               : AH13      :        :                   :         : 3B        :                
-RESERVED_INPUT               : AH14      :        :                   :         : 3B        :                
+IO_DATA[5]                   : AH13      : output : 3.3-V LVTTL       :         : 3B        : N              
+IO_DATA[12]                  : AH14      : output : 3.3-V LVTTL       :         : 3B        : N              
 RESERVED_INPUT               : AH15      :        :                   :         : 3B        :                
 VCCIO4A                      : AH16      : power  :                   : 3.3V    : 4A        :                
 HEX0[4]                      : AH17      : output : 3.3-V LVTTL       :         : 4A        : Y              
@@ -348,18 +348,18 @@ RESERVED_INPUT               : AH27      :        :                   :         
 RESERVED_INPUT               : AH28      :        :                   :         : 5A        :                
 RESERVED_INPUT               : AH29      :        :                   :         : 5A        :                
 RESERVED_INPUT               : AH30      :        :                   :         : 5A        :                
-RESERVED_INPUT               : AJ1       :        :                   :         : 3A        :                
-RESERVED_INPUT               : AJ2       :        :                   :         : 3A        :                
+GRP1_VALUE[10]               : AJ1       : output : 3.3-V LVTTL       :         : 3A        : N              
+GRP1_VALUE[12]               : AJ2       : output : 3.3-V LVTTL       :         : 3A        : N              
 GND                          : AJ3       : gnd    :                   :         :           :                
 KEY0                         : AJ4       : input  : 3.3-V LVTTL       :         : 3B        : Y              
-RESERVED_INPUT               : AJ5       :        :                   :         : 3B        :                
-RESERVED_INPUT               : AJ6       :        :                   :         : 3B        :                
-RESERVED_INPUT               : AJ7       :        :                   :         : 3B        :                
+IO_DATA[3]                   : AJ5       : output : 3.3-V LVTTL       :         : 3B        : N              
+GRP1_WRITE                   : AJ6       : output : 3.3-V LVTTL       :         : 3B        : N              
+IO_DATA[0]                   : AJ7       : output : 3.3-V LVTTL       :         : 3B        : N              
 VCCIO3B                      : AJ8       : power  :                   : 3.3V    : 3B        :                
-RESERVED_INPUT               : AJ9       :        :                   :         : 3B        :                
-RESERVED_INPUT               : AJ10      :        :                   :         : 3B        :                
-RESERVED_INPUT               : AJ11      :        :                   :         : 3B        :                
-RESERVED_INPUT               : AJ12      :        :                   :         : 3B        :                
+IO_DATA[2]                   : AJ9       : output : 3.3-V LVTTL       :         : 3B        : N              
+FC_VALUE[2]                  : AJ10      : output : 3.3-V LVTTL       :         : 3B        : N              
+GRP1_VALUE[1]                : AJ11      : output : 3.3-V LVTTL       :         : 3B        : N              
+GRP1_VALUE[3]                : AJ12      : output : 3.3-V LVTTL       :         : 3B        : N              
 VCCIO3B                      : AJ13      : power  :                   : 3.3V    : 3B        :                
 RESERVED_INPUT               : AJ14      :        :                   :         : 3B        :                
 VREFB3BN0                    : AJ15      : power  :                   :         : 3B        :                
@@ -378,16 +378,16 @@ RESERVED_INPUT               : AJ27      :        :                   :         
 GND                          : AJ28      : gnd    :                   :         :           :                
 RESERVED_INPUT               : AJ29      :        :                   :         : 5A        :                
 GND                          : AJ30      : gnd    :                   :         :           :                
-RESERVED_INPUT               : AK2       :        :                   :         : 3B        :                
-RESERVED_INPUT               : AK3       :        :                   :         : 3B        :                
-RESERVED_INPUT               : AK4       :        :                   :         : 3B        :                
+IO_DATA[10]                  : AK2       : output : 3.3-V LVTTL       :         : 3B        : N              
+IO_DATA[15]                  : AK3       : output : 3.3-V LVTTL       :         : 3B        : N              
+IO_DATA[4]                   : AK4       : output : 3.3-V LVTTL       :         : 3B        : N              
 GND                          : AK5       : gnd    :                   :         :           :                
-RESERVED_INPUT               : AK6       :        :                   :         : 3B        :                
+GRP0_WRITE                   : AK6       : output : 3.3-V LVTTL       :         : 3B        : N              
 RESERVED_INPUT               : AK7       :        :                   :         : 3B        :                
-RESERVED_INPUT               : AK8       :        :                   :         : 3B        :                
-RESERVED_INPUT               : AK9       :        :                   :         : 3B        :                
+GRP0_VALUE[8]                : AK8       : output : 3.3-V LVTTL       :         : 3B        : N              
+IO_DATA[11]                  : AK9       : output : 3.3-V LVTTL       :         : 3B        : N              
 VCCIO3B                      : AK10      : power  :                   : 3.3V    : 3B        :                
-RESERVED_INPUT               : AK11      :        :                   :         : 3B        :                
+GRP0_VALUE[2]                : AK11      : output : 3.3-V LVTTL       :         : 3B        : N              
 RESERVED_INPUT               : AK12      :        :                   :         : 3B        :                
 RESERVED_INPUT               : AK13      :        :                   :         : 3B        :                
 RESERVED_INPUT               : AK14      :        :                   :         : 3B        :                
@@ -408,7 +408,7 @@ RESERVED_INPUT               : AK28      :        :                   :         
 RESERVED_INPUT               : AK29      :        :                   :         : 4A        :                
 RESERVED_INPUT               : B1        :        :                   :         : 8A        :                
 RESERVED_INPUT               : B2        :        :                   :         : 8A        :                
-RESERVED_INPUT               : B3        :        :                   :         : 8A        :                
+FC_VALUE[6]                  : B3        : output : 3.3-V LVTTL       :         : 8A        : N              
 VCCIO8A                      : B4        : power  :                   : 3.3V    : 8A        :                
 RESERVED_INPUT               : B5        :        :                   :         : 8A        :                
 RESERVED_INPUT               : B6        :        :                   :         : 8A        :                
@@ -863,7 +863,7 @@ GND                          : U4        : gnd    :                   :         
 VCCE_GXBL                    : U5        : power  :                   : 1.1V    :           :                
 GND                          : U6        : gnd    :                   :         :           :                
 DCLK                         : U7        :        :                   :         : 3A        :                
-TDI                          : U8        : input  :                   :         : 3A        :                
+altera_reserved_tdi          : U8        : input  : 3.3-V LVTTL       :         : 3A        : N              
 GND                          : U9        : gnd    :                   :         :           :                
 VCC                          : U10       : power  :                   : 1.1V    :           :                
 GND                          : U11       : gnd    :                   :         :           :                
@@ -894,7 +894,7 @@ GND                          : V5        : gnd    :                   :         
 VCCH_GXBL                    : V6        : power  :                   : 2.5V    :           :                
 GND                          : V7        : gnd    :                   :         :           :                
 VCCA_FPLL                    : V8        : power  :                   : 2.5V    :           :                
-TMS                          : V9        : input  :                   :         : 3A        :                
+altera_reserved_tms          : V9        : input  : 3.3-V LVTTL       :         : 3A        : N              
 GND                          : V10       : gnd    :                   :         :           :                
 VCC                          : V11       : power  :                   : 1.1V    :           :                
 GND                          : V12       : gnd    :                   :         :           :                
@@ -961,7 +961,7 @@ GND                          : Y12       : gnd    :                   :         
 VCC                          : Y13       : power  :                   : 1.1V    :           :                
 GND                          : Y14       : gnd    :                   :         :           :                
 GND                          : Y15       : gnd    :                   :         :           :                
-RESERVED_INPUT               : Y16       :        :                   :         : 3B        :                
+FC_DISPLAY_SELECT[1]         : Y16       : output : 3.3-V LVTTL       :         : 3B        : N              
 HEX2[3]                      : Y17       : output : 3.3-V LVTTL       :         : 4A        : Y              
 HEX2[4]                      : Y18       : output : 3.3-V LVTTL       :         : 4A        : Y              
 HEX3[0]                      : Y19       : output : 3.3-V LVTTL       :         : 4A        : Y              

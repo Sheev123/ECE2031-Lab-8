@@ -22,7 +22,7 @@ end entity PARSE_DISP_DATA_IN;
 
 architecture comb of PARSE_DISP_DATA_IN is
     constant MODE_FC : std_logic_vector(1 downto 0) := "11";
-    signal mode_s               : std_logic_vector(1 downto 0);
+    signal mode_s               : std_logic_vector(1 downto 0); -- 15‑
     signal full_disp_override_s : std_logic;
     signal full_disp_value_s    : std_logic_vector(6 downto 0);
 	 signal full_disp_display_s  : std_logic_vector(2 downto 0);
@@ -33,11 +33,11 @@ architecture comb of PARSE_DISP_DATA_IN is
 
 begin
     -- Split the incoming data word once
-    mode_s               <= IO_DATA(1 downto 0);
-    full_disp_override_s <= IO_DATA(2);
-	 full_disp_value_s 	 <= IO_DATA(15 downto 9);
-	 full_disp_display_s  <= IO_DATA(4 downto 2);
-    value_s              <= IO_DATA(15 downto 3);
+    mode_s               <= IO_DATA(15 downto 14);
+    full_disp_override_s <= IO_DATA(13);
+	 full_disp_value_s 	 <= IO_DATA(6 downto 0);
+	 full_disp_display_s  <= IO_DATA(13 downto 11);
+    value_s              <= IO_DATA(12 downto 0);
 
     -- Shared outputs (identical for both display banks)
     MODE      <= mode_s;

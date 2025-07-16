@@ -6,7 +6,7 @@ JedecChain;
 	P ActionCode(Ign)
 		Device PartName(SOCVHPS) MfrSpec(OpMask(0));
 	P ActionCode(Cfg)
-		Device PartName(5CSXFC6D6F31) Path("C:/Users/shahs/Documents/2031/LAB08/SCOMP_Lab8_Sum25/output_files/") File("SCOMP.sof") MfrSpec(OpMask(1));
+		Device PartName(5CSXFC6D6F31) Path("C:/Users/hcarpenter30/Downloads/ECE2031-Lab-8/SCOMP_Lab8_Sum25/output_files/") File("SCOMP.sof") MfrSpec(OpMask(1));
 
 ChainEnd;
 

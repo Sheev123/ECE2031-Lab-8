@@ -5,8 +5,9 @@
 
 TestValModes:
         ; HEX Mode value = &H123
-        LOADI   ValHexNoOverride
-        OUT     Hex0
+        LOAD   ValHexNoOverride
+        ;OUT     Hex1
+		OUT		Hex0
 
         ;LOADI   ValHexOverride
         ;OUT     Hex1
