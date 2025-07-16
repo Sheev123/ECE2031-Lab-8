@@ -5,62 +5,20 @@ ADDRESS_RADIX=HEX;
 DATA_RADIX=HEX;
 
 CONTENT BEGIN
-0000: 182C; --         LOADI   ValHexNoOverride
+0000: 1802; --         LOADI   ValHexNoOverride
 0001: 9804; --         OUT     Hex0
-0002: 182D; --         LOADI   ValHexOverride
-0003: 9805; --         OUT     Hex1
-0004: 8027; --         CALL    Delay
-0005: 182E; --         LOADI   ValDecNoOverride
-0006: 9804; --         OUT     Hex0
-0007: 182F; --         LOADI   ValDecOverride
-0008: 9805; --         OUT     Hex1
-0009: 8027; --         CALL    Delay
-000A: 1830; --         LOADI   ValBinNoOverride
-000B: 9804; --         OUT     Hex0
-000C: 1831; --         LOADI   ValBinOverride
-000D: 9805; --         OUT     Hex1
-000E: 8027; --         CALL    Delay
-000F: 1800; --         LOADI   0
-0010: 1033; --         STORE   DigitIndex
-0011: 0833; --         LOAD    DigitIndex
-0012: 37FA; --         ADDI    -6
-0013: 7026; --         JZERO   Done
-0014: 0833; --         LOAD    DigitIndex
-0015: 500B; --         SHIFT   11
-0016: 1034; --         STORE   TempDigitBits
-0017: 1832; --         LOADI   SegmentPattern
-0018: 1035; --         STORE   TempSegBits
-0019: 0834; --         LOAD    TempDigitBits
-001A: 2035; --         ADD     TempSegBits
-001B: 1036; --         STORE   TempCombined
-001C: 0838; --         LOAD    FullCtrlModeBits
-001D: 2036; --         ADD     TempCombined
-001E: 1037; --         STORE   FullCtrlWord
-001F: 0837; --         LOAD    FullCtrlWord
-0020: 9804; --         OUT     Hex0
-0021: 8027; --         CALL    Delay
-0022: 0833; --         LOAD    DigitIndex
-0023: 3001; --         ADDI    1
-0024: 1033; --         STORE   DigitIndex
-0025: 5811; --         JUMP    DigitLoop
-0026: 5826; --         JUMP    Done
-0027: 9802; --         OUT     Timer
-0028: 9002; --         IN      Timer
-0029: 37FB; --         ADDI    -5
-002A: 6028; --         JNEG    WaitLoop
-002B: 8800; --         RETURN
-002C: 0123; -- ValHexNoOverride:     DW &B0000000100100011   ; MODE=00, override=0, value=&H123
-002D: 2123; -- ValHexOverride:       DW &B0010000100100011   ; MODE=00, override=1, value=&H123
-002E: 400A; -- ValDecNoOverride:     DW &B0100000000001010   ; MODE=01, override=0, value=10
-002F: 600A; -- ValDecOverride:       DW &B0110000000001010   ; MODE=01, override=1, value=10
-0030: 800F; -- ValBinNoOverride:     DW &B1000000000001111   ; MODE=10, override=0, value=15
-0031: A00F; -- ValBinOverride:       DW &B1010000000001111   ; MODE=10, override=1, value=15
-0032: 0054; -- SegmentPattern:       DW &B0000000001010100   ;
-0033: 0000; -- DigitIndex:     DW 0
-0034: 0000; -- TempDigitBits:  DW 0
-0035: 0000; -- TempSegBits:    DW 0
-0036: 0000; -- TempCombined:   DW 0
-0037: 0000; -- FullCtrlWord:   DW 0
-0038: C000; -- FullCtrlModeBits: DW &HC000
-[0039..07FF] : 0000; -- [empty memory]
+0002: 0123; -- ValHexNoOverride:     DW &B0000000100100011   ; MODE=00, override=0, value=&H123
+0003: 2123; -- ValHexOverride:       DW &B0010000100100011   ; MODE=00, override=1, value=&H123
+0004: 400A; -- ValDecNoOverride:     DW &B0100000000001010   ; MODE=01, override=0, value=10
+0005: 600A; -- ValDecOverride:       DW &B0110000000001010   ; MODE=01, override=1, value=10
+0006: 800F; -- ValBinNoOverride:     DW &B1000000000001111   ; MODE=10, override=0, value=15
+0007: A00F; -- ValBinOverride:       DW &B1010000000001111   ; MODE=10, override=1, value=15
+0008: 0054; -- SegmentPattern:       DW &B0000000001010100   ;
+0009: 0000; -- DigitIndex:     DW 0
+000A: 0000; -- TempDigitBits:  DW 0
+000B: 0000; -- TempSegBits:    DW 0
+000C: 0000; -- TempCombined:   DW 0
+000D: 0000; -- FullCtrlWord:   DW 0
+000E: C000; -- FullCtrlModeBits: DW &HC000
+[000F..07FF] : 0000; -- [empty memory]
 END;

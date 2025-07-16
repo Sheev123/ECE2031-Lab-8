@@ -8,82 +8,80 @@ TestValModes:
         LOADI   ValHexNoOverride
         OUT     Hex0
 
-        LOADI   ValHexOverride
-        OUT     Hex1
+        ;LOADI   ValHexOverride
+        ;OUT     Hex1
 
-        CALL    Delay
+        ;CALL    Delay
 
         ; DEC Mode value = 10
-        LOADI   ValDecNoOverride
-        OUT     Hex0
+        ;LOADI   ValDecNoOverride
+        ;OUT     Hex0
 
-        LOADI   ValDecOverride
-        OUT     Hex1
+        ;LOADI   ValDecOverride
+        ;OUT     Hex1
 
-        CALL    Delay
+        ;CALL    Delay
 
         ; BIN Mode value = 15
-        LOADI   ValBinNoOverride
-        OUT     Hex0
+        ;LOADI   ValBinNoOverride
+        ;OUT     Hex0
 
-        LOADI   ValBinOverride
-        OUT     Hex1
+        ;LOADI   ValBinOverride
+        ;OUT     Hex1
 
-        CALL    Delay
+        ;CALL    Delay
 
 ;Full Control Mode
 ;Loop through digits 0 to 5 with one segment pattern
 
-        LOADI   0
-        STORE   DigitIndex
+        ;LOADI   0
+        ;STORE   DigitIndex
 
-DigitLoop:
-        LOAD    DigitIndex
-        ADDI    -6
-        JZERO   Done
+;DigitLoop:
+        ;LOAD    DigitIndex
+        ;ADDI    -6
+        ;JZERO   Done
 
         ;shift digit index into bits 13:11
-        LOAD    DigitIndex
-        SHIFT   11
-        STORE   TempDigitBits
+        ;LOAD    DigitIndex
+        ;SHIFT   11
+        ;STORE   TempDigitBits
 
         ; Load segment pattern(&B01010100)
-        LOADI   SegmentPattern
-        STORE   TempSegBits
+        ;LOADI   SegmentPattern
+        ;STORE   TempSegBits
 
         ;combine digit bits + segment bits
-        LOAD    TempDigitBits
-        ADD     TempSegBits
-        STORE   TempCombined
+        ;LOAD    TempDigitBits
+        ;ADD     TempSegBits
+        ;STORE   TempCombined
 
         ; add mode bits (Mode = 11, override = 0)
-        LOAD    FullCtrlModeBits
-        ADD     TempCombined
-        STORE   FullCtrlWord
+        ;LOAD    FullCtrlModeBits
+        ;ADD     TempCombined
+        ;STORE   FullCtrlWord
 
         ;write to HEX0
-        LOAD    FullCtrlWord
-        OUT     Hex0
+        ;LOAD    FullCtrlWord
+        ;OUT     Hex0
 
-        CALL    Delay
+        ;CALL    Delay
 
         ;increment digit index and loop
-        LOAD    DigitIndex
-        ADDI    1
-        STORE   DigitIndex
-        JUMP    DigitLoop
+        ;LOAD    DigitIndex
+        ;ADDI    1
+        ;STORE   DigitIndex
+        ;JUMP    DigitLoop
 
-Done:
-        JUMP    Done
-
-
-Delay:
-        OUT     Timer
-WaitLoop:
-        IN      Timer
-        ADDI    -5
-        JNEG    WaitLoop
-        RETURN
+;Done:
+        ;JUMP    Done
+;Delay:
+        ;OUT     Timer
+;WaitLoop:
+        ;IN      Timer
+        ;ADDI    -5
+        ;JNEG    WaitLoop
+        ;RETURN
 
 ;Test Values for Value test
 
@@ -100,9 +98,9 @@ ValBinOverride:       DW &B1010000000001111   ; MODE=10, override=1, value=15
 SegmentPattern:       DW &B0000000001010100   ;
 
 ;I/O Addresses
-Hex0:         EQU &H04
-Hex1:         EQU &H05
-Timer:        EQU &H02
+Hex0:         EQU 004
+Hex1:         EQU 005
+Timer:        EQU 002
 
 ;Temporary Registers
 DigitIndex:     DW 0
