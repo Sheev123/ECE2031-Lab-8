@@ -1,5 +1,5 @@
 |SCOMP_System
-GRP0_WRITE <= HEX_DISP_6:inst3.GRP0_WRITE
+GRP0_WRITE <= HEX_DISP_6:inst10.GRP0_WRITE
 clock_50 => PLL_main:inst1.refclk
 KEY0 => inst2.IN0
 IO_DATA[0] <= IO_DATA.DB_MAX_OUTPUT_PORT_TYPE
@@ -28,43 +28,43 @@ SW[6] => DIG_IN:inst7.EXT_WIRES[6]
 SW[7] => DIG_IN:inst7.EXT_WIRES[7]
 SW[8] => DIG_IN:inst7.EXT_WIRES[8]
 SW[9] => DIG_IN:inst7.EXT_WIRES[9]
-GRP1_WRITE <= HEX_DISP_6:inst3.GRP1_WRITE
-FC_DISPLAY_SELECT[0] <= HEX_DISP_6:inst3.FC_DISPLAY_SELECT[0]
-FC_DISPLAY_SELECT[1] <= HEX_DISP_6:inst3.FC_DISPLAY_SELECT[1]
-FC_DISPLAY_SELECT[2] <= HEX_DISP_6:inst3.FC_DISPLAY_SELECT[2]
-FC_VALUE[0] <= HEX_DISP_6:inst3.FC_VALUE[0]
-FC_VALUE[1] <= HEX_DISP_6:inst3.FC_VALUE[1]
-FC_VALUE[2] <= HEX_DISP_6:inst3.FC_VALUE[2]
-FC_VALUE[3] <= HEX_DISP_6:inst3.FC_VALUE[3]
-FC_VALUE[4] <= HEX_DISP_6:inst3.FC_VALUE[4]
-FC_VALUE[5] <= HEX_DISP_6:inst3.FC_VALUE[5]
-FC_VALUE[6] <= HEX_DISP_6:inst3.FC_VALUE[6]
-GRP0_VALUE[0] <= HEX_DISP_6:inst3.GRP0_VALUE[0]
-GRP0_VALUE[1] <= HEX_DISP_6:inst3.GRP0_VALUE[1]
-GRP0_VALUE[2] <= HEX_DISP_6:inst3.GRP0_VALUE[2]
-GRP0_VALUE[3] <= HEX_DISP_6:inst3.GRP0_VALUE[3]
-GRP0_VALUE[4] <= HEX_DISP_6:inst3.GRP0_VALUE[4]
-GRP0_VALUE[5] <= HEX_DISP_6:inst3.GRP0_VALUE[5]
-GRP0_VALUE[6] <= HEX_DISP_6:inst3.GRP0_VALUE[6]
-GRP0_VALUE[7] <= HEX_DISP_6:inst3.GRP0_VALUE[7]
-GRP0_VALUE[8] <= HEX_DISP_6:inst3.GRP0_VALUE[8]
-GRP0_VALUE[9] <= HEX_DISP_6:inst3.GRP0_VALUE[9]
-GRP0_VALUE[10] <= HEX_DISP_6:inst3.GRP0_VALUE[10]
-GRP0_VALUE[11] <= HEX_DISP_6:inst3.GRP0_VALUE[11]
-GRP0_VALUE[12] <= HEX_DISP_6:inst3.GRP0_VALUE[12]
-GRP1_VALUE[0] <= HEX_DISP_6:inst3.GRP1_VALUE[0]
-GRP1_VALUE[1] <= HEX_DISP_6:inst3.GRP1_VALUE[1]
-GRP1_VALUE[2] <= HEX_DISP_6:inst3.GRP1_VALUE[2]
-GRP1_VALUE[3] <= HEX_DISP_6:inst3.GRP1_VALUE[3]
-GRP1_VALUE[4] <= HEX_DISP_6:inst3.GRP1_VALUE[4]
-GRP1_VALUE[5] <= HEX_DISP_6:inst3.GRP1_VALUE[5]
-GRP1_VALUE[6] <= HEX_DISP_6:inst3.GRP1_VALUE[6]
-GRP1_VALUE[7] <= HEX_DISP_6:inst3.GRP1_VALUE[7]
-GRP1_VALUE[8] <= HEX_DISP_6:inst3.GRP1_VALUE[8]
-GRP1_VALUE[9] <= HEX_DISP_6:inst3.GRP1_VALUE[9]
-GRP1_VALUE[10] <= HEX_DISP_6:inst3.GRP1_VALUE[10]
-GRP1_VALUE[11] <= HEX_DISP_6:inst3.GRP1_VALUE[11]
-GRP1_VALUE[12] <= HEX_DISP_6:inst3.GRP1_VALUE[12]
+GRP1_WRITE <= HEX_DISP_6:inst10.GRP1_WRITE
+FC_DISPLAY_SELECT[0] <= HEX_DISP_6:inst10.FC_DISPLAY_SELECT[0]
+FC_DISPLAY_SELECT[1] <= HEX_DISP_6:inst10.FC_DISPLAY_SELECT[1]
+FC_DISPLAY_SELECT[2] <= HEX_DISP_6:inst10.FC_DISPLAY_SELECT[2]
+FC_VALUE[0] <= HEX_DISP_6:inst10.FC_VALUE[0]
+FC_VALUE[1] <= HEX_DISP_6:inst10.FC_VALUE[1]
+FC_VALUE[2] <= HEX_DISP_6:inst10.FC_VALUE[2]
+FC_VALUE[3] <= HEX_DISP_6:inst10.FC_VALUE[3]
+FC_VALUE[4] <= HEX_DISP_6:inst10.FC_VALUE[4]
+FC_VALUE[5] <= HEX_DISP_6:inst10.FC_VALUE[5]
+FC_VALUE[6] <= HEX_DISP_6:inst10.FC_VALUE[6]
+GRP0_VALUE[0] <= HEX_DISP_6:inst10.GRP0_VALUE[0]
+GRP0_VALUE[1] <= HEX_DISP_6:inst10.GRP0_VALUE[1]
+GRP0_VALUE[2] <= HEX_DISP_6:inst10.GRP0_VALUE[2]
+GRP0_VALUE[3] <= HEX_DISP_6:inst10.GRP0_VALUE[3]
+GRP0_VALUE[4] <= HEX_DISP_6:inst10.GRP0_VALUE[4]
+GRP0_VALUE[5] <= HEX_DISP_6:inst10.GRP0_VALUE[5]
+GRP0_VALUE[6] <= HEX_DISP_6:inst10.GRP0_VALUE[6]
+GRP0_VALUE[7] <= HEX_DISP_6:inst10.GRP0_VALUE[7]
+GRP0_VALUE[8] <= HEX_DISP_6:inst10.GRP0_VALUE[8]
+GRP0_VALUE[9] <= HEX_DISP_6:inst10.GRP0_VALUE[9]
+GRP0_VALUE[10] <= HEX_DISP_6:inst10.GRP0_VALUE[10]
+GRP0_VALUE[11] <= HEX_DISP_6:inst10.GRP0_VALUE[11]
+GRP0_VALUE[12] <= HEX_DISP_6:inst10.GRP0_VALUE[12]
+GRP1_VALUE[0] <= HEX_DISP_6:inst10.GRP1_VALUE[0]
+GRP1_VALUE[1] <= HEX_DISP_6:inst10.GRP1_VALUE[1]
+GRP1_VALUE[2] <= HEX_DISP_6:inst10.GRP1_VALUE[2]
+GRP1_VALUE[3] <= HEX_DISP_6:inst10.GRP1_VALUE[3]
+GRP1_VALUE[4] <= HEX_DISP_6:inst10.GRP1_VALUE[4]
+GRP1_VALUE[5] <= HEX_DISP_6:inst10.GRP1_VALUE[5]
+GRP1_VALUE[6] <= HEX_DISP_6:inst10.GRP1_VALUE[6]
+GRP1_VALUE[7] <= HEX_DISP_6:inst10.GRP1_VALUE[7]
+GRP1_VALUE[8] <= HEX_DISP_6:inst10.GRP1_VALUE[8]
+GRP1_VALUE[9] <= HEX_DISP_6:inst10.GRP1_VALUE[9]
+GRP1_VALUE[10] <= HEX_DISP_6:inst10.GRP1_VALUE[10]
+GRP1_VALUE[11] <= HEX_DISP_6:inst10.GRP1_VALUE[11]
+GRP1_VALUE[12] <= HEX_DISP_6:inst10.GRP1_VALUE[12]
 HEX0[0] <= segments[0].DB_MAX_OUTPUT_PORT_TYPE
 HEX0[1] <= segments[1].DB_MAX_OUTPUT_PORT_TYPE
 HEX0[2] <= segments[2].DB_MAX_OUTPUT_PORT_TYPE
@@ -117,11 +117,53 @@ LEDR[6] <= LED[6].DB_MAX_OUTPUT_PORT_TYPE
 LEDR[7] <= LED[7].DB_MAX_OUTPUT_PORT_TYPE
 LEDR[8] <= LED[8].DB_MAX_OUTPUT_PORT_TYPE
 LEDR[9] <= LED[9].DB_MAX_OUTPUT_PORT_TYPE
-MODE[0] <= HEX_DISP_6:inst3.MODE[0]
-MODE[1] <= HEX_DISP_6:inst3.MODE[1]
+MODE[0] <= HEX_DISP_6:inst10.MODE[0]
+MODE[1] <= HEX_DISP_6:inst10.MODE[1]
+seg_val[0] <= HEX_DISP_6:inst10.seg_val[0]
+seg_val[1] <= HEX_DISP_6:inst10.seg_val[1]
+seg_val[2] <= HEX_DISP_6:inst10.seg_val[2]
+seg_val[3] <= HEX_DISP_6:inst10.seg_val[3]
+seg_val[4] <= HEX_DISP_6:inst10.seg_val[4]
+seg_val[5] <= HEX_DISP_6:inst10.seg_val[5]
+seg_val[6] <= HEX_DISP_6:inst10.seg_val[6]
+seg_val[7] <= HEX_DISP_6:inst10.seg_val[7]
+seg_val[8] <= HEX_DISP_6:inst10.seg_val[8]
+seg_val[9] <= HEX_DISP_6:inst10.seg_val[9]
+seg_val[10] <= HEX_DISP_6:inst10.seg_val[10]
+seg_val[11] <= HEX_DISP_6:inst10.seg_val[11]
+seg_val[12] <= HEX_DISP_6:inst10.seg_val[12]
+seg_val[13] <= HEX_DISP_6:inst10.seg_val[13]
+seg_val[14] <= HEX_DISP_6:inst10.seg_val[14]
+seg_val[15] <= HEX_DISP_6:inst10.seg_val[15]
+seg_val[16] <= HEX_DISP_6:inst10.seg_val[16]
+seg_val[17] <= HEX_DISP_6:inst10.seg_val[17]
+seg_val[18] <= HEX_DISP_6:inst10.seg_val[18]
+seg_val[19] <= HEX_DISP_6:inst10.seg_val[19]
+seg_val[20] <= HEX_DISP_6:inst10.seg_val[20]
+seg_val[21] <= HEX_DISP_6:inst10.seg_val[21]
+seg_val[22] <= HEX_DISP_6:inst10.seg_val[22]
+seg_val[23] <= HEX_DISP_6:inst10.seg_val[23]
+seg_val[24] <= HEX_DISP_6:inst10.seg_val[24]
+seg_val[25] <= HEX_DISP_6:inst10.seg_val[25]
+seg_val[26] <= HEX_DISP_6:inst10.seg_val[26]
+seg_val[27] <= HEX_DISP_6:inst10.seg_val[27]
+seg_val[28] <= HEX_DISP_6:inst10.seg_val[28]
+seg_val[29] <= HEX_DISP_6:inst10.seg_val[29]
+seg_val[30] <= HEX_DISP_6:inst10.seg_val[30]
+seg_val[31] <= HEX_DISP_6:inst10.seg_val[31]
+seg_val[32] <= HEX_DISP_6:inst10.seg_val[32]
+seg_val[33] <= HEX_DISP_6:inst10.seg_val[33]
+seg_val[34] <= HEX_DISP_6:inst10.seg_val[34]
+seg_val[35] <= HEX_DISP_6:inst10.seg_val[35]
+seg_val[36] <= HEX_DISP_6:inst10.seg_val[36]
+seg_val[37] <= HEX_DISP_6:inst10.seg_val[37]
+seg_val[38] <= HEX_DISP_6:inst10.seg_val[38]
+seg_val[39] <= HEX_DISP_6:inst10.seg_val[39]
+seg_val[40] <= HEX_DISP_6:inst10.seg_val[40]
+seg_val[41] <= HEX_DISP_6:inst10.seg_val[41]
 
 
-|SCOMP_System|HEX_DISP_6:inst3
+|SCOMP_System|HEX_DISP_6:inst10
 GRP0_WRITE <= PARSE_DISP_DATA_IN:inst3.GRP0_WRITE
 IO_WRITE => PARSE_DISP_DATA_IN:inst3.IO_WRITE
 IO_ADDR[0] => PARSE_DISP_DATA_IN:inst3.IO_ADDR[0]
@@ -190,6 +232,48 @@ GRP1_VALUE[11] <= PARSE_DISP_DATA_IN:inst3.GRP1_VALUE[11]
 GRP1_VALUE[12] <= PARSE_DISP_DATA_IN:inst3.GRP1_VALUE[12]
 MODE[0] <= PARSE_DISP_DATA_IN:inst3.MODE[0]
 MODE[1] <= PARSE_DISP_DATA_IN:inst3.MODE[1]
+seg_val[0] <= seg_val.DB_MAX_OUTPUT_PORT_TYPE
+seg_val[1] <= seg_val.DB_MAX_OUTPUT_PORT_TYPE
+seg_val[2] <= seg_val.DB_MAX_OUTPUT_PORT_TYPE
+seg_val[3] <= seg_val.DB_MAX_OUTPUT_PORT_TYPE
+seg_val[4] <= seg_val.DB_MAX_OUTPUT_PORT_TYPE
+seg_val[5] <= seg_val.DB_MAX_OUTPUT_PORT_TYPE
+seg_val[6] <= seg_val.DB_MAX_OUTPUT_PORT_TYPE
+seg_val[7] <= seg_val.DB_MAX_OUTPUT_PORT_TYPE
+seg_val[8] <= seg_val.DB_MAX_OUTPUT_PORT_TYPE
+seg_val[9] <= seg_val.DB_MAX_OUTPUT_PORT_TYPE
+seg_val[10] <= seg_val.DB_MAX_OUTPUT_PORT_TYPE
+seg_val[11] <= seg_val.DB_MAX_OUTPUT_PORT_TYPE
+seg_val[12] <= seg_val.DB_MAX_OUTPUT_PORT_TYPE
+seg_val[13] <= seg_val.DB_MAX_OUTPUT_PORT_TYPE
+seg_val[14] <= seg_val.DB_MAX_OUTPUT_PORT_TYPE
+seg_val[15] <= seg_val.DB_MAX_OUTPUT_PORT_TYPE
+seg_val[16] <= seg_val.DB_MAX_OUTPUT_PORT_TYPE
+seg_val[17] <= seg_val.DB_MAX_OUTPUT_PORT_TYPE
+seg_val[18] <= seg_val.DB_MAX_OUTPUT_PORT_TYPE
+seg_val[19] <= seg_val.DB_MAX_OUTPUT_PORT_TYPE
+seg_val[20] <= seg_val.DB_MAX_OUTPUT_PORT_TYPE
+seg_val[21] <= seg_val.DB_MAX_OUTPUT_PORT_TYPE
+seg_val[22] <= seg_val.DB_MAX_OUTPUT_PORT_TYPE
+seg_val[23] <= seg_val.DB_MAX_OUTPUT_PORT_TYPE
+seg_val[24] <= seg_val.DB_MAX_OUTPUT_PORT_TYPE
+seg_val[25] <= seg_val.DB_MAX_OUTPUT_PORT_TYPE
+seg_val[26] <= seg_val.DB_MAX_OUTPUT_PORT_TYPE
+seg_val[27] <= seg_val.DB_MAX_OUTPUT_PORT_TYPE
+seg_val[28] <= seg_val.DB_MAX_OUTPUT_PORT_TYPE
+seg_val[29] <= seg_val.DB_MAX_OUTPUT_PORT_TYPE
+seg_val[30] <= seg_val.DB_MAX_OUTPUT_PORT_TYPE
+seg_val[31] <= seg_val.DB_MAX_OUTPUT_PORT_TYPE
+seg_val[32] <= seg_val.DB_MAX_OUTPUT_PORT_TYPE
+seg_val[33] <= seg_val.DB_MAX_OUTPUT_PORT_TYPE
+seg_val[34] <= seg_val.DB_MAX_OUTPUT_PORT_TYPE
+seg_val[35] <= seg_val.DB_MAX_OUTPUT_PORT_TYPE
+seg_val[36] <= seg_val.DB_MAX_OUTPUT_PORT_TYPE
+seg_val[37] <= seg_val.DB_MAX_OUTPUT_PORT_TYPE
+seg_val[38] <= seg_val.DB_MAX_OUTPUT_PORT_TYPE
+seg_val[39] <= seg_val.DB_MAX_OUTPUT_PORT_TYPE
+seg_val[40] <= seg_val.DB_MAX_OUTPUT_PORT_TYPE
+seg_val[41] <= seg_val.DB_MAX_OUTPUT_PORT_TYPE
 segments[0] <= SEG_DISP:inst7.segments[0]
 segments[1] <= SEG_DISP:inst7.segments[1]
 segments[2] <= SEG_DISP:inst7.segments[2]
@@ -240,7 +324,7 @@ resetn => SEG_DISP:inst15.resetn
 resetn => SEG_DISP:inst12.resetn
 
 
-|SCOMP_System|HEX_DISP_6:inst3|PARSE_DISP_DATA_IN:inst3
+|SCOMP_System|HEX_DISP_6:inst10|PARSE_DISP_DATA_IN:inst3
 IO_WRITE => grp1_we_s.DATAB
 IO_WRITE => grp0_we_s.DATAB
 IO_ADDR[0] => Equal1.IN9
@@ -349,52 +433,7 @@ GRP1_VALUE[12] <= GRP1_VALUE.DB_MAX_OUTPUT_PORT_TYPE
 GRP1_WRITE <= grp1_we_s.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|SCOMP_System|HEX_DISP_6:inst3|SEG_DISP:inst7
-seg_val[0] => seg_d.DATAA
-seg_val[0] => latched_seg[0].DATAIN
-seg_val[1] => seg_d.DATAA
-seg_val[1] => latched_seg[1].DATAIN
-seg_val[2] => seg_d.DATAA
-seg_val[2] => latched_seg[2].DATAIN
-seg_val[3] => seg_d.DATAA
-seg_val[3] => latched_seg[3].DATAIN
-seg_val[4] => seg_d.DATAA
-seg_val[4] => latched_seg[4].DATAIN
-seg_val[5] => seg_d.DATAA
-seg_val[5] => latched_seg[5].DATAIN
-seg_val[6] => seg_d.DATAA
-seg_val[6] => latched_seg[6].DATAIN
-cs => latched_seg[0].CLK
-cs => latched_seg[1].CLK
-cs => latched_seg[2].CLK
-cs => latched_seg[3].CLK
-cs => latched_seg[4].CLK
-cs => latched_seg[5].CLK
-cs => latched_seg[6].CLK
-free => seg_d.OUTPUTSELECT
-free => seg_d.OUTPUTSELECT
-free => seg_d.OUTPUTSELECT
-free => seg_d.OUTPUTSELECT
-free => seg_d.OUTPUTSELECT
-free => seg_d.OUTPUTSELECT
-free => seg_d.OUTPUTSELECT
-resetn => latched_seg[0].ACLR
-resetn => latched_seg[1].ACLR
-resetn => latched_seg[2].ACLR
-resetn => latched_seg[3].ACLR
-resetn => latched_seg[4].ACLR
-resetn => latched_seg[5].ACLR
-resetn => latched_seg[6].ACLR
-segments[0] <= seg_d.DB_MAX_OUTPUT_PORT_TYPE
-segments[1] <= seg_d.DB_MAX_OUTPUT_PORT_TYPE
-segments[2] <= seg_d.DB_MAX_OUTPUT_PORT_TYPE
-segments[3] <= seg_d.DB_MAX_OUTPUT_PORT_TYPE
-segments[4] <= seg_d.DB_MAX_OUTPUT_PORT_TYPE
-segments[5] <= seg_d.DB_MAX_OUTPUT_PORT_TYPE
-segments[6] <= seg_d.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|SCOMP_System|HEX_DISP_6:inst3|SEG_EDIT:inst1
+|SCOMP_System|HEX_DISP_6:inst10|SEG_EDIT:inst1
 FC_DISP[0] => Mux0.IN9
 FC_DISP[0] => Mux1.IN9
 FC_DISP[0] => Mux2.IN9
@@ -607,7 +646,7 @@ segments[40] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
 segments[41] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|SCOMP_System|HEX_DISP_6:inst3|DISP_CONVERSION:inst18
+|SCOMP_System|HEX_DISP_6:inst10|DISP_CONVERSION:inst18
 GRP0_VALUE[0] => Mux0.IN19
 GRP0_VALUE[0] => Mux1.IN19
 GRP0_VALUE[0] => Mux2.IN19
@@ -669,6 +708,11 @@ GRP0_VALUE[4] => Mux12.IN19
 GRP0_VALUE[4] => Mux13.IN19
 GRP0_VALUE[4] => Mod0.IN21
 GRP0_VALUE[4] => Div0.IN12
+GRP0_VALUE[4] => tmp[28].DATAA
+GRP0_VALUE[4] => tmp[31].DATAA
+GRP0_VALUE[4] => tmp[32].DATAA
+GRP0_VALUE[4] => tmp[33].DATAA
+GRP0_VALUE[4] => tmp[33].DATAA
 GRP0_VALUE[5] => Mux7.IN18
 GRP0_VALUE[5] => Mux8.IN18
 GRP0_VALUE[5] => Mux9.IN18
@@ -678,6 +722,11 @@ GRP0_VALUE[5] => Mux12.IN18
 GRP0_VALUE[5] => Mux13.IN18
 GRP0_VALUE[5] => Mod0.IN20
 GRP0_VALUE[5] => Div0.IN11
+GRP0_VALUE[5] => tmp[35].DATAA
+GRP0_VALUE[5] => tmp[38].DATAA
+GRP0_VALUE[5] => tmp[39].DATAA
+GRP0_VALUE[5] => tmp[40].DATAA
+GRP0_VALUE[5] => tmp[40].DATAA
 GRP0_VALUE[6] => Mux7.IN17
 GRP0_VALUE[6] => Mux8.IN17
 GRP0_VALUE[6] => Mux9.IN17
@@ -743,10 +792,7 @@ GRP1_VALUE[0] => Mux26.IN19
 GRP1_VALUE[0] => Mux27.IN19
 GRP1_VALUE[0] => Mod4.IN25
 GRP1_VALUE[0] => Div3.IN16
-GRP1_VALUE[0] => tmp[28].DATAA
-GRP1_VALUE[0] => tmp[31].DATAA
-GRP1_VALUE[0] => tmp[32].DATAA
-GRP1_VALUE[0] => tmp[33].DATAA
+GRP1_VALUE[0] => tmp[33].DATAB
 GRP1_VALUE[1] => Mux21.IN18
 GRP1_VALUE[1] => Mux22.IN18
 GRP1_VALUE[1] => Mux23.IN18
@@ -756,10 +802,7 @@ GRP1_VALUE[1] => Mux26.IN18
 GRP1_VALUE[1] => Mux27.IN18
 GRP1_VALUE[1] => Mod4.IN24
 GRP1_VALUE[1] => Div3.IN15
-GRP1_VALUE[1] => tmp[35].DATAA
-GRP1_VALUE[1] => tmp[38].DATAA
-GRP1_VALUE[1] => tmp[39].DATAA
-GRP1_VALUE[1] => tmp[40].DATAA
+GRP1_VALUE[1] => tmp[40].DATAB
 GRP1_VALUE[2] => Mux21.IN17
 GRP1_VALUE[2] => Mux22.IN17
 GRP1_VALUE[2] => Mux23.IN17
@@ -824,7 +867,10 @@ GRP1_VALUE[11] => Mod4.IN14
 GRP1_VALUE[11] => Div3.IN5
 GRP1_VALUE[12] => Mod4.IN13
 GRP1_VALUE[12] => Div3.IN4
+GRP0_ENABLE => tmp[41].IN1
 GRP0_ENABLE => tmp[27].IN1
+GRP0_ENABLE => process_0.IN0
+GRP1_ENABLE => process_0.IN1
 GRP1_ENABLE => tmp[41].IN1
 MODE[0] => Equal40.IN1
 MODE[0] => Equal41.IN1
@@ -876,7 +922,7 @@ SEGMENTS_42[40] <= tmp[40].DB_MAX_OUTPUT_PORT_TYPE
 SEGMENTS_42[41] <= tmp[41].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|SCOMP_System|HEX_DISP_6:inst3|SEG_DISP:inst8
+|SCOMP_System|HEX_DISP_6:inst10|SEG_DISP:inst7
 seg_val[0] => seg_d.DATAA
 seg_val[0] => latched_seg[0].DATAIN
 seg_val[1] => seg_d.DATAA
@@ -921,7 +967,7 @@ segments[5] <= seg_d.DB_MAX_OUTPUT_PORT_TYPE
 segments[6] <= seg_d.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|SCOMP_System|HEX_DISP_6:inst3|SEG_DISP:inst13
+|SCOMP_System|HEX_DISP_6:inst10|SEG_DISP:inst8
 seg_val[0] => seg_d.DATAA
 seg_val[0] => latched_seg[0].DATAIN
 seg_val[1] => seg_d.DATAA
@@ -966,7 +1012,7 @@ segments[5] <= seg_d.DB_MAX_OUTPUT_PORT_TYPE
 segments[6] <= seg_d.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|SCOMP_System|HEX_DISP_6:inst3|SEG_DISP:inst14
+|SCOMP_System|HEX_DISP_6:inst10|SEG_DISP:inst13
 seg_val[0] => seg_d.DATAA
 seg_val[0] => latched_seg[0].DATAIN
 seg_val[1] => seg_d.DATAA
@@ -1011,7 +1057,7 @@ segments[5] <= seg_d.DB_MAX_OUTPUT_PORT_TYPE
 segments[6] <= seg_d.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|SCOMP_System|HEX_DISP_6:inst3|SEG_DISP:inst15
+|SCOMP_System|HEX_DISP_6:inst10|SEG_DISP:inst14
 seg_val[0] => seg_d.DATAA
 seg_val[0] => latched_seg[0].DATAIN
 seg_val[1] => seg_d.DATAA
@@ -1056,7 +1102,52 @@ segments[5] <= seg_d.DB_MAX_OUTPUT_PORT_TYPE
 segments[6] <= seg_d.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|SCOMP_System|HEX_DISP_6:inst3|SEG_DISP:inst12
+|SCOMP_System|HEX_DISP_6:inst10|SEG_DISP:inst15
+seg_val[0] => seg_d.DATAA
+seg_val[0] => latched_seg[0].DATAIN
+seg_val[1] => seg_d.DATAA
+seg_val[1] => latched_seg[1].DATAIN
+seg_val[2] => seg_d.DATAA
+seg_val[2] => latched_seg[2].DATAIN
+seg_val[3] => seg_d.DATAA
+seg_val[3] => latched_seg[3].DATAIN
+seg_val[4] => seg_d.DATAA
+seg_val[4] => latched_seg[4].DATAIN
+seg_val[5] => seg_d.DATAA
+seg_val[5] => latched_seg[5].DATAIN
+seg_val[6] => seg_d.DATAA
+seg_val[6] => latched_seg[6].DATAIN
+cs => latched_seg[0].CLK
+cs => latched_seg[1].CLK
+cs => latched_seg[2].CLK
+cs => latched_seg[3].CLK
+cs => latched_seg[4].CLK
+cs => latched_seg[5].CLK
+cs => latched_seg[6].CLK
+free => seg_d.OUTPUTSELECT
+free => seg_d.OUTPUTSELECT
+free => seg_d.OUTPUTSELECT
+free => seg_d.OUTPUTSELECT
+free => seg_d.OUTPUTSELECT
+free => seg_d.OUTPUTSELECT
+free => seg_d.OUTPUTSELECT
+resetn => latched_seg[0].ACLR
+resetn => latched_seg[1].ACLR
+resetn => latched_seg[2].ACLR
+resetn => latched_seg[3].ACLR
+resetn => latched_seg[4].ACLR
+resetn => latched_seg[5].ACLR
+resetn => latched_seg[6].ACLR
+segments[0] <= seg_d.DB_MAX_OUTPUT_PORT_TYPE
+segments[1] <= seg_d.DB_MAX_OUTPUT_PORT_TYPE
+segments[2] <= seg_d.DB_MAX_OUTPUT_PORT_TYPE
+segments[3] <= seg_d.DB_MAX_OUTPUT_PORT_TYPE
+segments[4] <= seg_d.DB_MAX_OUTPUT_PORT_TYPE
+segments[5] <= seg_d.DB_MAX_OUTPUT_PORT_TYPE
+segments[6] <= seg_d.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|SCOMP_System|HEX_DISP_6:inst10|SEG_DISP:inst12
 seg_val[0] => seg_d.DATAA
 seg_val[0] => latched_seg[0].DATAIN
 seg_val[1] => seg_d.DATAA

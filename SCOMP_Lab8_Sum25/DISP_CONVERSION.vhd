@@ -26,7 +26,7 @@ architecture rtl of DISP_CONVERSION is
 begin
     process(GRP0_VALUE, GRP1_VALUE, MODE, GRP0_ENABLE, GRP1_ENABLE)
         variable tmp : std_logic_vector(41 downto 0) := latched_segments;
-        variable val : integer;
+        variable vals : integer;
         variable dig : integer;
         variable seg : std_logic_vector(6 downto 0);
     begin
@@ -62,10 +62,10 @@ begin
                 end loop;
 
             elsif MODE = "01" then  -- Decimal
-                val := to_integer(unsigned(GRP0_VALUE));
+                vals := to_integer(unsigned(GRP0_VALUE));
                 for i in 0 to 3 loop
-                    dig := val mod 10;
-                    val := val / 10;
+                    dig := vals mod 10;
+                    vals := vals / 10;
                     case dig is
                         when 0 => seg := "1000000";
                         when 1 => seg := "1111001";
@@ -82,21 +82,33 @@ begin
                     tmp(i*7+6 downto i*7) := seg;
                 end loop;
 
-            elsif MODE = "10" then  -- Binay
-                for i in 0 to 3 loop
-                    if GRP0_VALUE(i) = '1' then dig := 1; else dig := 0; end if;
-                    case dig is
-                        when 0 => seg := "1000000"; -- 0
-                        when 1 => seg := "1111001"; -- 1
-                        when others => seg := "0111111";
-                    end case;
-                    tmp(i*7+6 downto i*7) := seg;
-                end loop;
+            elsif MODE = "10" then  -- Binary
+					if GRP1_ENABLE = '1' then
+						for i in 0 to 5 loop -- needs to be 5 when both enabled
+							  if GRP0_VALUE(i) = '1' then dig := 1; else dig := 0; end if;
+							  case dig is
+									when 0 => seg := "1000000"; -- 0
+									when 1 => seg := "1111001"; -- 1
+									when others => seg := "0111111";
+							  end case;
+							  tmp(i*7+6 downto i*7) := seg;
+						 end loop;
+					else
+						 for i in 0 to 3 loop -- needs to be 5 when both enabled
+							  if GRP0_VALUE(i) = '1' then dig := 1; else dig := 0; end if;
+							  case dig is
+									when 0 => seg := "1000000"; -- 0
+									when 1 => seg := "1111001"; -- 1
+									when others => seg := "0111111";
+							  end case;
+							  tmp(i*7+6 downto i*7) := seg;
+						 end loop;
+					end if;
             end if;
         end if;
 
 -- GRP1_ENABLE == 1
-        if GRP1_ENABLE = '1' then
+        if GRP1_ENABLE = '1' and GRP0_ENABLE = '0' then
             if MODE = "00" then  -- Hexadecimal
                 for i in 0 to 1 loop
                     if (i*4+3) <= 12 then
@@ -126,10 +138,10 @@ begin
                 end loop;
 
             elsif MODE = "01" then  -- Decimal
-                val := to_integer(unsigned(GRP1_VALUE));
+                vals := to_integer(unsigned(GRP1_VALUE));
                 for i in 0 to 1 loop
-                    dig := val mod 10;
-                    val := val / 10;
+                    dig := vals mod 10;
+                    vals := vals / 10;
                     case dig is
                         when 0 => seg := "1000000";
                         when 1 => seg := "1111001";

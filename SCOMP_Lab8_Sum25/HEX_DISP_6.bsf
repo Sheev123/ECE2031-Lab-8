@@ -108,6 +108,13 @@ on the Quartus Prime software download page.
 		(text "GRP1_VALUE[12..0]" (rect 163 139 283 153)(font "Intel Clear" (font_size 8)))
 		(line (pt 304 144)(pt 288 144)(line_width 3))
 	)
+	(port
+		(pt 304 160)
+		(output)
+		(text "seg_val[41..0]" (rect 0 0 83 14)(font "Intel Clear" (font_size 8)))
+		(text "seg_val[41..0]" (rect 200 155 283 169)(font "Intel Clear" (font_size 8)))
+		(line (pt 304 160)(pt 288 160)(line_width 3))
+	)
 	(drawing
 		(rectangle (rect 16 16 288 176))
 	)

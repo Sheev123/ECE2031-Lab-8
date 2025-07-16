@@ -3,90 +3,93 @@
 
 ;Value Modes with and without Override
 
-TestValModes:
-        ; HEX Mode value = &H123
-        LOAD   ValHexNoOverride
-        ;OUT     Hex1
-		OUT		Hex0
+LOAD ValBinOverride
+OUT HEX1
 
-        ;LOADI   ValHexOverride
-        ;OUT     Hex1
+; TestValModes:
+        ; ; HEX Mode value = &H123
+        ; LOAD   ValHexNoOverride
+        ; OUT     Hex1
+		; OUT		Hex0
 
-        ;CALL    Delay
+        ; LOAD   ValHexOverride
+        ; OUT     Hex1
 
-        ; DEC Mode value = 10
-        ;LOADI   ValDecNoOverride
-        ;OUT     Hex0
+        ; CALL    Delay
 
-        ;LOADI   ValDecOverride
-        ;OUT     Hex1
+        ; ; DEC Mode value = 10
+        ; LOAD   ValDecNoOverride
+        ; OUT     Hex0
 
-        ;CALL    Delay
+        ; LOAD   ValDecOverride
+        ; OUT     Hex1
 
-        ; BIN Mode value = 15
-        ;LOADI   ValBinNoOverride
-        ;OUT     Hex0
+        ; CALL    Delay
 
-        ;LOADI   ValBinOverride
-        ;OUT     Hex1
+        ; ; BIN Mode value = 15
+        ; LOAD   ValBinNoOverride
+        ; OUT     Hex0
 
-        ;CALL    Delay
+        ; LOAD   ValBinOverride
+        ; OUT     Hex1
 
-;Full Control Mode
-;Loop through digits 0 to 5 with one segment pattern
+        ; CALL    Delay
 
-        ;LOADI   0
-        ;STORE   DigitIndex
+; ;Full Control Mode
+; ;Loop through digits 0 to 5 with one segment pattern
 
-;DigitLoop:
-        ;LOAD    DigitIndex
-        ;ADDI    -6
-        ;JZERO   Done
+        ; LOADI   0
+        ; STORE   DigitIndex
 
-        ;shift digit index into bits 13:11
-        ;LOAD    DigitIndex
-        ;SHIFT   11
-        ;STORE   TempDigitBits
+; DigitLoop:
+        ; LOAD    DigitIndex
+        ; ADDI    -6
+        ; JZERO   Done
 
-        ; Load segment pattern(&B01010100)
-        ;LOADI   SegmentPattern
-        ;STORE   TempSegBits
+        ; ;shift digit index into bits 13:11
+        ; LOAD    DigitIndex
+        ; SHIFT   11
+        ; STORE   TempDigitBits
 
-        ;combine digit bits + segment bits
-        ;LOAD    TempDigitBits
-        ;ADD     TempSegBits
-        ;STORE   TempCombined
+        ; ; Load segment pattern(&B01010100)
+        ; LOAD   SegmentPattern
+        ; STORE   TempSegBits
 
-        ; add mode bits (Mode = 11, override = 0)
-        ;LOAD    FullCtrlModeBits
-        ;ADD     TempCombined
-        ;STORE   FullCtrlWord
+        ; ;combine digit bits + segment bits
+        ; LOAD    TempDigitBits
+        ; ADD     TempSegBits
+        ; STORE   TempCombined
 
-        ;write to HEX0
-        ;LOAD    FullCtrlWord
-        ;OUT     Hex0
+        ; ; add mode bits (Mode = 11, override = 0)
+        ; LOAD    FullCtrlModeBits
+        ; ADD     TempCombined
+        ; STORE   FullCtrlWord
 
-        ;CALL    Delay
+        ; ;write to HEX0
+        ; LOAD    FullCtrlWord
+        ; OUT     Hex0
 
-        ;increment digit index and loop
-        ;LOAD    DigitIndex
-        ;ADDI    1
-        ;STORE   DigitIndex
-        ;JUMP    DigitLoop
+        ; CALL    Delay
 
-;Done:
-        ;JUMP    Done
-;Delay:
-        ;OUT     Timer
-;WaitLoop:
-        ;IN      Timer
-        ;ADDI    -5
-        ;JNEG    WaitLoop
-        ;RETURN
+        ; ;increment digit index and loop
+        ; LOAD    DigitIndex
+        ; ADDI    1
+        ; STORE   DigitIndex
+        ; JUMP    DigitLoop
+
+; Done:
+        ; JUMP    Done
+; Delay:
+        ; OUT     Timer
+; WaitLoop:
+        ; IN      Timer
+        ; ADDI    -5
+        ; JNEG    WaitLoop
+        ; RETURN
 
 ;Test Values for Value test
 
-ValHexNoOverride:     DW &B0000000100100011   ; MODE=00, override=0, value=&H123
+ValHexNoOverride:     DW &B0000000000010001   ; MODE=00, override=0, value=&H123
 ValHexOverride:       DW &B0010000100100011   ; MODE=00, override=1, value=&H123
 
 ValDecNoOverride:     DW &B0100000000001010   ; MODE=01, override=0, value=10
