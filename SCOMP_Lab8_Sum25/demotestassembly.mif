@@ -1,0 +1,63 @@
+WIDTH=16;
+DEPTH=2048;
+
+ADDRESS_RADIX=HEX;
+DATA_RADIX=HEX;
+
+CONTENT BEGIN
+0000: 1806; --         LOADI   6
+0001: 102F; --         STORE   DigitIndex
+0002: 082F; --         LOAD   DigitIndex
+0003: 082F; --         LOAD    DigitIndex
+0004: 500B; --         SHIFT   11
+0005: 1030; --         STORE   TempDigitBits
+0006: 082F; -- 		LOAD 	DigitIndex
+0007: 3835; --         AND 	EvenCheck
+0008: 2835; --         SUB		EvenCheck
+0009: 600E; --         JNEG    Pattern1
+000A: 700B; --         JZERO 	Pattern2
+000B: 082E; -- 		LOAD    SegmentPattern2
+000C: 1031; --         STORE   TempSegBits
+000D: 5810; --         JUMP 	Continue
+000E: 082D; --         LOAD    SegmentPattern1
+000F: 1031; --         STORE   TempSegBits
+0010: 0830; --         LOAD    TempDigitBits
+0011: 2031; --         ADD     TempSegBits
+0012: 1032; --         STORE   TempCombined
+0013: 0834; --         LOAD    FullCtrlModeBits
+0014: 2032; --         ADD     TempCombined
+0015: 1033; --         STORE   FullCtrlWord
+0016: 0833; --         LOAD    FullCtrlWord
+0017: 9804; --         OUT     Hex0
+0018: 8022; --         CALL    Delay
+0019: 082F; --         LOAD    DigitIndex
+001A: 37FF; --         ADDI    -1
+001B: 601E; --         JNEG	RESET
+001C: 102F; --         STORE   DigitIndex
+001D: 5802; --         JUMP    DigitLoop
+001E: 1806; -- 		LOADI 6
+001F: 102F; --         STORE DigitIndex
+0020: 5802; --         JUMP    DigitLoop
+0021: 5821; -- 		JUMP 	Done
+0022: 9802; --         OUT     Timer
+0023: 9002; --         IN      Timer
+0024: 37FB; --         ADDI    -5
+0025: 6023; --         JNEG    WaitLoop
+0026: 8800; --         RETURN
+0027: 0123; -- ValHexNoOverride:     DW &B0000000100100011   ; MODE=00, override=0, value=&H123
+0028: 2123; -- ValHexOverride:       DW &B0010000100100011   ; MODE=00, override=1, value=&H123
+0029: 400A; -- ValDecNoOverride:     DW &B0100000000001010   ; MODE=01, override=0, value=10
+002A: 600A; -- ValDecOverride:       DW &B0110000000001010   ; MODE=01, override=1, value=10
+002B: 800F; -- ValBinNoOverride:     DW &B1000000000001111   ; MODE=10, override=0, value=15
+002C: A00F; -- ValBinOverride:       DW &B1010000000001111   ; MODE=10, override=1, value=15
+002D: 001C; -- SegmentPattern1:       DW &B0000000000011100 
+002E: 0023; -- SegmentPattern2:       DW &B0000000000100011
+002F: 0000; -- DigitIndex:     DW 0
+0030: 0000; -- TempDigitBits:  DW 0
+0031: 0000; -- TempSegBits:    DW 0
+0032: 0000; -- TempCombined:   DW 0
+0033: 0000; -- FullCtrlWord:   DW 0
+0034: C000; -- FullCtrlModeBits: DW &HC000
+0035: 0001; -- EvenCheck:		  DW &B0000000000000001
+[0036..07FF] : 0000; -- [empty memory]
+END;
