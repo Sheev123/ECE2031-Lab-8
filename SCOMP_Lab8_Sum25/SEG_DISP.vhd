@@ -23,7 +23,7 @@ BEGIN
   PROCESS (resetn, cs)
   BEGIN
     IF (resetn = '0') THEN
-      latched_seg <= "0000000";
+      latched_seg <= "1111111";
     ELSIF ( RISING_EDGE(cs) ) THEN
       latched_seg <= seg_val;
     END IF;

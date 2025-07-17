@@ -50,13 +50,15 @@ begin
     -- full_disp_override extends addr 4 and 5 write to all groups
 	 process(IO_ADDR, full_disp_override_s)
 	 begin
-		 if((IO_ADDR = "00000000100") or (IO_ADDR = "00000000101" and full_disp_override_s = '1')) then
+		 if ((IO_ADDR = "00000000100") or (IO_ADDR = "00000000101" and full_disp_override_s = '1')) then
 			grp0_we_s <= IO_WRITE;
-		 elsif((IO_ADDR = "00000000101") or (IO_ADDR = "00000000100" and full_disp_override_s = '1')) then
+		 else 
+			grp0_we_s <= '0';
+		 end if;
+		 if ((IO_ADDR = "00000000101") or (IO_ADDR = "00000000100" and full_disp_override_s = '1')) then
 			grp1_we_s <= IO_WRITE;
 		 else 
 			grp1_we_s <= '0';
-			grp0_we_s <= '0';
 		 end if;
 	 end process;
 	 

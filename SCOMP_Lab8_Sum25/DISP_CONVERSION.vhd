@@ -25,12 +25,11 @@ architecture rtl of DISP_CONVERSION is
 
 begin
     process(GRP0_VALUE, GRP1_VALUE, MODE, GRP0_ENABLE, GRP1_ENABLE)
-        variable tmp : std_logic_vector(41 downto 0) := latched_segments;
+        variable tmp : std_logic_vector(41 downto 0) := latched_segments; 
         variable vals : integer;
         variable dig : integer;
         variable seg : std_logic_vector(6 downto 0);
     begin
-
 -- GRP0_ENABLE == 1
         if GRP0_ENABLE = '1' then
             if MODE = "00" then  -- Hexadecimal
@@ -83,6 +82,7 @@ begin
                 end loop;
 
             elsif MODE = "10" then  -- Binary
+					
 					if GRP1_ENABLE = '1' then
 						for i in 0 to 5 loop -- needs to be 5 when both enabled
 							  if GRP0_VALUE(i) = '1' then dig := 1; else dig := 0; end if;
@@ -91,19 +91,19 @@ begin
 									when 1 => seg := "1111001"; -- 1
 									when others => seg := "0111111";
 							  end case;
-							  tmp(i*7+6 downto i*7) := seg;
+							  tmp((i*7)+6 downto (i*7)) := seg;
 						 end loop;
-					else
-						 for i in 0 to 3 loop -- needs to be 5 when both enabled
-							  if GRP0_VALUE(i) = '1' then dig := 1; else dig := 0; end if;
-							  case dig is
-									when 0 => seg := "1000000"; -- 0
-									when 1 => seg := "1111001"; -- 1
-									when others => seg := "0111111";
-							  end case;
-							  tmp(i*7+6 downto i*7) := seg;
-						 end loop;
-					end if;
+					else 
+						for i in 0 to 3 loop
+                    if GRP0_VALUE(i) = '1' then dig := 1; else dig := 0; end if;
+                    case dig is
+                        when 0 => seg := "1000000"; -- 0
+                        when 1 => seg := "1111001"; -- 1
+                        when others => seg := "0111111";
+                    end case;
+                    tmp((i*7)+6 downto (i*7)) := seg;
+                end loop;
+            end if;
             end if;
         end if;
 

@@ -3,14 +3,14 @@
 
 ;Value Modes with and without Override
 
-LOAD ValBinOverride
-OUT HEX1
+;LOAD ValBinOverride			; AC <= mem[ValBinOverride] ~ ; MODE=00, override=1, value=&H123
+;OUT HEX1					; Display 123 on full 6-segment display
 
-; TestValModes:
-        ; ; HEX Mode value = &H123
-        ; LOAD   ValHexNoOverride
-        ; OUT     Hex1
-		; OUT		Hex0
+TestValModes:
+        ; HEX Mode value = &H123
+        LOAD   ValBinNoOverride
+        OUT     Hex0
+		;OUT		Hex0
 
         ; LOAD   ValHexOverride
         ; OUT     Hex1
@@ -89,14 +89,14 @@ OUT HEX1
 
 ;Test Values for Value test
 
-ValHexNoOverride:     DW &B0000000000010001   ; MODE=00, override=0, value=&H123
+ValHexNoOverride:     DW &B0000000100100011   ; MODE=00, override=0, value=&H123
 ValHexOverride:       DW &B0010000100100011   ; MODE=00, override=1, value=&H123
 
-ValDecNoOverride:     DW &B0100000000001010   ; MODE=01, override=0, value=10
-ValDecOverride:       DW &B0110000000001010   ; MODE=01, override=1, value=10
+ValDecNoOverride:     DW &B0100000000001110   ; MODE=01, override=0, value=14
+ValDecOverride:       DW &B0110001010101110   ; MODE=01, override=1, value=14
 
-ValBinNoOverride:     DW &B1000000000001111   ; MODE=10, override=0, value=15
-ValBinOverride:       DW &B1010000000001111   ; MODE=10, override=1, value=15
+ValBinNoOverride:     DW &B1000000000000011   ; MODE=10, override=0, value=15
+ValBinOverride:       DW &B1010000000011001   ; MODE=10, override=1, value=15
 
 ;Segment Pattern for Full Control Test 
 SegmentPattern:       DW &B0000000001010100   ;

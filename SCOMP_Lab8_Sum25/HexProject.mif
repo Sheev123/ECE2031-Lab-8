@@ -5,14 +5,14 @@ ADDRESS_RADIX=HEX;
 DATA_RADIX=HEX;
 
 CONTENT BEGIN
-0000: 0807; -- LOAD ValBinOverride
-0001: 9805; -- OUT HEX1
-0002: 0011; -- ValHexNoOverride:     DW &B0000000000010001   ; MODE=00, override=0, value=&H123
+0000: 0806; --         LOAD   ValBinNoOverride
+0001: 9804; --         OUT     Hex0
+0002: 0123; -- ValHexNoOverride:     DW &B0000000100100011   ; MODE=00, override=0, value=&H123
 0003: 2123; -- ValHexOverride:       DW &B0010000100100011   ; MODE=00, override=1, value=&H123
-0004: 400A; -- ValDecNoOverride:     DW &B0100000000001010   ; MODE=01, override=0, value=10
-0005: 600A; -- ValDecOverride:       DW &B0110000000001010   ; MODE=01, override=1, value=10
-0006: 800F; -- ValBinNoOverride:     DW &B1000000000001111   ; MODE=10, override=0, value=15
-0007: A00F; -- ValBinOverride:       DW &B1010000000001111   ; MODE=10, override=1, value=15
+0004: 400E; -- ValDecNoOverride:     DW &B0100000000001110   ; MODE=01, override=0, value=14
+0005: 62AE; -- ValDecOverride:       DW &B0110001010101110   ; MODE=01, override=1, value=14
+0006: 8003; -- ValBinNoOverride:     DW &B1000000000000011   ; MODE=10, override=0, value=15
+0007: A019; -- ValBinOverride:       DW &B1010000000011001   ; MODE=10, override=1, value=15
 0008: 0054; -- SegmentPattern:       DW &B0000000001010100   ;
 0009: 0000; -- DigitIndex:     DW 0
 000A: 0000; -- TempDigitBits:  DW 0
