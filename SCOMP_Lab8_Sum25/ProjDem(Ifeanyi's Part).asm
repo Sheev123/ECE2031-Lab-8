@@ -154,7 +154,7 @@ ValDecNoOverride:     DW &B0100000000001010   ; MODE=01, override=0, value=10
 ValDecOverride:       DW &B0110000000001010   ; MODE=01, override=1, value=10
 
 ValBinNoOverride:     DW &B1000000000001000   ; MODE=10, override=0, value=8
-ValBinOverride:       DW &B1010000000001111   ; MODE=10, override=1, value=15
+ValBinOverride:       DW &B1010000000101000   ; MODE=10, override=1, value=15
 
 ;Segment Pattern for Full Control Test 
 SegmentPattern:       DW &B0000000001010100   ;
